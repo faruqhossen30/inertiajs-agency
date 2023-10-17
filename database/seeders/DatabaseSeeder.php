@@ -25,10 +25,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             AdminSeeder::class,
-            UserSeeder::class,
-            GameSeeder::class,
-            TeamSeeder::class,
-            // AutoquestionSeeder::class,
+            UserSeeder::class
         ]);
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\User\DepositController;
 use Illuminate\Foundation\Application;
@@ -25,6 +26,7 @@ Route::get('/', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 })->name('homepage');
+Route::get('contact', [ContactController::class, 'index'])->name('contact');
 
 
 
