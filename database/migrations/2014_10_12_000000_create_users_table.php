@@ -17,7 +17,10 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique()->nullable();
-            $table->string('password');
+            $table->string('password')->nullable();
+            $table->string('google_id')->nullable();
+            $table->boolean('is_admin')->default(false);
+            $table->boolean('is_user')->default(true);
             $table->rememberToken();
             $table->boolean('status')->default(true);
             $table->timestamps();

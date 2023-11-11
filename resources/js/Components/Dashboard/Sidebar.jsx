@@ -2,6 +2,14 @@ import { PuzzlePieceIcon, UserIcon } from '@heroicons/react/24/outline';
 import { Link } from '@inertiajs/react';
 
 export default function Sidebar() {
+    function closeSidebarNew() {
+        var hoverElement = document.getElementsByClassName('hs-overlay-backdrop');
+        if(hoverElement.length > 0){
+            hoverElement[0].remove()
+            console.log(hoverElement);
+        }
+    }
+
     return (
         <div id="application-sidebar" className="hs-overlay hs-overlay-open:translate-x-0 -translate-x-full transition-all duration-300 transform hidden fixed top-0 left-0 bottom-0 z-[60] w-64 bg-white border-r border-gray-200 pt-6 pb-10 overflow-y-auto scrollbar-y lg:block lg:translate-x-0 lg:right-auto lg:bottom-0 dark:scrollbar-y dark:bg-gray-800 dark:border-gray-700">
             <div className="px-4">
@@ -9,7 +17,7 @@ export default function Sidebar() {
             </div>
 
             <nav className="hs-accordion-group p-4 w-full flex flex-col flex-wrap" data-hs-accordion-always-open>
-                <ul className="space-y-1.5">
+                <ul className="space-y-1.5" onClick={closeSidebarNew}>
                     <li>
                         <Link href={route('dashboard')} className="flex items-center gap-x-3.5 py-2 px-2.5 bg-gray-100 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-900 dark:text-white" >
                             <svg className="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
