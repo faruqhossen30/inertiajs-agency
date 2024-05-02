@@ -36,7 +36,6 @@ Route::get('auth/google/call-back', [GoogleauthController::class, 'callbackGoogl
 
 
 Route::middleware('auth')->group(function () {
-    Route::get('/deposits', [DepositController::class, 'index']);
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
 });
 
