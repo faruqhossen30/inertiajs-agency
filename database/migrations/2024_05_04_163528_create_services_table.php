@@ -8,28 +8,25 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
-        Schema::create('auto_questions', function (Blueprint $table) {
+        Schema::create('services', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->unsignedBigInteger('game_id');
-            $table->string('game_name');
-            $table->boolean('status')->default(true);
+            $table->string('slug');
+            $table->string('thumbnail')->nullable();
+            $table->string('short_description',2000);
+            $table->longText('description_code');
             $table->timestamps();
         });
     }
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
-        Schema::dropIfExists('auto_questions');
+        Schema::dropIfExists('services');
     }
 };

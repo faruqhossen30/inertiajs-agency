@@ -9,8 +9,9 @@ export default function Authenticated({ user, header, children }) {
             <Sidebar />
             <div className="w-full lg:pl-64">
                 <Navbar />
+                <div className="p-4">
                     {children}
-
+                </div>
             </div>
         </div>
     );
