@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\Admin\Blog\BlogcategoryController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -11,4 +12,5 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth','admin']], function (
     Route::get('/dashboard', function () {
         return Inertia::render('Admin/Dashboard');
     })->name('dashboard');
+    Route::resource('blogcategory', BlogcategoryController::class);
 });
