@@ -10,7 +10,7 @@ export default function HeroSection() {
 
                 <div className="flex justify-center">
                     <Link href="#" className="inline-flex items-center gap-x-2 bg-white border border-gray-200 text-sm text-gray-800 p-1 pl-3 rounded-full transition hover:border-gray-300 dark:bg-gray-800 dark:border-gray-700 dark:hover:border-gray-600 dark:text-gray-200">
-                        PRO release - Join to waitlist
+                        TOP RATED & BEST
                         <span className="py-2 px-3 inline-flex justify-center items-center gap-x-2 rounded-full bg-gray-200 font-semibold text-sm text-gray-600 dark:bg-gray-700 dark:text-gray-400">
                             <ArrowRightIcon className="w-4 h-4" />
                         </span>
@@ -20,15 +20,18 @@ export default function HeroSection() {
 
 
                 <div className="mt-5 max-w-2xl text-center mx-auto">
-                    <h1 className="block font-bold text-gray-800 text-4xl md:text-5xl lg:text-6xl dark:text-gray-200">
-                        Let's Build
-                        <span className="bg-clip-text bg-gradient-to-tl from-blue-600 to-violet-600 text-transparent">Together</span>
+                    <h1 className="block font-bold text-gray-800 text-3xl md:text-5xl lg:text-6xl dark:text-gray-200">
+
+                        <span className="bg-clip-text bg-gradient-to-tl from-blue-600 to-violet-600 text-transparent">Digital Marketing,</span> and
+                         <span className="bg-clip-text bg-gradient-to-tl from-blue-600 to-violet-600 text-transparent">  Graphics</span> company
+
                     </h1>
                 </div>
 
 
                 <div className="mt-5 max-w-3xl text-center mx-auto">
-                    <p className="text-lg text-gray-600 dark:text-gray-400">Preline UI is an open-source set of prebuilt UI components, ready-to-use examples and Figma design system based on the utility-first Tailwind CSS framework.</p>
+                    <p className="text-lg text-gray-600 dark:text-gray-400">Best Software Design & Development, Website Design & Development, Best SEO Agency
+                        & Digital Marketing,  and Graphics Company of Bangladesh.</p>
                 </div>
 
 

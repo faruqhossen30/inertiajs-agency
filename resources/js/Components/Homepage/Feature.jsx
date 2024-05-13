@@ -1,4 +1,8 @@
 import { ServerStackIcon } from '@heroicons/react/24/outline'
+import { TbSeo } from "react-icons/tb";
+import { MdPreview } from "react-icons/md";
+import { TbHttpOptions } from "react-icons/tb";
+import { GiArchiveResearch } from "react-icons/gi";
 import React from 'react'
 
 export default function Feature() {
@@ -31,13 +35,15 @@ export default function Feature() {
                     <div className="grid sm:grid-cols-2 gap-8 md:gap-12">
 
                         <div className="flex gap-x-5">
-                            <ServerStackIcon className="h-8 w-8" />
+                            <TbSeo className="h-8 w-8" />
                             <div className="grow">
                                 <h3 className="text-lg font-semibold text-gray-800 dark:text-white">
-                                    Creative minds
+                                    SEO AUDIT
                                 </h3>
                                 <p className="mt-1 text-gray-600 dark:text-gray-400">
-                                    We choose our teams carefully. Our people are the secret to great work.
+                                    Conduct deep technical
+                                    audits to find gaps
+                                    based on target keywords.
                                 </p>
                             </div>
                         </div>
@@ -45,13 +51,15 @@ export default function Feature() {
 
 
                         <div className="flex gap-x-5">
-                            <ServerStackIcon className="h-8 w-8" />
+                            <MdPreview className="h-8 w-8" />
                             <div className="grow">
                                 <h3 className="text-lg font-semibold text-gray-800 dark:text-white">
-                                    Simple and affordable
+                                    REVIEW & UPDATE
                                 </h3>
                                 <p className="mt-1 text-gray-600 dark:text-gray-400">
-                                    From boarding passes to movie tickets, there's pretty much nothing you can't store with Preline.
+                                    Testing everything
+                                    and constantly improving
+                                    SEO strategy.
                                 </p>
                             </div>
                         </div>
@@ -59,13 +67,15 @@ export default function Feature() {
 
 
                         <div className="flex gap-x-5">
-                            <ServerStackIcon className="h-8 w-8" />
+                            <GiArchiveResearch className="h-8 w-8" />
                             <div className="grow">
                                 <h3 className="text-lg font-semibold text-gray-800 dark:text-white">
-                                    Industry-leading documentation
+                                    RESEARCH
                                 </h3>
                                 <p className="mt-1 text-gray-600 dark:text-gray-400">
-                                    Our documentation and extensive Client libraries contain everything a business needs to build a custom integration.
+                                    Run meticulous
+                                    Keyword research and
+                                    advanced rank tracking.
                                 </p>
                             </div>
                         </div>
@@ -73,13 +83,15 @@ export default function Feature() {
 
 
                         <div className="flex gap-x-5">
-                            <ServerStackIcon className="h-8 w-8" />
+                            <TbHttpOptions className="h-8 w-8" />
                             <div className="grow">
                                 <h3 className="text-lg font-semibold text-gray-800 dark:text-white">
-                                    Designing for people
+                                    OPTIMIZATION
                                 </h3>
                                 <p className="mt-1 text-gray-600 dark:text-gray-400">
-                                    We actively pursue the right balance between functionality and aesthetics, creating delightful experiences.
+                                    Target On-page,
+                                    Off-page SEO features
+                                    to optimize website.
                                 </p>
                             </div>
                         </div>

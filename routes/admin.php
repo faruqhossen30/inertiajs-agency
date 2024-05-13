@@ -3,6 +3,8 @@
 use App\Http\Controllers\Admin\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ServiceController;
+
+use App\Http\Controllers\Admin\Blog\BlogcategoryController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -17,4 +19,5 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth','admin']], function (
     // Service
     Route::resource('service', ServiceController::class);
     Route::resource('category', CategoryController::class);
+    Route::resource('blogcategory', BlogcategoryController::class);
 });
