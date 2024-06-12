@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Package;
 use App\Models\Service;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -24,7 +25,8 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        return Inertia::render('Admin/Service/Create');
+        $packages = Package::get();
+        return Inertia::render('Admin/Service/Create',['packages'=>$packages]);
     }
 
     /**
@@ -32,6 +34,7 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
+        // return $request->all();
         $request->validate([
             'title'=> 'required',
             'short_description'=> 'required',
