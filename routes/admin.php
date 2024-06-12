@@ -5,6 +5,9 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ServiceController;
 
 use App\Http\Controllers\Admin\Blog\BlogcategoryController;
+use App\Http\Controllers\Admin\PackageController;
+use App\Http\Controllers\Admin\PakageController;
+use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -20,4 +23,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth','admin']], function (
     Route::resource('service', ServiceController::class);
     Route::resource('category', CategoryController::class);
     Route::resource('blogcategory', BlogcategoryController::class);
+    Route::resource('package', PackageController::class);
+    Route::get('user/list', [UserController::class,'index'])->name('users');
+    Route::get('user/show/{id}', [UserController::class,'show'])->name('user.show');
+    Route::delete('user/delete/{id}', [UserController::class,'destroy'])->name('user.destroy');
 });

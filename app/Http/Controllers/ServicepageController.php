@@ -10,4 +10,8 @@ class ServicepageController extends Controller
     function index() : Response {
         return Inertia::render('ServicePage');
     }
+
+    function SingleService() : Response {
+        return Inertia::render('Service');
+    }
 }
