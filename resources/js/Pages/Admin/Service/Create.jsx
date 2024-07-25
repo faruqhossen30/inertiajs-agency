@@ -26,8 +26,8 @@ export default function Create({ auth, packages }) {
 
     function submit(e) {
         e.preventDefault()
-        console.log(data);
-        // post(route('service.store'));
+        // console.log(data);
+        post(route('service.store'));
     }
 
     return (
@@ -50,11 +50,11 @@ export default function Create({ auth, packages }) {
                                         <p className="text-sm text-red-600 mt-2">{errors.title}</p>
                                     </div>
 
-                                    <div>
+                                    {/* <div>
                                         <InputLabel isRequired={true} labelFor="thumbnail" />
                                         <input id="thumbnail" type="file" name="thumbnail" placeholder="thumbnail" onChange={(e) => setData('thumbnail', e.target.files[0])} />
                                         <p className="text-sm text-red-600 mt-2">{errors.thumbnail}</p>
-                                    </div>
+                                    </div> */}
                                     <div>
                                         <InputLabel isRequired={true} labelFor="Description Code" />
                                         <textarea id="description_code" type="file" name="description_code" placeholder="description_code" onChange={(e) => setData('description_code', e.target.value)}
@@ -62,7 +62,7 @@ export default function Create({ auth, packages }) {
                                         <p className="text-sm text-red-600 mt-2">{errors.thumbnail}</p>
                                     </div>
 
-                                    <div>
+                                    {/* <div>
                                         <InputLabel isRequired={true} labelFor="status" />
                                         <select id="status" name="status" className="py-2 px-4 pr-9 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
                                             onChange={(e) => setData('status', e.target.value)}>
@@ -70,7 +70,7 @@ export default function Create({ auth, packages }) {
                                             <option value="0">No</option>
                                         </select>
                                         <p className="text-sm text-red-600 mt-2">{errors.status}</p>
-                                    </div>
+                                    </div> */}
                                     <div>
                                         <CKEditor
 

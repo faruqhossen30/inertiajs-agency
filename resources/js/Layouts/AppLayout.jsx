@@ -5,12 +5,12 @@ import Footer from './Footer';
 
 export default function AppLayout({ children }) {
     return (
-        <>
+        <div className="dark:bg-slate-800">
             <Header />
-            <div className="max-w-7xl mx-auto">
-            {children}
+            <div className="container">
+                {children}
             </div>
             <Footer />
-        </>
+        </div>
     );
 }

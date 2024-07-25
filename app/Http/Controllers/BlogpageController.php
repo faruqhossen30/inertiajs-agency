@@ -11,4 +11,7 @@ class BlogpageController extends Controller
     function index() : Response {
         return Inertia::render('BlogPage');
     }
+    function singleBlog() : Response {
+        return Inertia::render('SingleBlog');
+    }
 }

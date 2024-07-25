@@ -7,9 +7,9 @@ export default function Header() {
     const { auth } = usePage().props
     return (
         <header className="flex flex-wrap sticky top-0 sm:justify-start sm:flex-nowrap z-50 w-full bg-white border-b border-gray-200 text-sm py-3 sm:py-0 dark:bg-gray-800 dark:border-gray-700">
-            <nav className="relative max-w-7xl w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between sm:px-6 lg:px-8" aria-label="Global">
+            <nav className="container relative w-full mx-auto sm:flex sm:items-center sm:justify-between" aria-label="Global">
                 <div className="flex items-center justify-between">
-                    <Link href={route('homepage')} className="flex-none text-xl font-semibold dark:text-white" aria-label="Brand">
+                    <Link href={route('homepage')} className="flex-none text-xl font-semibold dark:text-gray-400" aria-label="Brand">
                         {/* <img src="./boostcare.png" className="h-10 rounded-lg" alt="" /> */}
                         Boost Care IT
                     </Link>

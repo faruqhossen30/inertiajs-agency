@@ -1,16 +1,11 @@
 import AppLayout from '@/Layouts/AppLayout';
-import { Link, Head } from '@inertiajs/react';
-import Dropdown from '@/Components/Dropdown';
-import Slider from '@/Components/Slider';
-import HeroSection from '@/Components/Homepage/HeroSection';
-import ServiceSection from '@/Components/Homepage/ServiceSection';
-import FeatureStatus from '@/Components/Homepage/FeatureStatus';
+import { Head } from '@inertiajs/react';
 
 export default function ContactPage({ auth, user, laravelVersion, phpVersion }) {
 
     return (
         <AppLayout>
-            <Head title="ContactPage" />
+            <Head title="Contact" />
 
             <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
                 <div className="max-w-2xl lg:max-w-5xl mx-auto">

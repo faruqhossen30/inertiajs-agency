@@ -87,7 +87,6 @@ export default function Index({ auth, packages }) {
                                                     </div>
                                                 </td>
 
-
                                                 <td className="h-px w-px whitespace-nowrap">
                                                     <div className="px-6 py-1.5 flex space-x-1">
                                                         <Link href={route('category.destroy', item.id)} method="Delete" as="button" className="border p-1 rounded-md dark:border-gray-700 text-gray-500">

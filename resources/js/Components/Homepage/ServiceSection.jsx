@@ -23,13 +23,13 @@ export default function ServiceSection() {
             <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 items-center gap-6 md:gap-10">
 
-                    <div className="w-full h-full bg-white shadow-lg rounded-lg p-5 dark:bg-slate-900">
+                    <div className="w-full h-full bg-white shadow-lg rounded-lg p-5 dark:bg-slate-900 border dark:border-gray-700">
                         <div className="flex items-center gap-x-4 mb-3">
                             <div className="inline-flex justify-center items-center w-[62px] h-[62px] rounded-full border-4 border-blue-50 bg-blue-100 dark:border-blue-900 dark:bg-blue-800">
                                 <FaCode className="h-6 w-6" />
                             </div>
                             <div className="flex-shrink-0">
-                                <h3 className="block text-lg font-semibold text-gray-800 dark:text-white">Web Design</h3>
+                                <h3 className="block text-lg font-semibold text-gray-800 dark:text-gray-400">Web Design</h3>
                             </div>
                         </div>
                         <p className="text-gray-600 dark:text-gray-400">Create a brand and
@@ -39,13 +39,13 @@ export default function ServiceSection() {
 
 
 
-                    <div className="w-full h-full bg-white shadow-lg rounded-lg p-5 dark:bg-slate-900">
+                    <div className="w-full h-full bg-white shadow-lg rounded-lg p-5 dark:bg-slate-900 border dark:border-gray-700">
                         <div className="flex items-center gap-x-4 mb-3">
                             <div className="inline-flex justify-center items-center w-[62px] h-[62px] rounded-full border-4 border-blue-50 bg-blue-100 dark:border-blue-900 dark:bg-blue-800">
                                 <TbSeo className="h-6 w-6" />
                             </div>
                             <div className="flex-shrink-0">
-                                <h3 className="block text-lg font-semibold text-gray-800 dark:text-white">SEO</h3>
+                                <h3 className="block text-lg font-semibold text-gray-800 dark:text-gray-400">SEO</h3>
                             </div>
                         </div>
                         <p className="text-gray-600 dark:text-gray-400">Fine new clients
@@ -56,13 +56,13 @@ export default function ServiceSection() {
 
 
 
-                    <div className="w-full h-full bg-white shadow-lg rounded-lg p-5 dark:bg-slate-900">
+                    <div className="w-full h-full bg-white shadow-lg rounded-lg p-5 dark:bg-slate-900 border dark:border-gray-700">
                         <div className="flex items-center gap-x-4 mb-3">
                             <div className="inline-flex justify-center items-center w-[62px] h-[62px] rounded-full border-4 border-blue-50 bg-blue-100 dark:border-blue-900 dark:bg-blue-800">
                                 <VideoCameraIcon className="h-6 w-6" />
                             </div>
                             <div className="flex-shrink-0">
-                                <h3 className="block text-lg font-semibold text-gray-800 dark:text-white">Video Production</h3>
+                                <h3 className="block text-lg font-semibold text-gray-800 dark:text-gray-400">Video Production</h3>
                             </div>
                         </div>
                         <p className="text-gray-600 dark:text-gray-400">Your brand story and it can
@@ -73,13 +73,13 @@ export default function ServiceSection() {
 
 
 
-                    <div className="w-full h-full bg-white shadow-lg rounded-lg p-5 dark:bg-slate-900">
+                    <div className="w-full h-full bg-white shadow-lg rounded-lg p-5 dark:bg-slate-900 border dark:border-gray-700">
                         <div className="flex items-center gap-x-4 mb-3">
                             <div className="inline-flex justify-center items-center w-[62px] h-[62px] rounded-full border-4 border-blue-50 bg-blue-100 dark:border-blue-900 dark:bg-blue-800">
                                 <SiAdobe className="h-6 w-6" />
                             </div>
                             <div className="flex-shrink-0">
-                                <h3 className="block text-lg font-semibold text-gray-800 dark:text-white">Graphic Design</h3>
+                                <h3 className="block text-lg font-semibold text-gray-800 dark:text-gray-400">Graphic Design</h3>
                             </div>
                         </div>
                         <p className="text-gray-600 dark:text-gray-400">Create visually appealing and
@@ -91,13 +91,13 @@ export default function ServiceSection() {
 
 
 
-                    <div className="w-full h-full bg-white shadow-lg rounded-lg p-5 dark:bg-slate-900">
+                    <div className="w-full h-full bg-white shadow-lg rounded-lg p-5 dark:bg-slate-900 border dark:border-gray-700">
                         <div className="flex items-center gap-x-4 mb-3">
                             <div className="inline-flex justify-center items-center w-[62px] h-[62px] rounded-full border-4 border-blue-50 bg-blue-100 dark:border-blue-900 dark:bg-blue-800">
                                 <IoPhonePortrait className="h-6 w-6" />
                             </div>
                             <div className="flex-shrink-0">
-                                <h3 className="block text-lg font-semibold text-gray-800 dark:text-white">Social Media  </h3>
+                                <h3 className="block text-lg font-semibold text-gray-800 dark:text-gray-400">Social Media  </h3>
                             </div>
                         </div>
                         <p className="text-gray-600 dark:text-gray-400">Manage social media
@@ -109,13 +109,13 @@ export default function ServiceSection() {
 
 
 
-                    <div className="w-full h-full bg-white shadow-lg rounded-lg p-5 dark:bg-slate-900">
+                    <div className="w-full h-full bg-white shadow-lg rounded-lg p-5 dark:bg-slate-900 border dark:border-gray-700">
                         <div className="flex items-center gap-x-4 mb-3">
                             <div className="inline-flex justify-center items-center w-[62px] h-[62px] rounded-full border-4 border-blue-50 bg-blue-100 dark:border-blue-900 dark:bg-blue-800">
                                 <MdBrandingWatermark className="h-6 w-6" />
                             </div>
                             <div className="flex-shrink-0">
-                                <h3 className="block text-lg font-semibold text-gray-800 dark:text-white">Branding & Content</h3>
+                                <h3 className="block text-lg font-semibold text-gray-800 dark:text-gray-400">Branding & Content</h3>
                             </div>
                         </div>
                         <p className="text-gray-600 dark:text-gray-400">The process of creating a
@@ -123,13 +123,14 @@ export default function ServiceSection() {
                             in the mind of your target
                             audience and consumers.</p>
                     </div>
-                    <div className="w-full h-full bg-white shadow-lg rounded-lg p-5 dark:bg-slate-900">
+
+                    <div className="w-full h-full bg-white shadow-lg rounded-lg p-5 dark:bg-slate-900 border dark:border-gray-700">
                         <div className="flex items-center gap-x-4 mb-3">
                             <div className="inline-flex justify-center items-center w-[62px] h-[62px] rounded-full border-4 border-blue-50 bg-blue-100 dark:border-blue-900 dark:bg-blue-800">
                                 <FaBuilding className="h-6 w-6" />
                             </div>
                             <div className="flex-shrink-0">
-                                <h3 className="block text-lg font-semibold text-gray-800 dark:text-white">Branding & Content</h3>
+                                <h3 className="block text-lg font-semibold text-gray-800 dark:text-gray-400">Branding & Content</h3>
                             </div>
                         </div>
                         <p className="text-gray-600 dark:text-gray-400">The process of creating a
@@ -137,13 +138,14 @@ export default function ServiceSection() {
                             in the mind of your target
                             audience and consumers.</p>
                     </div>
-                    <div className="w-full h-full bg-white shadow-lg rounded-lg p-5 dark:bg-slate-900">
+
+                    <div className="w-full h-full bg-white shadow-lg rounded-lg p-5 dark:bg-slate-900 border dark:border-gray-700">
                         <div className="flex items-center gap-x-4 mb-3">
                             <div className="inline-flex justify-center items-center w-[62px] h-[62px] rounded-full border-4 border-blue-50 bg-blue-100 dark:border-blue-900 dark:bg-blue-800">
                                 <ServerStackIcon className="h-6 w-6" />
                             </div>
                             <div className="flex-shrink-0">
-                                <h3 className="block text-lg font-semibold text-gray-800 dark:text-white">Software</h3>
+                                <h3 className="block text-lg font-semibold text-gray-800 dark:text-gray-400">Software</h3>
                             </div>
                         </div>
                         <p className="text-gray-600 dark:text-gray-400">activity concerned with creating,
@@ -151,13 +153,13 @@ export default function ServiceSection() {
                             and designing computer
                             programs.</p>
                     </div>
-                    <div className="w-full h-full bg-white shadow-lg rounded-lg p-5 dark:bg-slate-900">
+                    <div className="w-full h-full bg-white shadow-lg rounded-lg p-5 dark:bg-slate-900 border dark:border-gray-700">
                         <div className="flex items-center gap-x-4 mb-3">
                             <div className="inline-flex justify-center items-center w-[62px] h-[62px] rounded-full border-4 border-blue-50 bg-blue-100 dark:border-blue-900 dark:bg-blue-800">
                                 <ServerStackIcon className="h-6 w-6" />
                             </div>
                             <div className="flex-shrink-0">
-                                <h3 className="block text-lg font-semibold text-gray-800 dark:text-white">App</h3>
+                                <h3 className="block text-lg font-semibold text-gray-800 dark:text-gray-400">App</h3>
                             </div>
                         </div>
                         <p className="text-gray-600 dark:text-gray-400">All techniques and strategies

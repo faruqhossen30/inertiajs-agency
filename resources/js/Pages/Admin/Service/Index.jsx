@@ -15,14 +15,10 @@ export default function Index({ auth, services }) {
                 <ButtonPlus routeName={route("service.create")} />
             </div>
 
-
-
             <div className="flex flex-col">
                 <div className="-m-1.5 overflow-x-auto">
                     <div className="p-1.5 min-w-full inline-block align-middle">
                         <div className="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden dark:bg-slate-900 dark:border-gray-700">
-
-
                             {/* <!-- Table --> */}
                             <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
                                 <thead className="bg-gray-50 dark:bg-slate-800">
