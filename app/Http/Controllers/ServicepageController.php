@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 class ServicepageController extends Controller
 {
     function index() : Response {
+
         return Inertia::render('ServicePage');
     }
 

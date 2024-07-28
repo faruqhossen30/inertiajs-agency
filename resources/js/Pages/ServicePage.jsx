@@ -1,10 +1,10 @@
 import AppLayout from '@/Layouts/AppLayout';
-import { Head } from '@inertiajs/react';
+import { Head, router } from '@inertiajs/react';
 import Service from '@/Components/Frontend/Service/Service';
 import CategorySidebar from '@/Components/Frontend/CategorySidebar';
 
 export default function ServicePage() {
-
+    const params = route().params;
     return (
         <AppLayout>
             <Head title="Services" />
@@ -65,17 +65,39 @@ export default function ServicePage() {
                         <div class=" flex space-x-2 py-3 ">
                             <div class="flex items-center space-x-1">
                                 <label for="" className="text-gray-800 dark:text-gray-400">Order:</label>
-                                <select name="orderby"
-                                    class="py-1 px-4 pe-9 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600">
-                                    <option value="">Sort by:</option>
-                                    <option value="asc">Latest</option>
-                                    <option value="desc">Oldest</option>
+                                <select name="show"
+                                    onChange={(e) => {
+                                        return router.get(route('servicepage', params),
+                                            {
+                                                show: e.target.value
+                                            },
+                                            {
+                                                preserveState: true,
+                                                replace: true
+                                            }
+                                        )
+                                    }}
+                                    className="py-1 px-4 pe-9 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600">
+                                    <option value="9">9</option>
+                                    <option value="12">12</option>
+                                    <option value="15">15</option>
                                 </select>
                             </div>
                             <div class="flex items-center space-x-1">
                                 <label for="" className="text-gray-800 dark:text-gray-400">Sort:</label>
-                                <select name="sortby"
-                                    class="py-1 px-4 pe-9 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600">
+                                <select name="orderby"
+                                    onChange={(e) => {
+                                        return router.get(route('servicepage', params),
+                                            {
+                                                orderby: e.target.value
+                                            },
+                                            {
+                                                preserveState: true,
+                                                replace: true
+                                            }
+                                        )
+                                    }}
+                                    className="py-1 px-4 pe-9 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600">
                                     <option value="">Price:</option>
                                     <option value="asc">Low to Hith</option>
                                     <option value="desc">High to low</option>
