@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Service;
 
+use App\Models\Category;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -16,4 +17,8 @@ class Service extends Model
         'short_description',
         'description_code'
     ];
+
+    public function categories(){
+        return $this->belongsToMany(Category::class,'service_categories');
+    }
 }

@@ -33,14 +33,12 @@ Route::get('/', function () {
 
 Route::get('contact', [ContactController::class, 'index'])->name('contact');
 Route::get('services', [ServicepageController::class, 'index'])->name('servicepage');
-Route::get('service/{slug}', [ServicepageController::class, 'SingleService'])->name('single.service');
-Route::get('services', [ServicepageController::class, 'index'])->name('servicepage');
+Route::get('services/{slug}', [ServicepageController::class, 'SingleService'])->name('single.service');
+
 Route::get('blogs', [BlogpageController::class, 'index'])->name('blogpage');
 Route::get('blog/{slug}', [BlogpageController::class, 'singleBlog'])->name('single.blog');
 Route::get('auth/google', [GoogleauthController::class, 'redirect'])->name('google-auth');
 Route::get('auth/google/call-back', [GoogleauthController::class, 'callbackGoogle']);
-
-
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

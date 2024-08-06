@@ -1,7 +1,7 @@
 import { StarIcon } from '@heroicons/react/24/outline'
 import React from 'react'
 
-export default function Service() {
+export default function Service({service}) {
     return (
         <div className="col-span-6 md:col-span-4">
             <a className="flex flex-col group bg-white border shadow-sm rounded-md overflow-hidden hover:shadow-lg transition dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7]" href="#">
@@ -10,8 +10,7 @@ export default function Service() {
                 </div>
                 <div className="text-center">
                     <h3 className="text-lg font-bold text-gray-800 dark:text-gray-400 py-3">
-                        SEO keyword research and
-                        competitors analysis
+                        {service.title}
                     </h3>
                     <div className="text-center">
                         <div className="flex space-x-1 justify-center">
