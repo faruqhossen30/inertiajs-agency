@@ -10,6 +10,7 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import ReactQuill from 'react-quill';
 import { useState } from 'react';
 import 'react-quill/dist/quill.snow.css';
+// import { Alignment } from '@ckeditor/ckeditor5-alignment';
 
 
 export default function Create({ auth, packages }) {
@@ -22,11 +23,9 @@ export default function Create({ auth, packages }) {
         status: 1,
     });
 
-    const [value, setValue] = useState('');
 
     function submit(e) {
         e.preventDefault()
-        // console.log(data);
         post(route('service.store'));
     }
 
@@ -71,10 +70,15 @@ export default function Create({ auth, packages }) {
                                         </select>
                                         <p className="text-sm text-red-600 mt-2">{errors.status}</p>
                                     </div> */}
-                                    <div>
+                                    <div className="prose min-w-full">
                                         <CKEditor
 
                                             editor={ClassicEditor}
+                                            // config={ {
+                                            //     plugins: [ Alignment ],
+                                            //     toolbar: [ 'bold', 'italic' ]
+                                            // } }
+
                                             data={data.short_description}
                                             onReady={editor => {
                                                 // You can store the "editor" and use when it is needed.

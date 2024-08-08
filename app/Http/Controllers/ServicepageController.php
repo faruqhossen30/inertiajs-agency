@@ -9,8 +9,10 @@ use Illuminate\Http\Request;
 
 class ServicepageController extends Controller
 {
-    function index(): Response
+    function index(Request $request): Response
     {
+
+
         $show = null;
         if (isset($_GET['show']) && $_GET['show']) {
             $show = $_GET['show'];

@@ -4,15 +4,20 @@ import Service from '@/Components/Frontend/Service/Service';
 import CategorySidebar from '@/Components/Frontend/CategorySidebar';
 import Pagination from '@/Components/Pagination';
 import { MagnifyingGlassIcon } from '@heroicons/react/24/solid';
+import { useState } from 'react';
 
 export default function ServicePage({ services }) {
     const params = route().params;
+    const [day, setDay] = useState([]);
+
+    const duration = [10, 20, 30, 40, 50];
+
+
+
     return (
         <AppLayout>
             <Head title="Services" />
-
             <div className="grid grid-cols-12 gap-5 mt-5">
-
                 <div className="col-span-3 hidden md:block">
                     <CategorySidebar />
                     <div className="bg-white dark:bg-gray-800 mb-4 rounded-md px-4 py-2 space-y-2 border dark:border-gray-700">
@@ -20,23 +25,27 @@ export default function ServicePage({ services }) {
                             <span className="text-lg font-bold">Delivery Days</span>
                         </div>
 
-                        <div className="flex">
-                            <input type="checkbox" className="shrink-0 mt-0.5 border-gray-200 rounded text-blue-600 pointer-events-none focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" id="hs-default-checkbox" />
-                            <label htmlFor="hs-default-checkbox" className="text-sm text-gray-500 ml-3 dark:text-gray-400">Up to 10 days</label>
-                        </div>
-
-                        <div className="flex">
-                            <input type="checkbox" className="shrink-0 mt-0.5 border-gray-200 rounded text-blue-600 pointer-events-none focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" id="hs-checked-checkbox" />
-                            <label htmlFor="hs-checked-checkbox" className="text-sm text-gray-500 ml-3 dark:text-gray-400">Up to 20 days</label>
-                        </div>
-                        <div className="flex">
-                            <input type="checkbox" className="shrink-0 mt-0.5 border-gray-200 rounded text-blue-600 pointer-events-none focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" id="hs-checked-checkbox" />
-                            <label htmlFor="hs-checked-checkbox" className="text-sm text-gray-500 ml-3 dark:text-gray-400">Up to 20 days</label>
-                        </div>
-                        <div className="flex">
-                            <input type="checkbox" className="shrink-0 mt-0.5 border-gray-200 rounded text-blue-600 pointer-events-none focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" id="hs-checked-checkbox" />
-                            <label htmlFor="hs-checked-checkbox" className="text-sm text-gray-500 ml-3 dark:text-gray-400">Up to 20 days</label>
-                        </div>
+                        {
+                            duration.map((item, index) => {
+                                return <div className="flex" key={index}>
+                                    <input type="checkbox" name="day" value={item}
+                                        onChange={(e) => {
+                                            handleCheck(e);
+                                            return router.get(route(route().current(), params),
+                                                {
+                                                    day: item
+                                                },
+                                                {
+                                                    preserveState: true,
+                                                    replace: true
+                                                }
+                                            );
+                                        }}
+                                        className="shrink-0 mt-0.5 border-gray-200 rounded text-blue-600 pointer-events-none focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" id={`larabel-${item}`} />
+                                    <label htmlFor={`larabel-${item}`} className="text-sm text-gray-500 ml-3 dark:text-gray-400">Up to {item} days</label>
+                                </div>
+                            })
+                        }
                     </div>
 
                 </div>
