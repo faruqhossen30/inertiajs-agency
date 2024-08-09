@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Blog\Blog;
+use App\Models\Category;
 use App\Models\Package;
 use App\Models\Service\Service;
 use Illuminate\Http\Request;
@@ -17,7 +19,7 @@ class ServiceController extends Controller
     public function index()
     {
         $services = Service::paginate(10);
-        return Inertia::render('Admin/Service/Index',['services'=> $services]);
+        return Inertia::render('Admin/Service/Index', ['services' => $services]);
     }
 
     /**
@@ -26,7 +28,8 @@ class ServiceController extends Controller
     public function create()
     {
         $packages = Package::get();
-        return Inertia::render('Admin/Service/Create',['packages'=>$packages]);
+        $categories = Category::get();
+        return Inertia::render('Admin/Service/Create', ['packages' => $packages, 'categories' => $categories]);
     }
 
     /**
@@ -36,22 +39,25 @@ class ServiceController extends Controller
     {
         // return $request->all();
         $request->validate([
-            'title'=> 'required',
-            'short_description'=> 'required',
+            'title' => 'required',
+            'description' => 'required',
         ]);
 
-        $data=[
-            'title'=> $request->title,
-            'slug'=> Str::slug($request->name),
-            'short_description'=> $request->short_description,
-            'description_code'=> $request->description_code,
+        $data = [
+            'title' => $request->title,
+            'slug' => Str::slug($request->name),
+            'short_description' => $request->short_description,
+            'description_code' => $request->description_code,
+            'description' => $request->description,
         ];
         if ($request->file('thumbnail')) {
             $file_name = $request->file('thumbnail')->store('service');
             $data['thumbnail'] = $file_name;
         }
 
-        Service::create($data);
+        $service = Service::create($data);
+        $service->categories()->attach($request->category_ids);
+
         return to_route('service.index');
     }
 
@@ -68,7 +74,7 @@ class ServiceController extends Controller
      */
     public function edit(string $id)
     {
-        //
+
     }
 
     /**

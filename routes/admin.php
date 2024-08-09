@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ServiceController;
 
 use App\Http\Controllers\Admin\Blog\BlogcategoryController;
+use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\PackageController;
 use App\Http\Controllers\Admin\PakageController;
 use App\Http\Controllers\Admin\UserController;
@@ -21,6 +22,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth','admin']], function (
 
     // Service
     Route::resource('service', ServiceController::class);
+    // Blog
+    Route::resource('blogs', BlogController::class);
+
     Route::resource('category', CategoryController::class);
     Route::resource('blogcategory', BlogcategoryController::class);
     Route::resource('package', PackageController::class);

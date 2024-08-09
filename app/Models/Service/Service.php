@@ -15,6 +15,7 @@ class Service extends Model
         'slug',
         'thumbnail',
         'short_description',
+        'description',
         'description_code'
     ];
 

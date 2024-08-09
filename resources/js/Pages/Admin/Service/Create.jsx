@@ -7,26 +7,33 @@ import Input from '@/Components/Form/Input';
 import SubmitButton from '@/Components/Form/SubmitButton';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import ReactQuill from 'react-quill';
+
 import { useState } from 'react';
-import 'react-quill/dist/quill.snow.css';
+import Select from 'react-select'
+import RichTextEditor from '@/Components/RichTextEditor';
 // import { Alignment } from '@ckeditor/ckeditor5-alignment';
 
 
-export default function Create({ auth, packages }) {
+
+
+export default function Create({ auth, packages, categories }) {
     const { data, setData, post, processing, errors, reset } = useForm({
         title: '',
         short_description: '',
         description_code: '',
+        description: '',
         thumbnail: null,
         package: [],
+        category_ids: [],
         status: 1,
     });
+
 
 
     function submit(e) {
         e.preventDefault()
         post(route('service.store'));
+
     }
 
     return (
@@ -61,6 +68,13 @@ export default function Create({ auth, packages }) {
                                         <p className="text-sm text-red-600 mt-2">{errors.thumbnail}</p>
                                     </div>
 
+                                    <div>
+                                        <RichTextEditor setData={setData} data={data}/>
+                                    </div>
+
+
+
+
                                     {/* <div>
                                         <InputLabel isRequired={true} labelFor="status" />
                                         <select id="status" name="status" className="py-2 px-4 pr-9 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
@@ -70,7 +84,7 @@ export default function Create({ auth, packages }) {
                                         </select>
                                         <p className="text-sm text-red-600 mt-2">{errors.status}</p>
                                     </div> */}
-                                    <div className="prose min-w-full">
+                                    {/* <div className="prose min-w-full">
                                         <CKEditor
 
                                             editor={ClassicEditor}
@@ -96,7 +110,7 @@ export default function Create({ auth, packages }) {
                                             }}
                                         />
                                         <p className="text-sm text-red-600 mt-2">{errors.short_description}</p>
-                                    </div>
+                                    </div> */}
                                     <SubmitButton />
                                 </div>
                             </div>
@@ -137,6 +151,15 @@ export default function Create({ auth, packages }) {
 
 
                                 </div>
+
+                                <InputLabel isRequired={true} labelFor="Category" />
+                                <Select
+                                    onChange={(e) => setData('category_ids', e.map(item => item.id))}
+                                    isMulti
+                                    options={categories}
+                                    getOptionLabel={option => option.name}
+                                    getOptionValue={option => option.id}
+                                />
 
                             </div>
                         </div>

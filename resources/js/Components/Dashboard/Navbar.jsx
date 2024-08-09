@@ -20,7 +20,7 @@ export default function Navbar() {
                 {/* <!-- Breadcrumb --> */}
 
                 {/* <!-- ========== HEADER ========== --> */}
-                <nav className="max-w-7xl flex basis-full items-center w-full mx-auto" aria-label="Global">
+                <nav className="flex basis-full items-center w-full mx-auto" aria-label="Global">
                     <div className="mr-5 md:mr-8">
                         <Link href={route('dashboard')} className="flex-none text-xl font-semibold dark:text-white"  aria-label="Brand">Brand</Link>
                     </div>

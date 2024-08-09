@@ -13,11 +13,8 @@ return new class extends Migration
     {
         Schema::create('blog_categories', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('slug');
-            $table->string('thumbnail')->nullable();
-            $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('edit_user_id')->nullable();
+            $table->foreignId('blog_id')->constrained('blogs')->onDelete('cascade');
+            $table->unsignedBigInteger('category_id');
             $table->timestamps();
         });
     }

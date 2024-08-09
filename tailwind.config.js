@@ -29,5 +29,5 @@ export default {
         },
     },
 
-    plugins: [forms,require('@tailwindcss/typography')],
+    plugins: [forms,require('preline/plugin'),require('@tailwindcss/typography')],
 };

@@ -4,6 +4,10 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Blog\Blog;
+use App\Models\Blog\BlogCategory;
+use App\Models\Category;
+use App\Models\Service\Service;
 use AutoquestionSeeder;
 use Illuminate\Database\Seeder;
 
@@ -27,7 +31,19 @@ class DatabaseSeeder extends Seeder
             AdminSeeder::class,
             UserSeeder::class,
             PackageSeeder::class,
-            CategorySeeder::class
+            // CategorySeeder::class
         ]);
+        Category::factory(5)->create();
+        Blog::factory(50)
+            ->create()
+            ->each(function ($blog) {
+                $blog->categories()->attach(collect([1, 2, 3, 4, 5])->random(3));
+            });
+
+        Service::factory(50)
+            ->create()
+            ->each(function ($blog) {
+                $blog->categories()->attach(collect([1, 2, 3, 4, 5])->random(3));
+            });;
     }
 }

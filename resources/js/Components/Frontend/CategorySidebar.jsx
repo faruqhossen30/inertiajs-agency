@@ -6,6 +6,8 @@ import React, { useEffect, useState } from 'react'
 
 function CategorySidebar() {
     const params = route().params;
+    console.log(params.category);
+
     const [Categories, setCategories] = useState([]);
     useEffect(() => {
         axios.get(route('data.categories'))
@@ -20,8 +22,8 @@ function CategorySidebar() {
                 <span className="text-lg font-bold">All Category</span>
             </li>
             {Categories.map((category, index) => {
-                return <li key={index} className="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-medium text-gray-800 dark:text-gray-400">
-                    <Link href={route(route().current(),params)} data={{ category: category.id }} method="get" className="inline-flex space-x-2">
+                return <li key={index} className={`inline-flex items-center gap-x-2 text-sm font-medium text-gray-800 dark:text-gray-400 hover:dark:bg-slate-900 hover:bg-gray-100 ${params.category == category.id ? 'bg-gray-100 dark:bg-slate-900' : 'none'}`}>
+                    <Link href={route(route().current(),params)} data={{ category: category.id }} method="get" className="inline-flex space-x-2 py-3 px-4  w-full">
                         <HomeIcon className="w-4 h-4" />
                         <span>{category.name}</span>
                     </Link>
