@@ -5,10 +5,7 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import InputLabel from '@/Components/Form/InputLabel';
 import Input from '@/Components/Form/Input';
 import SubmitButton from '@/Components/Form/SubmitButton';
-import { CKEditor } from '@ckeditor/ckeditor5-react';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
-import { useState } from 'react';
 import Select from 'react-select'
 import RichTextEditor from '@/Components/RichTextEditor';
 // import { Alignment } from '@ckeditor/ckeditor5-alignment';
@@ -52,7 +49,7 @@ export default function Create({ auth, packages, categories }) {
                                 <div className=" px-2 py-2 sm:px-6 lg:px-4 mx-auto">
                                     <div>
                                         <InputLabel isRequired={true} labelFor="title" />
-                                        <Input id="title" type="text" name="title" value={data.title} autoComplete="title" placeholder="title" onChange={(e) => setData('title', e.target.value)} />
+                                        <Input id="title" type="text" name="title" value={data.title} autoComplete="title" placeholder="Title" onChange={(e) => setData('title', e.target.value)} />
                                         <p className="text-sm text-red-600 mt-2">{errors.title}</p>
                                     </div>
 
@@ -69,48 +66,9 @@ export default function Create({ auth, packages, categories }) {
                                     </div>
 
                                     <div>
-                                        <RichTextEditor setData={setData} data={data}/>
+                                        <InputLabel isRequired={true} labelFor="Description" />
+                                        <RichTextEditor setData={setData} data={data} />
                                     </div>
-
-
-
-
-                                    {/* <div>
-                                        <InputLabel isRequired={true} labelFor="status" />
-                                        <select id="status" name="status" className="py-2 px-4 pr-9 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
-                                            onChange={(e) => setData('status', e.target.value)}>
-                                            <option value="1">Yes</option>
-                                            <option value="0">No</option>
-                                        </select>
-                                        <p className="text-sm text-red-600 mt-2">{errors.status}</p>
-                                    </div> */}
-                                    {/* <div className="prose min-w-full">
-                                        <CKEditor
-
-                                            editor={ClassicEditor}
-                                            // config={ {
-                                            //     plugins: [ Alignment ],
-                                            //     toolbar: [ 'bold', 'italic' ]
-                                            // } }
-
-                                            data={data.short_description}
-                                            onReady={editor => {
-                                                // You can store the "editor" and use when it is needed.
-                                                // console.log('Editor is ready to use!', editor);
-                                            }}
-                                            onChange={(event, editor) => {
-                                                // console.log(editor.getData());
-                                                setData('short_description', editor.getData())
-                                            }}
-                                            onBlur={(event, editor) => {
-                                                // console.log('Blur.', editor);
-                                            }}
-                                            onFocus={(event, editor) => {
-                                                // console.log('Focus.', editor);
-                                            }}
-                                        />
-                                        <p className="text-sm text-red-600 mt-2">{errors.short_description}</p>
-                                    </div> */}
                                     <SubmitButton />
                                 </div>
                             </div>

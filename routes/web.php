@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutpageController;
 use App\Http\Controllers\Auth\GoogleauthController;
 use App\Http\Controllers\BlogpageController;
 use App\Http\Controllers\ContactController;
@@ -32,6 +33,7 @@ Route::get('/', function () {
 })->name('homepage');
 
 Route::get('contact', [ContactController::class, 'index'])->name('contact');
+Route::get('about-us', [AboutpageController::class, 'index'])->name('aboutpage');
 Route::get('services', [ServicepageController::class, 'index'])->name('servicepage');
 Route::get('services/{slug}', [ServicepageController::class, 'SingleService'])->name('single.service');
 
