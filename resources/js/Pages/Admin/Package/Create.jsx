@@ -3,8 +3,6 @@ import { Head, useForm } from '@inertiajs/react';
 import BreadcumComponent from '@/Components/Dashboard/BreadcumComponent';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import InputLabel from '@/Components/Form/InputLabel';
-import { CKEditor } from '@ckeditor/ckeditor5-react';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import Input from '@/Components/Form/Input';
 import SubmitButton from '@/Components/Form/SubmitButton';
 
@@ -18,9 +16,8 @@ export default function Create({ auth }) {
 
     function submit(e) {
         e.preventDefault()
-        // console.log(data);
         post(route('package.store'));
-        // console.log(errors);
+
     }
 
     return (
@@ -48,37 +45,6 @@ export default function Create({ auth }) {
                                 <p className="text-sm text-red-600 mt-2">{errors.thumbnail}</p>
                             </div>
 
-                            {/* <div>
-                                <InputLabel isRequired={true} labelFor="Description" />
-                                <textarea id="description" type="file" name="description" placeholder="description_code" onChange={(e) => setData('description', e.target.value)}
-                                className="border py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"></textarea>
-                                <p className="text-sm text-red-600 mt-2">{errors.description}</p>
-                            </div> */}
-
-
-
-                            <div>
-                                <CKEditor
-
-                                    editor={ClassicEditor}
-                                    data={data.description}
-                                    onReady={editor => {
-                                        // You can store the "editor" and use when it is needed.
-                                        // console.log('Editor is ready to use!', editor);
-                                    }}
-                                    onChange={(event, editor) => {
-                                        // console.log(editor.getData());
-                                        setData('description', editor.getData())
-                                    }}
-                                    onBlur={(event, editor) => {
-                                        // console.log('Blur.', editor);
-                                    }}
-                                    onFocus={(event, editor) => {
-                                        // console.log('Focus.', editor);
-                                    }}
-                                />
-                                <p className="text-sm text-red-600 mt-2">{errors.description}</p>
-                            </div>
 
                             <SubmitButton />
                         </form>

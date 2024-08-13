@@ -4,8 +4,6 @@ import { Head, useForm } from '@inertiajs/react';
 import Input from '@/Components/Form/Input';
 import SubmitButton from '@/Components/Form/SubmitButton';
 import InputLabel from '@/Components/Form/InputLabel';
-import { CKEditor } from '@ckeditor/ckeditor5-react';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import BreadcumComponent from '@/Components/Dashboard/BreadcumComponent';
 
 
@@ -40,36 +38,6 @@ export default function Edit({ auth, pac }) {
                                 <Input id="name" type="text" name="name" value={data.name} autoComplete="name" placeholder="name" onChange={(e) => setData('name', e.target.value)} />
                                 <p className="text-sm text-red-600 mt-2">{errors.name}</p>
                             </div>
-
-                            {/* <div>
-                                <InputLabel isRequired={true} labelFor="thumbnail" />
-                                <input id="thumbnail" type="file" name="thumbnail"  value={data.thumbnail}  placeholder="thumbnail" onChange={(e) => setData('thumbnail', e.target.files[0])} />
-                                <p className="text-sm text-red-600 mt-2">{errors.thumbnail}</p>
-                            </div> */}
-
-                            <div>
-                                <CKEditor
-
-                                    editor={ClassicEditor}
-                                    data={data.description}
-                                    onReady={editor => {
-                                        // You can store the "editor" and use when it is needed.
-                                        // console.log('Editor is ready to use!', editor);
-                                    }}
-                                    onChange={(event, editor) => {
-                                        // console.log(editor.getData());
-                                        setData('description', editor.getData())
-                                    }}
-                                    onBlur={(event, editor) => {
-                                        // console.log('Blur.', editor);
-                                    }}
-                                    onFocus={(event, editor) => {
-                                        // console.log('Focus.', editor);
-                                    }}
-                                />
-                                <p className="text-sm text-red-600 mt-2">{errors.description}</p>
-                            </div>
-
                             <SubmitButton />
                         </form>
                     </div>
