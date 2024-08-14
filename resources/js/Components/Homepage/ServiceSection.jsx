@@ -10,166 +10,290 @@ import React from 'react'
 export default function ServiceSection() {
     return (
         <>
-            <div className="mx-auto">
-                <div className="mx-auto max-w-2xl mb-8 lg:mb-14 text-center">
-                    <h2 className="text-3xl lg:text-4xl text-gray-800 font-bold dark:text-gray-200">
-                        Explore tools
-                    </h2>
-                    <p className="mt-3 text-gray-800 dark:text-gray-200">
-                        The powerful and flexible theme for all kinds of businesses.
-                    </p>
+
+            <div className="container mx-auto">
+                <div className="grid grid-cols-12 2xl:grid-cols-10 gap-6">
+                    <div className="col-span-6 sm:col-span-6 md:col-span-6 lg:col-span-4 xl:col-span-3 2xl:col-span-2 ">
+                        <div className=" border-2 rounded-2xl border-[#2563EB] space-y-5 px-12 py-6">
+                            <div className="flex justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-24 w-24 text-[#FF543E] font-thin">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+                                </svg>
+                            </div>
+                            <div className="flex justify-center">
+                                <span className="text-5xl font-extrabold ">SEO</span>
+                            </div>
+                            <div className="flex justify-center text-center">
+                                <p className='text-lg  font-medium'>Fine new clients
+                                    organically and grow
+                                    a foundation for
+                                    tomorrow.</p>
+                            </div>
+                            <div className="flex justify-center">
+                                <a href="#" class="py-2 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-blue-600 text-blue-600 hover:border-blue-500 hover:text-blue-500 focus:outline-none focus:border-blue-500 focus:text-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:border-blue-500 dark:text-blue-500 dark:hover:text-blue-400 dark:hover:border-blue-400">
+                                    Learn
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-span-6 sm:col-span-6 md:col-span-6 lg:col-span-4 xl:col-span-3 2xl:col-span-2">
+                        <div className=" border-2 rounded-2xl border-[#2563EB] space-y-5 px-12 py-6">
+                            <div className="flex justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-24 w-24 text-[#FF543E] font-thin">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+                                </svg>
+                            </div>
+                            <div className="flex justify-center">
+                                <span className="text-5xl font-extrabold ">SEO</span>
+                            </div>
+                            <div className="flex justify-center text-center">
+                                <p className='text-lg  font-medium'>Fine new clients
+                                    organically and grow
+                                    a foundation for
+                                    tomorrow.</p>
+                            </div>
+                            <div className="flex justify-center">
+                                <a href="#" class="py-2 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-blue-600 text-blue-600 hover:border-blue-500 hover:text-blue-500 focus:outline-none focus:border-blue-500 focus:text-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:border-blue-500 dark:text-blue-500 dark:hover:text-blue-400 dark:hover:border-blue-400">
+                                    Learn
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div className=" col-span-6 sm:col-span-6 md:col-span-6 lg:col-span-4 xl:col-span-3 2xl:col-span-2 ">
+                        <div className=" border-2 rounded-2xl border-[#2563EB] space-y-5 px-12 py-6">
+                            <div className="flex justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-24 w-24 text-[#FF543E] font-thin">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+                                </svg>
+                            </div>
+                            <div className="flex justify-center">
+                                <span className="text-5xl font-extrabold ">SEO</span>
+                            </div>
+                            <div className="flex justify-center text-center">
+                                <p className='text-lg  font-medium'>Fine new clients
+                                    organically and grow
+                                    a foundation for
+                                    tomorrow.</p>
+                            </div>
+                            <div className="flex justify-center">
+                                <a href="#" class="py-2 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-blue-600 text-blue-600 hover:border-blue-500 hover:text-blue-500 focus:outline-none focus:border-blue-500 focus:text-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:border-blue-500 dark:text-blue-500 dark:hover:text-blue-400 dark:hover:border-blue-400">
+                                    Learn
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-span-6 sm:col-span-6 md:col-span-6 lg:col-span-4 xl:col-span-3 2xl:col-span-2 ">
+                        <div className=" border-2 rounded-2xl border-[#2563EB] space-y-5 px-12 py-6">
+                            <div className="flex justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-24 w-24 text-[#FF543E] font-thin">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+                                </svg>
+                            </div>
+                            <div className="flex justify-center">
+                                <span className="text-5xl font-extrabold ">SEO</span>
+                            </div>
+                            <div className="flex justify-center text-center">
+                                <p className='text-lg  font-medium'>Fine new clients
+                                    organically and grow
+                                    a foundation for
+                                    tomorrow.</p>
+                            </div>
+                            <div className="flex justify-center">
+                                <a href="#" class="py-2 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-blue-600 text-blue-600 hover:border-blue-500 hover:text-blue-500 focus:outline-none focus:border-blue-500 focus:text-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:border-blue-500 dark:text-blue-500 dark:hover:text-blue-400 dark:hover:border-blue-400">
+                                    Learn
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-span-6 sm:col-span-6 md:col-span-6 lg:col-span-4 xl:col-span-3 2xl:col-span-2">
+                        <div className=" border-2 rounded-2xl border-[#2563EB] space-y-5 px-12 py-6">
+                            <div className="flex justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-24 w-24 text-[#FF543E] font-thin">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+                                </svg>
+                            </div>
+                            <div className="flex justify-center">
+                                <span className="text-5xl font-extrabold ">SEO</span>
+                            </div>
+                            <div className="flex justify-center text-center">
+                                <p className='text-lg  font-medium'>Fine new clients
+                                    organically and grow
+                                    a foundation for
+                                    tomorrow.</p>
+                            </div>
+                            <div className="flex justify-center">
+                                <a href="#" class="py-2 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-blue-600 text-blue-600 hover:border-blue-500 hover:text-blue-500 focus:outline-none focus:border-blue-500 focus:text-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:border-blue-500 dark:text-blue-500 dark:hover:text-blue-400 dark:hover:border-blue-400">
+                                    Learn
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-span-6 sm:col-span-6 md:col-span-6 lg:col-span-4 xl:col-span-3 2xl:col-span-2">
+                        <div className=" border-2 rounded-2xl border-[#2563EB] space-y-5 px-12 py-6">
+                            <div className="flex justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-24 w-24 text-[#FF543E] font-thin">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+                                </svg>
+                            </div>
+                            <div className="flex justify-center">
+                                <span className="text-5xl font-extrabold ">SEO</span>
+                            </div>
+                            <div className="flex justify-center text-center">
+                                <p className='text-lg  font-medium'>Fine new clients
+                                    organically and grow
+                                    a foundation for
+                                    tomorrow.</p>
+                            </div>
+                            <div className="flex justify-center">
+                                <a href="#" class="py-2 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-blue-600 text-blue-600 hover:border-blue-500 hover:text-blue-500 focus:outline-none focus:border-blue-500 focus:text-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:border-blue-500 dark:text-blue-500 dark:hover:text-blue-400 dark:hover:border-blue-400">
+                                    Learn
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-span-6 sm:col-span-6 md:col-span-6 lg:col-span-4 xl:col-span-3 2xl:col-span-2">
+                        <div className=" border-2 rounded-2xl border-[#2563EB] space-y-5 px-12 py-6">
+                            <div className="flex justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-24 w-24 text-[#FF543E] font-thin">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+                                </svg>
+                            </div>
+                            <div className="flex justify-center">
+                                <span className="text-5xl font-extrabold ">SEO</span>
+                            </div>
+                            <div className="flex justify-center text-center">
+                                <p className='text-lg  font-medium'>Fine new clients
+                                    organically and grow
+                                    a foundation for
+                                    tomorrow.</p>
+                            </div>
+                            <div className="flex justify-center">
+                                <a href="#" class="py-2 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-blue-600 text-blue-600 hover:border-blue-500 hover:text-blue-500 focus:outline-none focus:border-blue-500 focus:text-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:border-blue-500 dark:text-blue-500 dark:hover:text-blue-400 dark:hover:border-blue-400">
+                                    Learn
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 items-center gap-6 md:gap-10">
 
-                    <div className="w-full h-full bg-white shadow-lg rounded-lg p-5 dark:bg-slate-900 border dark:border-gray-700">
-                        <div className="flex items-center gap-x-4 mb-3">
-                            <div className="inline-flex justify-center items-center w-[62px] h-[62px] rounded-full border-4 border-blue-50 bg-blue-100 dark:border-blue-900 dark:bg-blue-800">
-                                <FaCode className="h-6 w-6" />
-                            </div>
-                            <div className="flex-shrink-0">
-                                <h3 className="block text-lg font-semibold text-gray-800 dark:text-gray-400">Web Design</h3>
-                            </div>
-                        </div>
-                        <p className="text-gray-600 dark:text-gray-400">Create a brand and
-                            communicate Your
-                            value.</p>
+
+            <section>
+                <div className="container mx-auto">
+                    <div className="">
+                        <h3 className='text-center'>HOW WE DO</h3>
+                        <p className='text-justify'>At ............., we help businesses achieve their digital marketing goals. We use a data-driven approach to develop and implement
+                            custom strategies that will help you get more traffic, convert more leads, and grow your business.</p>
                     </div>
 
-
-
-                    <div className="w-full h-full bg-white shadow-lg rounded-lg p-5 dark:bg-slate-900 border dark:border-gray-700">
-                        <div className="flex items-center gap-x-4 mb-3">
-                            <div className="inline-flex justify-center items-center w-[62px] h-[62px] rounded-full border-4 border-blue-50 bg-blue-100 dark:border-blue-900 dark:bg-blue-800">
-                                <TbSeo className="h-6 w-6" />
-                            </div>
-                            <div className="flex-shrink-0">
-                                <h3 className="block text-lg font-semibold text-gray-800 dark:text-gray-400">SEO</h3>
-                            </div>
-                        </div>
-                        <p className="text-gray-600 dark:text-gray-400">Fine new clients
-                            organically and grow
-                            a foundation for
-                            tomorrow.</p>
-                    </div>
-
-
-
-                    <div className="w-full h-full bg-white shadow-lg rounded-lg p-5 dark:bg-slate-900 border dark:border-gray-700">
-                        <div className="flex items-center gap-x-4 mb-3">
-                            <div className="inline-flex justify-center items-center w-[62px] h-[62px] rounded-full border-4 border-blue-50 bg-blue-100 dark:border-blue-900 dark:bg-blue-800">
-                                <VideoCameraIcon className="h-6 w-6" />
-                            </div>
-                            <div className="flex-shrink-0">
-                                <h3 className="block text-lg font-semibold text-gray-800 dark:text-gray-400">Video Production</h3>
+                    <div className="grid grid-cols-12   py-24">
+                        <div className="sm:col-span-6 sm:my-12 col-span-4 sm:ml-18">
+                            <div className="border-4 border-[#32CEEF] rounded-2xl w-60 h-60 py-6 transform rotate-45 px-4">
+                                <div className="transform -rotate-45 space-y-1">
+                                <div className="flex justify-center ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-12 w-12">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+                                    </svg>
+                                </div>
+                                <div className="flex justify-center">
+                                    <span className='text-xl font-bold'>ANALYZE</span>
+                                </div>
+                                <div className="flex justify-center items-center">
+                                    <p className='text-center text-base font-semibold'>Listen to your goal <br />
+                                        & find out the SERPS <br />
+                                        competting online strength.</p>
+                                </div>
+                                </div>
                             </div>
                         </div>
-                        <p className="text-gray-600 dark:text-gray-400">Your brand story and it can
-                            be used for marketing,
-                            advertising, and training
-                            purposes.</p>
-                    </div>
+                        <div className="sm:col-span-6 sm:my-12  col-span-4 ">
+                            <div className="border-4 border-[#32CEEF] rounded-2xl w-60 h-60 mt-48 -ml-28
+                             py-6 transform rotate-45 px-4">
+                                <div className="transform -rotate-45 space-y-1">
+                                <div className="flex justify-center ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-12 w-12">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+                                    </svg>
+                                </div>
 
+                                <div className="flex justify-center">
+                                    <span className='text-xl font-bold'>ANALYZE</span>
+                                </div>
+                                <div className="flex justify-center items-center">
+                                    <p className='text-center text-base font-semibold'>Listen to your goal <br />
+                                        & find out the SERPS <br />
+                                        competting online strength.</p>
+                                </div>
 
-
-                    <div className="w-full h-full bg-white shadow-lg rounded-lg p-5 dark:bg-slate-900 border dark:border-gray-700">
-                        <div className="flex items-center gap-x-4 mb-3">
-                            <div className="inline-flex justify-center items-center w-[62px] h-[62px] rounded-full border-4 border-blue-50 bg-blue-100 dark:border-blue-900 dark:bg-blue-800">
-                                <SiAdobe className="h-6 w-6" />
-                            </div>
-                            <div className="flex-shrink-0">
-                                <h3 className="block text-lg font-semibold text-gray-800 dark:text-gray-400">Graphic Design</h3>
-                            </div>
-                        </div>
-                        <p className="text-gray-600 dark:text-gray-400">Create visually appealing and
-                            informative graphics
-                            for their websites, social media
-                            channels, and
-                            marketing materials.</p>
-                    </div>
-
-
-
-                    <div className="w-full h-full bg-white shadow-lg rounded-lg p-5 dark:bg-slate-900 border dark:border-gray-700">
-                        <div className="flex items-center gap-x-4 mb-3">
-                            <div className="inline-flex justify-center items-center w-[62px] h-[62px] rounded-full border-4 border-blue-50 bg-blue-100 dark:border-blue-900 dark:bg-blue-800">
-                                <IoPhonePortrait className="h-6 w-6" />
-                            </div>
-                            <div className="flex-shrink-0">
-                                <h3 className="block text-lg font-semibold text-gray-800 dark:text-gray-400">Social Media  </h3>
+                                </div>
                             </div>
                         </div>
-                        <p className="text-gray-600 dark:text-gray-400">Manage social media
-                            accounts, so that they
-                            can connect with
-                            their target audience and
-                            build relationships</p>
-                    </div>
+                        <div className="sm:col-span-6 sm:my-12 col-span-4">
+                            <div className="border-4 border-[#32CEEF] rounded-2xl w-60 h-60 py-6 transform rotate-45 px-4">
+                                <div className="transform -rotate-45 space-y-1">
+                                <div className="flex justify-center ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-12 w-12">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+                                    </svg>
+                                </div>
 
+                                <div className="flex justify-center">
+                                    <span className='text-xl font-bold'>ANALYZE</span>
+                                </div>
+                                <div className="flex justify-center items-center">
+                                    <p className='text-center text-base font-semibold'>Listen to your goal <br />
+                                        & find out the SERPS <br />
+                                        competting online strength.</p>
+                                </div>
 
-
-                    <div className="w-full h-full bg-white shadow-lg rounded-lg p-5 dark:bg-slate-900 border dark:border-gray-700">
-                        <div className="flex items-center gap-x-4 mb-3">
-                            <div className="inline-flex justify-center items-center w-[62px] h-[62px] rounded-full border-4 border-blue-50 bg-blue-100 dark:border-blue-900 dark:bg-blue-800">
-                                <MdBrandingWatermark className="h-6 w-6" />
-                            </div>
-                            <div className="flex-shrink-0">
-                                <h3 className="block text-lg font-semibold text-gray-800 dark:text-gray-400">Branding & Content</h3>
+                                </div>
                             </div>
                         </div>
-                        <p className="text-gray-600 dark:text-gray-400">The process of creating a
-                            distinct identity for a business
-                            in the mind of your target
-                            audience and consumers.</p>
-                    </div>
+                        <div className="sm:col-span-6 sm:my-12  col-span-4">
+                            <div className="border-4 border-[#32CEEF] rounded-2xl w-60 h-60 py-6 transform rotate-45 px-4">
+                                <div className="transform -rotate-45 space-y-1">
+                                <div className="flex justify-center ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-12 w-12">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+                                    </svg>
+                                </div>
 
-                    <div className="w-full h-full bg-white shadow-lg rounded-lg p-5 dark:bg-slate-900 border dark:border-gray-700">
-                        <div className="flex items-center gap-x-4 mb-3">
-                            <div className="inline-flex justify-center items-center w-[62px] h-[62px] rounded-full border-4 border-blue-50 bg-blue-100 dark:border-blue-900 dark:bg-blue-800">
-                                <FaBuilding className="h-6 w-6" />
-                            </div>
-                            <div className="flex-shrink-0">
-                                <h3 className="block text-lg font-semibold text-gray-800 dark:text-gray-400">Branding & Content</h3>
+                                <div className="flex justify-center">
+                                    <span className='text-xl font-bold'>ANALYZE</span>
+                                </div>
+                                <div className="flex justify-center items-center">
+                                    <p className='text-center text-base font-semibold'>Listen to your goal <br />
+                                        & find out the SERPS <br />
+                                        competting online strength.</p>
+                                </div>
+
+                                </div>
                             </div>
                         </div>
-                        <p className="text-gray-600 dark:text-gray-400">The process of creating a
-                            distinct identity for a business
-                            in the mind of your target
-                            audience and consumers.</p>
-                    </div>
+                        <div className="sm:col-span-6 sm:my-12 col-span-4">
+                            <div className="border-4 border-[#32CEEF] rounded-2xl w-60 h-60 py-6 transform rotate-45 px-4">
+                                <div className="transform -rotate-45 space-y-1">
+                                <div className="flex justify-center ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-12 w-12">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+                                    </svg>
+                                </div>
 
-                    <div className="w-full h-full bg-white shadow-lg rounded-lg p-5 dark:bg-slate-900 border dark:border-gray-700">
-                        <div className="flex items-center gap-x-4 mb-3">
-                            <div className="inline-flex justify-center items-center w-[62px] h-[62px] rounded-full border-4 border-blue-50 bg-blue-100 dark:border-blue-900 dark:bg-blue-800">
-                                <ServerStackIcon className="h-6 w-6" />
-                            </div>
-                            <div className="flex-shrink-0">
-                                <h3 className="block text-lg font-semibold text-gray-800 dark:text-gray-400">Software</h3>
+                                <div className="flex justify-center">
+                                    <span className='text-xl font-bold'>ANALYZE</span>
+                                </div>
+                                <div className="flex justify-center items-center">
+                                    <p className='text-center text-base font-semibold'>Listen to your goal <br />
+                                        & find out the SERPS <br />
+                                        competting online strength.</p>
+                                </div>
+
+                                </div>
                             </div>
                         </div>
-                        <p className="text-gray-600 dark:text-gray-400">activity concerned with creating,
-                            establishing, implementing
-                            and designing computer
-                            programs.</p>
                     </div>
-                    <div className="w-full h-full bg-white shadow-lg rounded-lg p-5 dark:bg-slate-900 border dark:border-gray-700">
-                        <div className="flex items-center gap-x-4 mb-3">
-                            <div className="inline-flex justify-center items-center w-[62px] h-[62px] rounded-full border-4 border-blue-50 bg-blue-100 dark:border-blue-900 dark:bg-blue-800">
-                                <ServerStackIcon className="h-6 w-6" />
-                            </div>
-                            <div className="flex-shrink-0">
-                                <h3 className="block text-lg font-semibold text-gray-800 dark:text-gray-400">App</h3>
-                            </div>
-                        </div>
-                        <p className="text-gray-600 dark:text-gray-400">All techniques and strategies
-                            that can help you communicate
-                            about your app to your
-                            target audience.</p>
-                    </div>
-
                 </div>
-            </div>
+            </section>
         </>
 
     )
