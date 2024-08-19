@@ -5,6 +5,7 @@ import ServiceSection from '@/Components/Homepage/ServiceSection';
 import FeatureStatus from '@/Components/Homepage/FeatureStatus';
 import Feature from '@/Components/Homepage/Feature';
 import Testimonial from '@/Components/Homepage/Testimonial';
+import Client from '@/Components/Homepage/Client';
 
 export default function Homepage({ auth, user, laravelVersion, phpVersion }) {
 
@@ -13,7 +14,8 @@ export default function Homepage({ auth, user, laravelVersion, phpVersion }) {
             <Head title="Home" />
             <HeroSection />
             <ServiceSection />
-            <FeatureStatus />
+            {/* <FeatureStatus /> */}
+            <Client />
             <Feature />
             <Testimonial />
         </AppLayout>
