@@ -20,34 +20,6 @@ export default function ServicePage({ services }) {
             <div className="grid grid-cols-12 gap-5 mt-5">
                 <div className="col-span-3 hidden md:block">
                     <CategorySidebar />
-                    <div className="bg-white dark:bg-gray-800 mb-4 rounded-md px-4 py-2 space-y-2 border dark:border-gray-700">
-                        <div className="inline-flex items-center gap-x-2 py-1 text-sm font-medium text-gray-800 dark:text-gray-400 border-b dark:border-b-gray-700 w-full">
-                            <span className="text-lg font-bold">Delivery Days</span>
-                        </div>
-
-                        {
-                            duration.map((item, index) => {
-                                return <div className="flex" key={index}>
-                                    <input type="checkbox" name="day" value={item}
-                                        onChange={(e) => {
-                                            handleCheck(e);
-                                            return router.get(route(route().current(), params),
-                                                {
-                                                    day: item
-                                                },
-                                                {
-                                                    preserveState: true,
-                                                    replace: true
-                                                }
-                                            );
-                                        }}
-                                        className="shrink-0 mt-0.5 border-gray-200 rounded text-blue-600 pointer-events-none focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" id={`larabel-${item}`} />
-                                    <label htmlFor={`larabel-${item}`} className="text-sm text-gray-500 ml-3 dark:text-gray-400">Up to {item} days</label>
-                                </div>
-                            })
-                        }
-                    </div>
-
                 </div>
                 <div className="col-span-12 md:col-span-9 ">
                     <div className="p-1 px-5 flex items-center space-x-2 border dark:border-gray-700 rounded-md">

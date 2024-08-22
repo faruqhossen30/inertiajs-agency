@@ -7,6 +7,7 @@ import Input from '@/Components/Form/Input';
 import SubmitButton from '@/Components/Form/SubmitButton';
 import Select from 'react-select'
 import RichTextEditor from '@/Components/RichTextEditor';
+import ImageFile from '@/Components/Form/ImageFile';
 
 
 
@@ -65,11 +66,12 @@ export default function Create({ auth, categories }) {
                                 </p>
                             </div>
                             <div className="px-2 py-2 sm:px-6 lg:px-4 mx-auto w-full">
-                                <div>
+                                {/* <div>
                                     <InputLabel isRequired={true} labelFor="thumbnail" />
                                     <input id="thumbnail" type="file" name="thumbnail" placeholder="thumbnail" onChange={(e) => setData('thumbnail', e.target.files[0])} />
                                     <p className="text-sm text-red-600 mt-2">{errors.thumbnail}</p>
-                                </div>
+                                </div> */}
+                                <ImageFile name="thumbnail" setData={setData} errors={errors} placeholder="Feature Photo" />
                                 <div>
                                     <InputLabel isRequired={true} labelFor="status" />
                                     <select id="status" name="status" className="py-2 px-4 pr-9 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"

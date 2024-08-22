@@ -7,6 +7,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DataController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServicepageController;
+use App\Http\Controllers\TeamPageController;
 use App\Http\Controllers\User\DepositController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -34,6 +35,7 @@ Route::get('/', function () {
 
 Route::get('contact', [ContactController::class, 'index'])->name('contact');
 Route::get('about-us', [AboutpageController::class, 'index'])->name('aboutpage');
+Route::get('teams', [TeamPageController::class, 'teamPage'])->name('teampage');
 Route::get('services', [ServicepageController::class, 'index'])->name('servicepage');
 Route::get('services/{slug}', [ServicepageController::class, 'SingleService'])->name('single.service');
 

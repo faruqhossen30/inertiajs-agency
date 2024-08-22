@@ -1,4 +1,4 @@
-import { ServerStackIcon, VideoCameraIcon } from '@heroicons/react/24/outline'
+import { ArrowRightIcon, ServerStackIcon, VideoCameraIcon } from '@heroicons/react/24/outline'
 import { FaCode } from "react-icons/fa";
 import { TbSeo } from "react-icons/tb";
 import { SiAdobe } from "react-icons/si";
@@ -19,7 +19,7 @@ export default function ServiceSection() {
                 </div>
                 <div className="grid grid-cols-12 2xl:grid-cols-10 gap-8 py-10">
                     {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item, index) => {
-                        return <div key={index} className="col-span-12 sm:col-span-6 md:col-span-6 lg:col-span-4 xl:col-span-3 2xl:col-span-2 border-2 border-gray-200 hover:border-blue-200 hover:shadow-blue-100 rounded-md shadow-lg ">
+                        return <div key={index} className="group col-span-12 sm:col-span-6 md:col-span-6 lg:col-span-4 xl:col-span-3 2xl:col-span-2 border-2 border-gray-200 hover:border-blue-200 hover:shadow-blue-100 hover:scale-105 hover:transition-all duration-700 rounded-md shadow-lg ">
                             <div className="space-y-5 px-8 py-3">
                                 <div className="flex justify-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-16 w-16 text-[#FF543E] font-thin">
@@ -39,8 +39,9 @@ export default function ServiceSection() {
                                     {/* <a href="#" class="py-2 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-blue-600 text-blue-600 hover:border-blue-500 hover:text-blue-500 focus:outline-none focus:border-blue-500 focus:text-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:border-blue-500 dark:text-blue-500 dark:hover:text-blue-400 dark:hover:border-blue-400">
                                         Learn More
                                     </a> */}
-                                    <button type="button" class="py-2 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded border border-gray-400 text-gray-800 hover:border-gray-800 hover:text-gray-800 focus:outline-none focus:border-gray-800 focus:text-gray-800 disabled:opacity-50 disabled:pointer-events-none dark:border-neutral-400 dark:text-neutral-400 dark:hover:text-neutral-300 dark:hover:border-neutral-300">
-                                        Button
+                                    <button type="button" class="py-2 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded border border-gray-400 text-gray-800 group-hover:border-blue-800 hover:text-gray-800 focus:outline-none focus:border-gray-800 focus:text-gray-800 disabled:opacity-50 disabled:pointer-events-none dark:border-neutral-400 dark:text-neutral-400 dark:hover:text-neutral-300 dark:hover:border-neutral-300 group-hover:bg-blue-500 group-hover:text-white group-hover:border-none ">
+                                        View More
+                                        <ArrowRightIcon className="w-4 hidden group-hover:block group-hover:transition-all duration-700" />
                                     </button>
                                 </div>
                             </div>

@@ -1,4 +1,5 @@
 import React from 'react'
+import CountUp from 'react-countup';
 
 function Client() {
     return (
@@ -154,7 +155,7 @@ function Client() {
             <div class="grid grid-cols-12 sm:flex sm:justify-center gap-6 sm:gap-x-12 lg:gap-x-20">
                 <div class="col-span-6 text-center">
                     <h4 class="text-xl md:text-5xl font-semibold text-gray-800 dark:text-neutral-200">
-                        250+
+                    <CountUp end={5000} />
                     </h4>
                     <h4 class="text-sm text-gray-600 dark:text-neutral-400">
                         Components

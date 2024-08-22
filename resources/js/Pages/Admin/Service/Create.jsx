@@ -8,6 +8,7 @@ import SubmitButton from '@/Components/Form/SubmitButton';
 
 import Select from 'react-select'
 import RichTextEditor from '@/Components/RichTextEditor';
+import ImageFile from '@/Components/Form/ImageFile';
 // import { Alignment } from '@ckeditor/ckeditor5-alignment';
 
 
@@ -59,10 +60,7 @@ export default function Create({ auth, packages, categories }) {
                                         <p className="text-sm text-red-600 mt-2">{errors.thumbnail}</p>
                                     </div> */}
                                     <div>
-                                        <InputLabel isRequired={true} labelFor="Description Code" />
-                                        <textarea id="description_code" type="file" name="description_code" placeholder="description_code" onChange={(e) => setData('description_code', e.target.value)}
-                                            className="border py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"></textarea>
-                                        <p className="text-sm text-red-600 mt-2">{errors.thumbnail}</p>
+                                    <ImageFile name="thumbnail" setData={setData} errors={errors} placeholder="Feature Photo" />
                                     </div>
 
                                     <div>
