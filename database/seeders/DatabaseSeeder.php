@@ -31,9 +31,9 @@ class DatabaseSeeder extends Seeder
             AdminSeeder::class,
             UserSeeder::class,
             PackageSeeder::class,
-            // CategorySeeder::class
+            CategorySeeder::class
         ]);
-        Category::factory(5)->create();
+        // Category::factory(5)->create();
         Blog::factory(50)
             ->create()
             ->each(function ($blog) {

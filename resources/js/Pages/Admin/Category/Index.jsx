@@ -89,7 +89,7 @@ export default function Index({ auth, categories }) {
                                                 </td>
                                                 <td className="h-px w-px whitespace-nowrap">
                                                     <div className="px-6 py-2">
-                                                        <img src={window.location.protocol + '/storage/' + item.thumbnail} alt="photo" className="h-4" />
+                                                        <img src={window.location.origin + '/storage/' + item.thumbnail} alt="photo" className="h-4" />
                                                     </div>
                                                 </td>
 

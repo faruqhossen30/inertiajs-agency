@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\GoogleauthController;
 use App\Http\Controllers\BlogpageController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DataController;
+use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServicepageController;
 use App\Http\Controllers\TeamPageController;
@@ -24,14 +25,7 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function () {
-    return Inertia::render('HomePage', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-})->name('homepage');
+Route::get('/', [HomepageController::class, 'index'])->name('homepage');
 
 Route::get('contact', [ContactController::class, 'index'])->name('contact');
 Route::get('about-us', [AboutpageController::class, 'index'])->name('aboutpage');

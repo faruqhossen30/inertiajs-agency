@@ -26,6 +26,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth','admin']], function (
     Route::resource('blogs', BlogController::class);
 
     Route::resource('category', CategoryController::class);
+    Route::post('category/{id}', [CategoryController::class, 'update'])->name('categoryupdate');
+
     Route::resource('blogcategory', BlogcategoryController::class);
     Route::resource('package', PackageController::class);
     Route::get('user/list', [UserController::class,'index'])->name('users');

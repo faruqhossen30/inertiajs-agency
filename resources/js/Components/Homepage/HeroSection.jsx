@@ -19,24 +19,24 @@ export default function HeroSection() {
 
 
 
-                <div className="mt-5 max-w-4xl text-center mx-auto">
+                <div className="mt-5 max-w-5xl text-center mx-auto">
                     <h1 className="block font-bold text-gray-800 text-3xl md:text-5xl lg:text-[80px] dark:text-gray-200">
 
-                        <span className="bg-clip-text bg-gradient-to-tl from-blue-600 to-violet-600 text-transparent">Digital Marketing,</span> and
-                         <span className="bg-clip-text bg-gradient-to-tl from-blue-600 to-violet-600 text-transparent">  Graphics</span> company
+                        <span className="bg-clip-text bg-gradient-to-tl from-blue-600 to-violet-600 text-transparent">Digital Marketing Agency</span>
+                         <span className="bg-clip-text bg-gradient-to-tl from-blue-600 to-violet-600 text-transparent">  </span> Innovate Your World
 
                     </h1>
                 </div>
 
 
                 <div className="mt-5 max-w-3xl text-center mx-auto">
-                    <p className="text-md text-gray-600 dark:text-gray-400">Best Software Design & Development, Website Design & Development, Best SEO Agency
-                        & Digital Marketing,  and Graphics Company of Bangladesh.</p>
+                    <p className="text-[16px] text-gray-600 dark:text-gray-400 font-bold">Boost Your ROI with Top Digital Marketing! Choose WebBizify for expert strategies and  <br /> exceptional results. Exceptional Website Design & Development, Expert SEO & <br /> Digital Marketing Strategies,  Premier Graphics Design Services
+                    </p>
                 </div>
 
 
                 <div className="mt-8 grid gap-3 w-full sm:inline-flex sm:justify-center">
-                    <Link className="inline-flex justify-center items-center gap-x-3 text-center bg-gradient-to-tl from-blue-600 to-violet-600 hover:from-violet-600 hover:to-blue-600 border border-transparent text-white text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white py-3 px-4 dark:focus:ring-offset-gray-800" href="#">
+                    <Link className="inline-flex justify-center items-center gap-x-3 text-center bg-gradient-to-tl from-blue-600 to-violet-600 hover:from-violet-600 hover:to-blue-600 border border-transparent text-white font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white py-4 px-5 dark:focus:ring-offset-gray-800 text-xl" href="#">
                         Get started
                         <ArrowRightIcon className="w-4 h-4" />
                     </Link>

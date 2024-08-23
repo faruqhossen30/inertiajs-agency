@@ -8,13 +8,13 @@ import Testimonial from '@/Components/Homepage/Testimonial';
 import Client from '@/Components/Homepage/Client';
 import WhatWeDo from '@/Components/Homepage/WhatWeDo';
 
-export default function Homepage({ auth, user, laravelVersion, phpVersion }) {
+export default function Homepage({categories }) {
 
     return (
         <AppLayout>
             <Head title="Home" />
             <HeroSection />
-            <ServiceSection />
+            <ServiceSection categories={categories} />
             <Client />
             <WhatWeDo />
             <Testimonial />

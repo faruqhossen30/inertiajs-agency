@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class CategoryController extends Controller
 {
@@ -43,7 +44,8 @@ class CategoryController extends Controller
         $data=[
             'name'=> $request->name,
             'slug'=> Str::slug($request->name),
-            'author_id'=> Auth::user()->id,
+            'description'=> $request->description,
+            'user_id'=> Auth::user()->id,
         ];
         if ($request->file('thumbnail')) {
             $file_name = $request->file('thumbnail')->store('category');
@@ -84,8 +86,20 @@ class CategoryController extends Controller
         $data = [
             'name'=> $request->name,
             'slug'=> Str::slug($request->name),
-            'author_id'=> Auth::user()->id,
+            'description'=> $request->description,
+            'user_id'=> Auth::user()->id,
         ];
+
+        $skill = Category::firstwhere('id', $id);
+        if ($request->file('thumbnail')) {
+            if ($skill->thumbnail != null && Storage::exists($skill->thumbnail)) {
+                Storage::delete($skill->thumbnail);
+            }
+
+            $file_name = $request->file('thumbnail')->store('category');
+            $data['thumbnail'] = $file_name;
+        }
+
 
         Category::firstwhere('id', $id)->update($data);
         return to_route('category.index');
