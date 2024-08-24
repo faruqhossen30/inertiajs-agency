@@ -5,8 +5,10 @@ import ServiceSection from '@/Components/Homepage/ServiceSection';
 import FeatureStatus from '@/Components/Homepage/FeatureStatus';
 import Feature from '@/Components/Homepage/Feature';
 import Testimonial from '@/Components/Homepage/Testimonial';
-import Client from '@/Components/Homepage/Client';
 import WhatWeDo from '@/Components/Homepage/WhatWeDo';
+import ClientStatus from '@/Components/Homepage/ClientStatus';
+import FeatueSection from '@/Components/Homepage/FeatueSection';
+import AddsPartner from '@/Components/Homepage/AddsPartner';
 
 export default function Homepage({categories }) {
 
@@ -15,8 +17,9 @@ export default function Homepage({categories }) {
             <Head title="Home" />
             <HeroSection />
             <ServiceSection categories={categories} />
-            <Client />
-            <WhatWeDo />
+            <ClientStatus />
+            <FeatueSection />
+            <AddsPartner />
             <Testimonial />
         </AppLayout>
     );
