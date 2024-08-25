@@ -10,7 +10,7 @@ import ClientStatus from '@/Components/Homepage/ClientStatus';
 import FeatueSection from '@/Components/Homepage/FeatueSection';
 import AddsPartner from '@/Components/Homepage/AddsPartner';
 
-export default function Homepage({categories }) {
+export default function Homepage({categories , reviews }) {
 
     return (
         <AppLayout>
@@ -20,7 +20,7 @@ export default function Homepage({categories }) {
             <ClientStatus />
             <FeatueSection />
             <AddsPartner />
-            <Testimonial />
+            <Testimonial reviews = {reviews}/>
         </AppLayout>
     );
 }

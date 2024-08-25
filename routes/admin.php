@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\Blog\BlogcategoryController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\PackageController;
 use App\Http\Controllers\Admin\PakageController;
+use App\Http\Controllers\Admin\ReviewController;
 use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -24,7 +25,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth','admin']], function (
     Route::resource('service', ServiceController::class);
     // Blog
     Route::resource('blogs', BlogController::class);
-
+    Route::resource('review', ReviewController::class);
+    Route::post('review/{id}',[ReviewController::class,'update'])->name('reviewupdate');
     Route::resource('category', CategoryController::class);
     Route::post('category/{id}', [CategoryController::class, 'update'])->name('categoryupdate');
 
