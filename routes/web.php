@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\GoogleauthController;
 use App\Http\Controllers\BlogpageController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DataController;
+use App\Http\Controllers\FaqpageController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServicepageController;
@@ -27,6 +28,7 @@ use Inertia\Inertia;
 
 Route::get('/', [HomepageController::class, 'index'])->name('homepage');
 
+Route::get('faq', [FaqpageController::class, 'index'])->name('faq.page');
 Route::get('contact', [ContactController::class, 'index'])->name('contact');
 Route::get('about-us', [AboutpageController::class, 'index'])->name('aboutpage');
 Route::get('teams', [TeamPageController::class, 'teamPage'])->name('teampage');
