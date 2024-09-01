@@ -3,23 +3,19 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Blog\Blog;
-use App\Models\Category;
-use App\Models\Package;
+use App\Models\Feature;
 use App\Models\Service\Service;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
-use Illuminate\Support\Str;
 
-class ServiceController extends Controller
+class ServiceFeatureController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $services = Service::paginate(10);
-        return Inertia::render('Admin/Service/Index', ['services' => $services]);
+        //
     }
 
     /**
@@ -27,9 +23,11 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        $packages   = Package::get();
-        $categories = Category::get();
-        return Inertia::render('Admin/Service/Create', ['packages' => $packages, 'categories' => $categories]);
+        $services = Service::get();
+        $features = Feature::get();
+
+        // return  $services;
+        return Inertia::render('Admin/ServiceFeature/Create',['services' => $services,'features' => $features]);
     }
 
     /**
@@ -37,26 +35,18 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        // return $request->all();
-        $request->validate([
-            'title' => 'required',
-            'description' => 'required',
-        ]);
+
+        return $request->all();
 
         $data = [
-            'title' => $request->title,
-            'slug' => Str::slug($request->name),
-            'short_description' => $request->short_description,
-            'description_code' => $request->description_code,
-            'description' => $request->description,
+            'service_id' => $request->service_id,
+            'feature_id' => $request->feature_id,
+
         ];
-        if ($request->file('thumbnail')) {
-            $file_name = $request->file('thumbnail')->store('service');
-            $data['thumbnail'] = $file_name;
-        }
+
 
         $service = Service::create($data);
-        $service->categories()->attach($request->category_ids);
+
 
         return to_route('service.index');
     }
@@ -74,7 +64,7 @@ class ServiceController extends Controller
      */
     public function edit(string $id)
     {
-
+        //
     }
 
     /**

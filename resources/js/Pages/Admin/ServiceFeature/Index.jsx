@@ -1,12 +1,11 @@
 import ButtonPlus from '@/Components/Button/ButtonPlus';
 import BreadcumComponent from '@/Components/Dashboard/BreadcumComponent';
-import { Cog6ToothIcon, PencilIcon, TrashIcon } from '@heroicons/react/24/outline';
+import { PencilIcon, TrashIcon } from '@heroicons/react/24/outline';
 import { EyeIcon } from '@heroicons/react/24/solid';
 import { Head, Link } from '@inertiajs/react';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import SearchFilter from '@/Components/Table/SearchFilter';
 import Pagination from '@/Components/Pagination';
-import { features } from '@/data/features';
 
 
 export default function Index({ auth, services }) {
@@ -46,13 +45,6 @@ export default function Index({ auth, services }) {
                                             <div className="flex items-center gap-x-2">
                                                 <span className="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
                                                     Photo
-                                                </span>
-                                            </div>
-                                        </th>
-                                        <th scope="col" className="px-6 py-3 text-left">
-                                            <div className="flex items-center gap-x-2">
-                                                <span className="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
-                                                    Featurte
                                                 </span>
                                             </div>
                                         </th>
@@ -96,12 +88,6 @@ export default function Index({ auth, services }) {
                                                 <td className="h-px w-px whitespace-nowrap">
                                                     <div className="px-6 py-2">
                                                         <img src={window.location.protocol + '/storage/' + item.thumbnail} alt="photo" className="h-4" />
-                                                    </div>
-                                                </td>
-
-                                                <td className="h-px w-px whitespace-nowrap">
-                                                    <div className="px-6 py-2">
-                                                        <Link href={route('service.feature', item.id)}><Cog6ToothIcon className="w-5" /></Link>
                                                     </div>
                                                 </td>
 

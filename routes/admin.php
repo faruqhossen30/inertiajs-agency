@@ -6,9 +6,12 @@ use App\Http\Controllers\Admin\ServiceController;
 
 use App\Http\Controllers\Admin\Blog\BlogcategoryController;
 use App\Http\Controllers\Admin\BlogController;
+use App\Http\Controllers\Admin\FaqController;
+use App\Http\Controllers\Admin\FeatureController;
 use App\Http\Controllers\Admin\PackageController;
 use App\Http\Controllers\Admin\PakageController;
 use App\Http\Controllers\Admin\ReviewController;
+use App\Http\Controllers\Admin\ServiceFeatureController;
 use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -23,6 +26,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth','admin']], function (
 
     // Service
     Route::resource('service', ServiceController::class);
+    Route::get('service/{id}/feature',[ServiceFeatureController::class, 'create'])->name('service.feature');
+    Route::resource('feature', FeatureController::class);
+    Route::resource('faq', FaqController::class);
     // Blog
     Route::resource('blogs', BlogController::class);
     Route::resource('review', ReviewController::class);

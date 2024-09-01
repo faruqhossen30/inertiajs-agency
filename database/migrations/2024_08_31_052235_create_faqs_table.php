@@ -11,13 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('service_features', function (Blueprint $table) {
+        Schema::create('faqs', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('service_id')->nullable();
-            $table->unsignedBigInteger('feature_id')->nullable();
-            $table->boolean('basic')->default(false);
-            $table->boolean('standard')->default(false);
-            $table->boolean('premium')->default(false);
+            $table->string('title');
+            $table->string('description', 5000)->nullable();
+            $table->boolean('status')->default(1);
             $table->timestamps();
         });
     }
@@ -27,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('service_features');
+        Schema::dropIfExists('faqs');
     }
 };

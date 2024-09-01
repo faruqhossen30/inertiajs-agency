@@ -1,10 +1,11 @@
 import { StarIcon } from '@heroicons/react/24/outline'
+import { Link } from '@inertiajs/react'
 import React from 'react'
 
 export default function Service({service}) {
     return (
         <div className="col-span-6 md:col-span-4">
-            <a className="flex flex-col group bg-white border shadow-sm rounded-md overflow-hidden hover:shadow-lg transition dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7]" href="#">
+            <Link href={route('single.service',service.slug)} className="flex flex-col group bg-white border shadow-sm rounded-md overflow-hidden hover:shadow-lg transition dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7]" >
                 <div className=" overflow-hidden">
                     <img className="w-full object-fill group-hover:scale-105 transition-transform duration-500 ease-in-out" src="./marketing.png" alt="Image Description" />
                 </div>
@@ -33,7 +34,7 @@ export default function Service({service}) {
                         Order Now !
                     </button>
                 </div>
-            </a>
+            </Link>
         </div>
     )
 }
