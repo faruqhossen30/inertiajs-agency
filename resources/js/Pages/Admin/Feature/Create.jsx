@@ -35,7 +35,7 @@ export default function Create({ auth, categories }) {
                         <form onSubmit={submit}>
 
                             <div className='mt-1'>
-                                <InputLabel isRequired={true} labellabelfor="category" />
+                                <InputLabel isRequired={true} labelFor="category" />
                                 <select name='category_id' id='category' className=" px-4 pr-9 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400" onChange={(e) => setData('category_id', e.target.value)} >
                                     <option value="">Select Category</option>
                                     {
@@ -47,7 +47,7 @@ export default function Create({ auth, categories }) {
                                 <p className="text-sm text-red-600 mt-2">{errors.status}</p>
                             </div>
                             <div>
-                                <InputLabel isRequired={true} labellabelfor="title" />
+                                <InputLabel isRequired={true} labelFor="title" />
                                 <Input id="title" type="text" name="title" value={data.title} autoComplete="title" placeholder="title" onChange={(e) => setData('title', e.target.value)} />
                                 <p className="text-sm text-red-600 mt-2">{errors.title}</p>
                             </div>

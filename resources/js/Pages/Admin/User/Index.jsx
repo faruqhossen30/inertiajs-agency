@@ -21,7 +21,7 @@ export default function Index({ auth, users }) {
                                 <div className="px-6 py-4 grid gap-3 md:flex md:justify-between md:items-center border-b border-gray-200 dark:border-gray-700">
                                     {/* <!-- Input --> */}
                                     <div className="sm:col-span-1">
-                                        <label htmlFor"hs-as-table-product-review-search" className="sr-only">Search</label>
+                                        <label htmlFor="hs-as-table-product-review-search" className="sr-only">Search</label>
                                         <div className="relative">
                                             <input type="text" id="hs-as-table-product-review-search" name="hs-as-table-product-review-search" className="py-2 px-3 pl-11 block w-full border-gray-200 shadow-sm rounded-md text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400" placeholder="Search" />
                                             <div className="absolute inset-y-0 left-0 flex items-center pointer-events-none pl-4">
@@ -49,19 +49,19 @@ export default function Index({ auth, users }) {
                                                 </button>
                                                 <div className="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden divide-y divide-gray-200 min-w-[12rem] z-10 bg-white shadow-md rounded-lg mt-2 dark:divide-gray-700 dark:bg-gray-800 dark:border dark:border-gray-700" aria-labelledby="hs-as-table-table-filter-dropdown">
                                                     <div className="divide-y divide-gray-200 dark:divide-gray-700">
-                                                        <label htmlFor"hs-as-filters-dropdown-all" className="flex py-2.5 px-3">
+                                                        <label htmlFor="hs-as-filters-dropdown-all" className="flex py-2.5 px-3">
                                                             <input type="checkbox" className="shrink-0 mt-0.5 border-gray-200 rounded text-blue-600 pointer-events-none focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" id="hs-as-filters-dropdown-all" />
                                                             <span className="ml-3 text-sm text-gray-800 dark:text-gray-200">All</span>
                                                         </label>
-                                                        <label htmlFor"hs-as-filters-dropdown-paid" className="flex py-2.5 px-3">
+                                                        <label htmlFor="hs-as-filters-dropdown-paid" className="flex py-2.5 px-3">
                                                             <input type="checkbox" className="shrink-0 mt-0.5 border-gray-200 rounded text-blue-600 pointer-events-none focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" id="hs-as-filters-dropdown-paid" />
                                                             <span className="ml-3 text-sm text-gray-800 dark:text-gray-200">Paid</span>
                                                         </label>
-                                                        <label htmlFor"hs-as-filters-dropdown-pending" className="flex py-2.5 px-3">
+                                                        <label htmlFor="hs-as-filters-dropdown-pending" className="flex py-2.5 px-3">
                                                             <input type="checkbox" className="shrink-0 mt-0.5 border-gray-200 rounded text-blue-600 pointer-events-none focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" id="hs-as-filters-dropdown-pending" />
                                                             <span className="ml-3 text-sm text-gray-800 dark:text-gray-200">Pending</span>
                                                         </label>
-                                                        <label htmlFor"hs-as-filters-dropdown-declined" className="flex py-2.5 px-3">
+                                                        <label htmlFor="hs-as-filters-dropdown-declined" className="flex py-2.5 px-3">
                                                             <input type="checkbox" className="shrink-0 mt-0.5 border-gray-200 rounded text-blue-600 pointer-events-none focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" id="hs-as-filters-dropdown-declined" />
                                                             <span className="ml-3 text-sm text-gray-800 dark:text-gray-200">Declined</span>
                                                         </label>

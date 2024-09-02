@@ -49,13 +49,13 @@ export default function Create({ auth, packages, categories }) {
                             <div className="p-4 md:p-5">
                                 <div className=" px-2 py-2 sm:px-6 lg:px-4 mx-auto">
                                     <div>
-                                        <InputLabel isRequired={true} labellabelfor="title" />
+                                        <InputLabel isRequired={true} labelFor="title" />
                                         <Input id="title" type="text" name="title" value={data.title} autoComplete="title" placeholder="Title" onChange={(e) => setData('title', e.target.value)} />
                                         <p className="text-sm text-red-600 mt-2">{errors.title}</p>
                                     </div>
 
                                     {/* <div>
-                                        <InputLabel isRequired={true} labellabelfor="thumbnail" />
+                                        <InputLabel isRequired={true} labelFor="thumbnail" />
                                         <input id="thumbnail" type="file" name="thumbnail" placeholder="thumbnail" onChange={(e) => setData('thumbnail', e.target.files[0])} />
                                         <p className="text-sm text-red-600 mt-2">{errors.thumbnail}</p>
                                     </div> */}
@@ -64,7 +64,7 @@ export default function Create({ auth, packages, categories }) {
                                     </div>
 
                                     <div>
-                                        <InputLabel isRequired={true} labellabelfor="Description" />
+                                        <InputLabel isRequired={true} labelFor="Description" />
                                         <RichTextEditor setData={setData} data={data} />
                                     </div>
                                     <SubmitButton />
@@ -81,12 +81,12 @@ export default function Create({ auth, packages, categories }) {
                             </div>
                             <div className="px-2 py-2 sm:px-6 lg:px-4 mx-auto w-full">
                                 <div>
-                                    <InputLabel isRequired={true} labellabelfor="thumbnail" />
+                                    <InputLabel isRequired={true} labelFor="thumbnail" />
                                     <input id="thumbnail" type="file" name="thumbnail" placeholder="thumbnail" onChange={(e) => setData('thumbnail', e.target.files[0])} />
                                     <p className="text-sm text-red-600 mt-2">{errors.thumbnail}</p>
                                 </div>
                                 <div>
-                                    <InputLabel isRequired={true} labellabelfor="status" />
+                                    <InputLabel isRequired={true} labelFor="status" />
                                     <select id="status" name="status" className="py-2 px-4 pr-9 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
                                         onChange={(e) => setData('status', e.target.value)}>
                                         <option value="1">Yes</option>
@@ -100,7 +100,7 @@ export default function Create({ auth, packages, categories }) {
                                         packages.map((pack, index) => {
                                             return <div className="flex" key={index}>
                                                 <input name="package[]" type="checkbox" checked={pack.id} onChange={(e) => setData('package', e.target.checked)} id={index} className="shrink-0 mt-0.5 border-gray-200 rounded text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" />
-                                                <label labelfor={index} className="text-sm text-gray-500 ms-3 dark:text-neutral-400">{pack.name}</label>
+                                                <label htmlFor={index} className="text-sm text-gray-500 ms-3 dark:text-neutral-400">{pack.name}</label>
                                             </div>
                                         })
                                     }
@@ -108,7 +108,7 @@ export default function Create({ auth, packages, categories }) {
 
                                 </div>
 
-                                <InputLabel isRequired={true} labellabelfor="Category" />
+                                <InputLabel isRequired={true} labelFor="Category" />
                                 <Select
                                     onChange={(e) => setData('category_ids', e.map(item => item.id))}
                                     isMulti

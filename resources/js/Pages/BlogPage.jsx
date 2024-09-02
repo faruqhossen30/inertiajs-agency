@@ -41,7 +41,7 @@ export default function BlogPage({ blogs }) {
 
                     <div className=" flex space-x-2 py-3 ">
                         <div className="flex items-center space-x-1">
-                            <label labelfor="" className="text-gray-800 dark:text-gray-400">Order:</label>
+                            <label htmlFor="show" className="text-gray-800 dark:text-gray-400">Order:</label>
                             <select name="show"
                                 onChange={(e) => {
                                     return router.get(route('servicepage', params),
@@ -61,7 +61,7 @@ export default function BlogPage({ blogs }) {
                             </select>
                         </div>
                         <div className="flex items-center space-x-1">
-                            <label labelfor="" className="text-gray-800 dark:text-gray-400">Sort:</label>
+                            <label htmlFor="orderby" className="text-gray-800 dark:text-gray-400">Sort:</label>
                             <select name="orderby"
                                 onChange={(e) => {
                                     return router.get(route('servicepage', params),

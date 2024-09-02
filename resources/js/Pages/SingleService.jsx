@@ -84,7 +84,7 @@ return (
                     }
                 </ul>
 
-                <a className="mt-5 py-3 px-4 inline-flex justify-center items-center text-gray-800 gap-x-2 text-sm font-medium rounded-lg border hover:border-transparent bg-white border-gray-200 hover:text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
+                <a className="mt-5 py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm  disabled:pointer-events-none   dark:bg-transparent dark:border-neutral-700 dark:text-neutral-300 hover:text-white dark:hover:bg-neutral-800 dark:focus:bg-neutral-800 hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50"
                     href="#">
                    Order Now
                 </a>

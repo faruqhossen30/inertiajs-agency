@@ -30,29 +30,29 @@ export default function ContactPage({ auth, user, laravelVersion, phpVersion }) 
 
                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                         <div>
-                                            <label labelfor="hs-firstname-contacts-1" className="sr-only">First Name</label>
+                                            <label htmlFor="hs-firstname-contacts-1" className="sr-only">First Name</label>
                                             <input type="text" name="hs-firstname-contacts-1" id="hs-firstname-contacts-1" className="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400" placeholder="First Name"/>
                                         </div>
 
                                         <div>
-                                            <label labelfor="hs-lastname-contacts-1" className="sr-only">Last Name</label>
+                                            <label htmlFor="hs-lastname-contacts-1" className="sr-only">Last Name</label>
                                             <input type="text" name="hs-lastname-contacts-1" id="hs-lastname-contacts-1" className="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400" placeholder="Last Name"/>
                                         </div>
                                     </div>
 
 
                                     <div>
-                                        <label labelfor="hs-email-contacts-1" className="sr-only">Email</label>
-                                        <input type="email" name="hs-email-contacts-1" id="hs-email-contacts-1" autocomplete="email" className="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400" placeholder="Email"/>
+                                        <label htmlFor="hs-email-contacts-1" className="sr-only">Email</label>
+                                        <input type="email" name="hs-email-contacts-1" id="hs-email-contacts-1" autoComplete="email" className="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400" placeholder="Email"/>
                                     </div>
 
                                     <div>
-                                        <label labelfor="hs-phone-number-1" className="sr-only">Phone Number</label>
+                                        <label htmlFor="hs-phone-number-1" className="sr-only">Phone Number</label>
                                         <input type="text" name="hs-phone-number-1" id="hs-phone-number-1" className="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400" placeholder="Phone Number"/>
                                     </div>
 
                                     <div>
-                                        <label labelfor="hs-about-contacts-1" className="sr-only">Details</label>
+                                        <label htmlFor="hs-about-contacts-1" className="sr-only">Details</label>
                                         <textarea id="hs-about-contacts-1" name="hs-about-contacts-1" rows="4" className="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400" placeholder="Details"></textarea>
                                     </div>
                                 </div>

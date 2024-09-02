@@ -18,7 +18,7 @@ export default function FaqPage({ auth, user, faqs, laravelVersion, phpVersion }
                     <form>
                         <div className="mt-4 flex flex-col items-center border rounded-lg gap-6 py-3 px-6 sm:flex-row sm:gap-3  p-2 dark:bg-neutral-900 bg-gray-100">
                             <div className="w-full">
-                                <label labelfor="hero-input" className="sr-only">Subscribe</label>
+                                <label htmlFor="hero-input" className="sr-only">Subscribe</label>
                                 <input type="text" id="hero-input" name="hero-input" className="py-1 px-4  bg-gray-100 block w-full border-transparent text-sm focus:border-blue-500 focus:ring-blue-500  disabled:opacity-50 disabled:pointer-events-none placeholder:text-lg  " placeholder="Enter Address Website" />
                             </div>
                             <a className="w-full sm:w-auto whitespace-nowrap rounded px-6 py-4  text-white inline-flex justify-center items-center gap-x-2 text-sm  border border-transparent bg-blue-700  font-extrabold   text-blackfocus:outline-none focus:bg-gray-200 disabled:opacity-50 hover:bg-gray-200 hover:text-gray-600 hover:font-bold disabled:pointer-events-none" href="#">

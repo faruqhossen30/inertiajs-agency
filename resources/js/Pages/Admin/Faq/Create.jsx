@@ -36,18 +36,18 @@ export default function Create({ auth }) {
                         <form onSubmit={submit}>
                             <div>
 
-                                <InputLabel isRequired={true} labellabelfor="title" />
+                                <InputLabel isRequired={true} labelFor="title" />
                                 <Input id="title" type="text" name="title" value={data.title} autoComplete="title" placeholder="title" onChange={(e) => setData('title', e.target.value)} />
                                 <p className="text-sm text-red-600 mt-2">{errors.title}</p>
                             </div>
                             <div>
-                                <InputLabel isRequired={true} labellabelfor="Description" />
+                                <InputLabel isRequired={true} labelFor="Description" />
                                 <textarea id="description" type="file" name="description" rows="4" placeholder="description" onChange={(e) => setData('description', e.target.value)}
                                     className="border py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-50 disabled:opacity-200 disabled:pointer-events-none "></textarea>
                                 <p className="text-sm text-red-600 mt-2">{errors.description}</p>
                             </div>
                             <div>
-                                <InputLabel isRequired={true} labellabelfor="status" />
+                                <InputLabel isRequired={true} labelFor="status" />
                                 <select id="status" name="status" className="py-2 px-4 pr-9 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
                                     onChange={(e) => setData('status', e.target.value)}>
                                     <option value="1">Yes</option>
