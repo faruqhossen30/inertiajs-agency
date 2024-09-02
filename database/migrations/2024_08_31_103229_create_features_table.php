@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('features', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('category_id')->nullable();
             $table->string('title');
+            $table->unsignedBigInteger('category_id')->nullable();
             $table->timestamps();
         });
     }

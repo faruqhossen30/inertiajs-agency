@@ -40,11 +40,11 @@ class ServicepageController extends Controller
         $services = $services->paginate($show ?? 9)->appends($_GET);
 
         return Inertia::render('ServicePage', ['services' => $services, 'request' => $_GET]);
-
     }
 
-    function SingleService(): Response
+    function SingleService($slug): Response
     {
-        return Inertia::render('Service');
+        $service = Service::firstWhere('slug', $slug);
+        return Inertia::render('SingleService', ['service' => $service]);
     }
 }

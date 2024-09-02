@@ -6,7 +6,7 @@ import HeroSection from '@/Components/Homepage/HeroSection';
 import ServiceSection from '@/Components/Homepage/ServiceSection';
 import FeatureStatus from '@/Components/Homepage/FeatureStatus';
 
-export default function ContactPage({ auth, user, laravelVersion, phpVersion }) {
+export default function SingleServiceCopy({ service }) {
 
     return (
         <AppLayout>
