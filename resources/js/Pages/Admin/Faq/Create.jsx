@@ -35,18 +35,19 @@ export default function Create({ auth }) {
                     <div className=" px-2 py-2 sm:px-6 lg:px-4 mx-auto">
                         <form onSubmit={submit}>
                             <div>
-                                <InputLabel isRequired={true} labelFor="title" />
+
+                                <InputLabel isRequired={true} labellabelfor="title" />
                                 <Input id="title" type="text" name="title" value={data.title} autoComplete="title" placeholder="title" onChange={(e) => setData('title', e.target.value)} />
                                 <p className="text-sm text-red-600 mt-2">{errors.title}</p>
                             </div>
                             <div>
-                                <InputLabel isRequired={true} labelFor="Description" />
+                                <InputLabel isRequired={true} labellabelfor="Description" />
                                 <textarea id="description" type="file" name="description" rows="4" placeholder="description" onChange={(e) => setData('description', e.target.value)}
                                     className="border py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-50 disabled:opacity-200 disabled:pointer-events-none "></textarea>
                                 <p className="text-sm text-red-600 mt-2">{errors.description}</p>
                             </div>
                             <div>
-                                <InputLabel isRequired={true} labelFor="status" />
+                                <InputLabel isRequired={true} labellabelfor="status" />
                                 <select id="status" name="status" className="py-2 px-4 pr-9 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
                                     onChange={(e) => setData('status', e.target.value)}>
                                     <option value="1">Yes</option>

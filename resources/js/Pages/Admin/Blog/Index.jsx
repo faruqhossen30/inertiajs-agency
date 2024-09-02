@@ -12,7 +12,7 @@ export default function Index({ blogs }) {
     return (
         <AuthenticatedLayout>
             <div className="flex justify-between items-center">
-                <BreadcumComponent pageOne="services" pageOneRoute="blogs.index" />
+                <BreadcumComponent pageOne="Blogs" pageOneRoute="blogs.index" />
                 <ButtonPlus routeName={route("blogs.create")} />
             </div>
 

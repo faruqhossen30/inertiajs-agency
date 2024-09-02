@@ -35,7 +35,7 @@ export default function Navbar() {
                         </div>
 
                         <div className="hidden sm:block">
-                            <label htmlFor="icon" className="sr-only">Search</label>
+                        <label labelfor="icon" className="sr-only">Search</label>
                             <div className="relative">
                                 <div className="absolute inset-y-0 left-0 flex items-center pointer-events-none z-20 pl-4">
                                     <svg className="h-4 w-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">

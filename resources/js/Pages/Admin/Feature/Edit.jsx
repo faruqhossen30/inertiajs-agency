@@ -34,12 +34,12 @@ export default function Create({ auth, feature ,categories}) {
                     <div className=" px-2 py-2 sm:px-6 lg:px-4 mx-auto">
                         <form onSubmit={submit}>
                             <div>
-                                <InputLabel isRequired={true} labelFor="faq" />
+                                <InputLabel isRequired={true} labellabelfor="faq" />
                                 <Input id="faq" type="text" name="title" value={data.title} autoComplete="title" placeholder="title" onChange={(e) => setData('title', e.target.value)} />
                                 <p className="text-sm text-red-600 mt-2">{errors.title}</p>
                             </div>
                             <div className='mt-1'>
-                                <InputLabel isRequired={true} labelFor="category" />
+                                <InputLabel isRequired={true} labellabelfor="category" />
                                 <select name='category_id' value={data.category_id} id='category' className=" px-4 pr-9 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400" onChange={(e) => setData('category_id', e.target.value)} >
                                     <option value="">Select Category</option>
                                     {

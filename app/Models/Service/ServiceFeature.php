@@ -2,17 +2,17 @@
 
 namespace App\Models\Service;
 
+use App\Models\Feature;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class ServiceFeature extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'service_id',
-        'feature_id',
-        'basic',
-        'standard',
-        'premium',
-    ];
+    protected $fillable = ['service_id', 'feature_id', 'basic', 'standard', 'premium'];
+
+    public function feature()
+    {
+        return $this->hasOne(Feature::class, 'id', 'feature_id');
+    }
 }

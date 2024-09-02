@@ -33,13 +33,13 @@ export default function Create({ auth,category }) {
                     <div className=" px-2 py-2 sm:px-6 lg:px-4 mx-auto">
                         <form onSubmit={submit}>
                             <div>
-                                <InputLabel isRequired={true} labelFor="name" />
+                                <InputLabel isRequired={true} labellabelfor="name" />
                                 <Input id="name" type="text" name="name" value={data.name} autoComplete="name" placeholder="name" onChange={(e) => setData('name', e.target.value)} />
                                 <p className="text-sm text-red-600 mt-2">{errors.name}</p>
                             </div>
 
                             <div>
-                                <InputLabel isRequired={true} labelFor="status" />
+                                <InputLabel isRequired={true} labellabelfor="status" />
                                 <select id="status" name="status" className="py-2 px-4 pr-9 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
                                     onChange={(e) => setData('status', e.target.value)}>
                                     <option value="1">Yes</option>

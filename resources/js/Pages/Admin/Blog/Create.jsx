@@ -43,12 +43,12 @@ export default function Create({ auth, categories }) {
                             <div className="p-4 md:p-5">
                                 <div className=" px-2 py-2 sm:px-6 lg:px-4 mx-auto">
                                     <div>
-                                        <InputLabel isRequired={true} labelFor="title" />
+                                        <InputLabel isRequired={true} labelfor="title" />
                                         <Input id="title" type="text" name="title" value={data.title} autoComplete="title" placeholder="title" onChange={(e) => setData('title', e.target.value)} />
                                         <p className="text-sm text-red-600 mt-2">{errors.title}</p>
                                     </div>
                                     <div>
-                                        <InputLabel isRequired={true} labelFor="Description" />
+                                        <InputLabel isRequired={true} labelfor="Description" />
                                         <RichTextEditor setData={setData} data={data} />
                                     </div>
                                     <div className="pt-12">
@@ -67,13 +67,13 @@ export default function Create({ auth, categories }) {
                             </div>
                             <div className="px-2 py-2 sm:px-6 lg:px-4 mx-auto w-full">
                                 {/* <div>
-                                    <InputLabel isRequired={true} labelFor="thumbnail" />
+                                    <InputLabel isRequired={true} labellabelfor="thumbnail" />
                                     <input id="thumbnail" type="file" name="thumbnail" placeholder="thumbnail" onChange={(e) => setData('thumbnail', e.target.files[0])} />
                                     <p className="text-sm text-red-600 mt-2">{errors.thumbnail}</p>
                                 </div> */}
                                 <ImageFile name="thumbnail" setData={setData} errors={errors} placeholder="Feature Photo" />
                                 <div>
-                                    <InputLabel isRequired={true} labelFor="status" />
+                                    <InputLabel isRequired={true} labelfor="status" />
                                     <select id="status" name="status" className="py-2 px-4 pr-9 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
                                         onChange={(e) => setData('status', e.target.value)}>
                                         <option value="1">Yes</option>
@@ -83,7 +83,7 @@ export default function Create({ auth, categories }) {
                                 </div>
 
 
-                                <InputLabel isRequired={true} labelFor="Category" />
+                                <InputLabel isRequired={true} labellabelfor="Category" />
                                 <Select
                                     onChange={(e) => setData('category_ids', e.map(item => item.id))}
                                     isMulti

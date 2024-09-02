@@ -61,7 +61,7 @@ export default function Register() {
                                 <div className="grid gap-y-4">
 
                                     <div>
-                                        <label htmlFor="email" className="block text-sm mb-2 dark:text-white">Full Name</label>
+                                        <label htmlFor"email" className="block text-sm mb-2 dark:text-white">Full Name</label>
                                         <div className="relative">
                                             <input
                                             id="name"
@@ -84,7 +84,7 @@ export default function Register() {
 
 
                                     <div>
-                                        <label htmlFor="email" className="block text-sm mb-2 dark:text-white">Email address</label>
+                                        <label htmlFor"email" className="block text-sm mb-2 dark:text-white">Email address</label>
                                         <div className="relative">
                                             <input
                                             id="email"
@@ -107,7 +107,7 @@ export default function Register() {
 
 
                                     <div>
-                                        <label htmlFor="password" className="block text-sm mb-2 dark:text-white">Password</label>
+                                        <label htmlFor"password" className="block text-sm mb-2 dark:text-white">Password</label>
                                         <div className="relative">
                                             <input
                                              id="password"
@@ -130,7 +130,7 @@ export default function Register() {
 
 
                                     <div>
-                                        <label htmlFor="confirm-password" className="block text-sm mb-2 dark:text-white">Confirm Password</label>
+                                        <label htmlFor"confirm-password" className="block text-sm mb-2 dark:text-white">Confirm Password</label>
                                         <div className="relative">
                                             <input
                                              id="password_confirmation"
@@ -157,7 +157,7 @@ export default function Register() {
                                             <input id="remember-me" name="remember-me" type="checkbox" className="shrink-0 mt-0.5 border-gray-200 rounded text-blue-600 pointer-events-none focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" />
                                         </div>
                                         <div className="ml-3">
-                                            <label htmlFor="remember-me" className="text-sm dark:text-white">I accept the <a className="text-blue-600 decoration-2 hover:underline font-medium" href="#">Terms and Conditions</a></label>
+                                            <label htmlFor"remember-me" className="text-sm dark:text-white">I accept the <a className="text-blue-600 decoration-2 hover:underline font-medium" href="#">Terms and Conditions</a></label>
                                         </div>
                                     </div>
 

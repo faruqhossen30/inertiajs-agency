@@ -30,7 +30,7 @@ function ThumbnailInput({ name,thumbnail=null, setData, errors,placeholder }) {
                         <PhotoIcon aria-hidden="true" className="mx-auto h-12 w-12 text-gray-300" />
                         <div className="mt-4 text-sm leading-6 text-gray-600">
                             <label
-                                htmlFor={name}
+                                labelfor={name}
                                 className="relative cursor-pointer rounded-md font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500"
                             >
                                 <span>{placeholder ?? "Upload Photo"}</span>

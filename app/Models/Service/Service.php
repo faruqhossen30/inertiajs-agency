@@ -3,6 +3,7 @@
 namespace App\Models\Service;
 
 use App\Models\Category;
+use App\Models\Feature;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -21,5 +22,13 @@ class Service extends Model
 
     public function categories(){
         return $this->belongsToMany(Category::class,'service_categories');
+    }
+    public function features(){
+
+        return $this->belongsToMany(Feature::class, 'service_features');
+    }
+    public function items(){
+
+        return $this->hasMany(ServiceFeature::class);
     }
 }

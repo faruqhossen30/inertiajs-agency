@@ -42,9 +42,11 @@ class ServicepageController extends Controller
         return Inertia::render('ServicePage', ['services' => $services, 'request' => $_GET]);
     }
 
-    function SingleService($slug): Response
+    function SingleService($slug)
     {
-        $service = Service::firstWhere('slug', $slug);
+        $service = Service::with('items.feature')->firstWhere('slug', $slug);
+
+        // return $service;
         return Inertia::render('SingleService', ['service' => $service]);
     }
 }

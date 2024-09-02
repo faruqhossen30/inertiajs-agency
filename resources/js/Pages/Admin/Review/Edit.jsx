@@ -42,17 +42,17 @@ export default function Create({ auth, review }) {
                                 <div className=" px-2 py-2 sm:px-6 lg:px-4 mx-auto">
 
                                 <div>
-                                <InputLabel isRequired={true} labelFor="name" />
+                                <InputLabel isRequired={true} labellabelfor="name" />
                                 <Input id="name" type="text" name="name" value={data.name} autoComplete="name" placeholder="name" onChange={(e) => setData('name', e.target.value)} />
                                 <p className="text-sm text-red-600 mt-2">{errors.name}</p>
                             </div>
                             <div>
-                                <InputLabel isRequired={true} labelFor="designation" />
+                                <InputLabel isRequired={true} labellabelfor="designation" />
                                 <Input id="designation" type="text" name="designation" value={data.designation} autoComplete="designation" placeholder="designation" onChange={(e) => setData('designation', e.target.value)} />
                                 <p className="text-sm text-red-600 mt-2">{errors.designation}</p>
                             </div>
                             <div>
-                                <InputLabel isRequired={true} labelFor="Review" />
+                                <InputLabel isRequired={true} labellabelfor="Review" />
                                 <textarea id="review" rows={5} type="file" name="review" placeholder="Write about Category." onChange={(e) => setData('review', e.target.value)}
                                     className="border py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600">{data.review}</textarea>
                                 <p className="text-sm text-red-600 mt-2">{errors.review}</p>
@@ -73,7 +73,7 @@ export default function Create({ auth, review }) {
                             </div>
                             <div className="px-2 py-2 sm:px-6 lg:px-4 mx-auto w-full">
                             <div>
-                                <InputLabel isRequired={true} labelFor="Rating" />
+                                <InputLabel isRequired={true} labellabelfor="Rating" />
                                 <select id="rating" name="rating" defaultValue={review.rating} className="py-2 px-4 pr-9 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
                                     onChange={(e) => setData('rating', e.target.value)}>
                                     <option value="1" >One Star</option>
@@ -88,14 +88,14 @@ export default function Create({ auth, review }) {
 
 
                             <div className="w-48 h-48 mb-2">
-                                <InputLabel isRequired={true} labelFor="Thumbnail" />
+                                <InputLabel isRequired={true} labellabelfor="Thumbnail" />
                                 <ThumbnailInput name="thumbnail" thumbnail={data.thumbnail} setData={setData} />
 
                             </div>
 
 
                             <div className='my-10'>
-                                <InputLabel isRequired={true} labelFor="date" />
+                                <InputLabel isRequired={true} labellabelfor="date" />
                                 <Input id="date" type="date" name="date" value={data.date} autoComplete="date" placeholder="date" onChange={(e) => setData('date', e.target.value)} />
                                 <p className="text-sm text-red-600 mt-2">{errors.date}</p>
                             </div>
