@@ -26,6 +26,9 @@ class ServiceFactory extends Factory
             'slug' => Str::slug($title),
             'description' => $this->faker->paragraph,
             'description_code' => 'some',
+            'basic_price' => rand(10,50),
+            'standard_price' => rand(50,100),
+            'premium_price' => rand(100,150),
         ];
     }
 }

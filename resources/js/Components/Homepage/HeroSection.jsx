@@ -20,7 +20,7 @@ export default function HeroSection() {
 
 
                 <div className="mt-5 max-w-5xl text-center mx-auto">
-                    <h1 className="block font-bold text-gray-800 text-3xl md:text-5xl lg:text-[80px] dark:text-gray-200">
+                    <h1 className="block font-bold text-gray-800 text-3xl sm:text-4xl md:text-5xl lg:text-[80px] dark:text-gray-200">
 
                         <span className="bg-clip-text bg-gradient-to-tl from-blue-600 to-violet-600 text-transparent">Digital Marketing Agency</span>
                          <span className="bg-clip-text bg-gradient-to-tl from-blue-600 to-violet-600 text-transparent">  </span> Innovate Your World

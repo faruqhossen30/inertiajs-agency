@@ -7,6 +7,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DataController;
 use App\Http\Controllers\FaqpageController;
 use App\Http\Controllers\HomepageController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServicepageController;
 use App\Http\Controllers\TeamPageController;
@@ -35,6 +36,7 @@ Route::get('teams', [TeamPageController::class, 'teamPage'])->name('teampage');
 Route::get('services', [ServicepageController::class, 'index'])->name('servicepage');
 Route::get('services/{slug}', [ServicepageController::class, 'SingleService'])->name('single.service');
 
+Route::get('order/{id}',[OrderController::class,'order'])->name('order');
 Route::get('blogs', [BlogpageController::class, 'index'])->name('blogpage');
 Route::get('blog/{slug}', [BlogpageController::class, 'singleBlog'])->name('single.blog');
 Route::get('auth/google', [GoogleauthController::class, 'redirect'])->name('google-auth');

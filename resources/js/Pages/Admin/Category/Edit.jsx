@@ -5,11 +5,12 @@ import Input from '@/Components/Form/Input';
 import SubmitButton from '@/Components/Form/SubmitButton';
 import InputLabel from '@/Components/Form/InputLabel';
 import BreadcumComponent from '@/Components/Dashboard/BreadcumComponent';
+import ImageFile from '@/Components/Form/ImageFile';
 
 
 export default function Create({ auth, category }) {
     console.log(category);
-    const { data, setData, put,post, processing, errors, reset } = useForm({
+    const { data, setData, put, post, processing, errors, reset } = useForm({
         name: category.name,
         description: category.description,
         status: category.status,
@@ -46,10 +47,16 @@ export default function Create({ auth, category }) {
                                 <p className="text-sm text-red-600 mt-2">{errors.description}</p>
                             </div>
 
-                            <div>
+                            {/* <div>
                                 <InputLabel isRequired={true} labelFor="thumbnail" />
                                 <input id="thumbnail" type="file" name="thumbnail" placeholder="thumbnail" onChange={(e) => setData('thumbnail', e.target.files[0])} />
                                 <p className="text-sm text-red-600 mt-2">{errors.thumbnail}</p>
+                            </div> */}
+
+
+                            <div>
+                                <InputLabel isRequired={true} labelFor="thumbnail" />
+                                <ImageFile name="thumbnail" setData={setData} errors={errors} placeholder="Feature Photo" />
                             </div>
 
                             <div>

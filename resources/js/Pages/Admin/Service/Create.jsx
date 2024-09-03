@@ -17,8 +17,10 @@ import ImageFile from '@/Components/Form/ImageFile';
 export default function Create({ auth, packages, categories }) {
     const { data, setData, post, processing, errors, reset } = useForm({
         title: '',
-        short_description: '',
         description_code: '',
+        basic_price: '',
+        standard_price: '',
+        premium_price: '',
         description: '',
         thumbnail: null,
         package: [],
@@ -43,7 +45,7 @@ export default function Create({ auth, packages, categories }) {
                         <div className="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-gray-800 dark:border-neutral-700 dark:shadow-neutral-700/70">
                             <div className="bg-gray-100 border-b rounded-t-xl py-3 px-4 md:py-4 md:px-5 dark:bg-gray-800 dark:border-neutral-700">
                                 <p className="mt-1 text-sm text-gray-500 dark:text-neutral-500">
-                                    Category Create
+                                    Service Create
                                 </p>
                             </div>
                             <div className="p-4 md:p-5">
@@ -53,16 +55,6 @@ export default function Create({ auth, packages, categories }) {
                                         <Input id="title" type="text" name="title" value={data.title} autoComplete="title" placeholder="Title" onChange={(e) => setData('title', e.target.value)} />
                                         <p className="text-sm text-red-600 mt-2">{errors.title}</p>
                                     </div>
-
-                                    {/* <div>
-                                        <InputLabel isRequired={true} labelFor="thumbnail" />
-                                        <input id="thumbnail" type="file" name="thumbnail" placeholder="thumbnail" onChange={(e) => setData('thumbnail', e.target.files[0])} />
-                                        <p className="text-sm text-red-600 mt-2">{errors.thumbnail}</p>
-                                    </div> */}
-                                    <div>
-                                    <ImageFile name="thumbnail" setData={setData} errors={errors} placeholder="Feature Photo" />
-                                    </div>
-
                                     <div>
                                         <InputLabel isRequired={true} labelFor="Description" />
                                         <RichTextEditor setData={setData} data={data} />
@@ -76,15 +68,16 @@ export default function Create({ auth, packages, categories }) {
                         <div className="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-gray-800 dark:border-neutral-700 dark:shadow-neutral-700/70">
                             <div className="bg-gray-100 border-b rounded-t-xl py-3 px-4 md:py-4 md:px-5 dark:bg-gray-800 dark:border-neutral-700">
                                 <p className="mt-1 text-sm text-gray-500 dark:text-neutral-500">
-                                    Category Create
+                                    Service Create
                                 </p>
                             </div>
                             <div className="px-2 py-2 sm:px-6 lg:px-4 mx-auto w-full">
+
                                 <div>
                                     <InputLabel isRequired={true} labelFor="thumbnail" />
-                                    <input id="thumbnail" type="file" name="thumbnail" placeholder="thumbnail" onChange={(e) => setData('thumbnail', e.target.files[0])} />
-                                    <p className="text-sm text-red-600 mt-2">{errors.thumbnail}</p>
+                                    <ImageFile name="thumbnail" setData={setData} errors={errors} placeholder="Feature Photo" />
                                 </div>
+
                                 <div>
                                     <InputLabel isRequired={true} labelFor="status" />
                                     <select id="status" name="status" className="py-2 px-4 pr-9 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
@@ -95,7 +88,22 @@ export default function Create({ auth, packages, categories }) {
                                     <p className="text-sm text-red-600 mt-2">{errors.status}</p>
                                 </div>
 
-                                <div className='space-y-2'>
+                                <div>
+                                    <InputLabel isRequired={true} labelFor="basic price" />
+                                    <Input id="basicprice" type="integer" name="premium_price" value={data.basic_price} autoComplete="basic_price" placeholder="basic" onChange={(e) => setData('basic_price', e.target.value)} />
+                                    <p className="text-sm text-red-600 mt-2">{errors.basic_price}</p>
+                                </div>
+                                <div>
+                                    <InputLabel isRequired={true} labelFor="standard price" />
+                                    <Input id="standard_price" type="integer" name="standard_price" value={data.standard_price} autoComplete="standard_price" placeholder="standard" onChange={(e) => setData('standard_price', e.target.value)} />
+                                    <p className="text-sm text-red-600 mt-2">{errors.standard_price}</p>
+                                </div>
+                                <div>
+                                    <InputLabel isRequired={true} labelFor="premium price" />
+                                    <Input id="premium_price" type="integer" name="premium_price" value={data.premium_price} autoComplete="premium_price" placeholder="premium" onChange={(e) => setData('premium_price', e.target.value)} />
+                                    <p className="text-sm text-red-600 mt-2">{errors.premium_price}</p>
+                                </div>
+                                {/* <div className='space-y-2'>
                                     {
                                         packages.map((pack, index) => {
                                             return <div className="flex" key={index}>
@@ -106,7 +114,7 @@ export default function Create({ auth, packages, categories }) {
                                     }
 
 
-                                </div>
+                                </div> */}
 
                                 <InputLabel isRequired={true} labelFor="Category" />
                                 <Select

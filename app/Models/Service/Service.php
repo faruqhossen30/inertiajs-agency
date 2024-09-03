@@ -17,7 +17,10 @@ class Service extends Model
         'thumbnail',
         'short_description',
         'description',
-        'description_code'
+        'description_code',
+        'basic_price',
+        'standard_price',
+        'premium_price',
     ];
 
     public function categories(){

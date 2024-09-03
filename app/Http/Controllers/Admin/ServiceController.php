@@ -44,11 +44,14 @@ class ServiceController extends Controller
         ]);
 
         $data = [
-            'title' => $request->title,
-            'slug' => Str::slug($request->name),
+            'title'             => $request->title,
+            'slug'              => Str::slug($request->name),
             'short_description' => $request->short_description,
-            'description_code' => $request->description_code,
-            'description' => $request->description,
+            'description_code'  => $request->description_code,
+            'description'       => $request->description,
+            'basic_price'       => $request->basic_price,
+            'standard_price'    => $request->standard_price,
+            'premium_price'     => $request->premium_price,
         ];
         if ($request->file('thumbnail')) {
             $file_name = $request->file('thumbnail')->store('service');

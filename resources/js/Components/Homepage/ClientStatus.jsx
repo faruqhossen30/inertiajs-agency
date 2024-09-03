@@ -24,7 +24,7 @@ function ClientStatus() {
             <div className="container max-w-7xl grid grid-cols-12 gap-8">
                 {
                     status.map((item, index) => {
-                        return <div key={index} className="col-span-3 space-y-5 px-5 py-10 border text-center rounded-lg shadow text-gray-800 hover:translate-y-6 transition-all duration-700 ">
+                        return <div key={index} className="col-span-3 sm:col-span-6 md:col-span-6 lg:col-span-4 xl:col-span-3 space-y-5 px-5 py-10 border text-center rounded-lg shadow text-gray-800 hover:translate-y-6 transition-all duration-700 ">
                             <span className="text-center flex justify-center">{icons[index]}</span>
                             <h3 className="text-4xl font-bold">{item.title}+</h3>
                             <p className="text-2xl font-bold">{item.text}</p>

@@ -18,7 +18,10 @@ return new class extends Migration
             $table->string('thumbnail')->nullable();
             $table->string('short_description',2000)->nullable();
             $table->longText('description')->nullable();
-            $table->longText('description_code');
+            $table->longText('description_code')->nullable();
+            $table->integer('basic_price')->nullable();
+            $table->integer('standard_price')->nullable();
+            $table->integer('premium_price')->nullable();
             $table->timestamps();
         });
     }

@@ -5,6 +5,7 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import InputLabel from '@/Components/Form/InputLabel';
 import Input from '@/Components/Form/Input';
 import SubmitButton from '@/Components/Form/SubmitButton';
+import ImageFile from '@/Components/Form/ImageFile';
 
 
 export default function Create({ auth }) {
@@ -27,7 +28,7 @@ export default function Create({ auth }) {
             <div className="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-gray-800 dark:border-neutral-700 dark:shadow-neutral-700/70">
                 <div className="bg-gray-100 border-b rounded-t-xl py-3 px-4 md:py-4 md:px-5 dark:bg-gray-800 dark:border-neutral-700">
                     <p className="mt-1 text-sm text-gray-500 dark:text-neutral-500">
-                    Package Create
+                        Package Create
                     </p>
                 </div>
                 <div className="p-4 md:p-5">
@@ -39,13 +40,16 @@ export default function Create({ auth }) {
                                 <p className="text-sm text-red-600 mt-2">{errors.name}</p>
                             </div>
 
-                            <div>
+                            {/* <div>
                                 <InputLabel isRequired={true} labelFor="thumbnail" />
                                 <input id="thumbnail" type="file" name="thumbnail"  placeholder="thumbnail" onChange={(e) => setData('thumbnail', e.target.files[0])} />
                                 <p className="text-sm text-red-600 mt-2">{errors.thumbnail}</p>
+                            </div> */}
+
+                            <div>
+                                <InputLabel isRequired={true} labelFor="thumbnail" />
+                                <ImageFile name="thumbnail" setData={setData} errors={errors} placeholder="Feature Photo" />
                             </div>
-
-
                             <SubmitButton />
                         </form>
                     </div>

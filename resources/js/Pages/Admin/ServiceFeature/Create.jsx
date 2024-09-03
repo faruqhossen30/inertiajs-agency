@@ -9,10 +9,6 @@ import SubmitButton from '@/Components/Form/SubmitButton';
 import Select from 'react-select'
 import { useState } from 'react';
 
-
-
-
-
 export default function Create({ auth, services, features,service}) {
     const {parmas} = usePage().props;
     console.log(service);
@@ -32,10 +28,6 @@ export default function Create({ auth, services, features,service}) {
             }
         });
         console.log(data);
-
-
-
-
     }
     // Feature checkbox
     const [feature, setFeature] = useState([]);
@@ -141,9 +133,6 @@ export default function Create({ auth, services, features,service}) {
                                     </span>
                                 </div>
                             </th>
-
-
-
                         </tr>
                     </thead>
 
@@ -156,7 +145,7 @@ export default function Create({ auth, services, features,service}) {
                                         <span className="text-sm text-gray-600 dark:text-gray-400">{index + 1}</span>
                                     </div>
                                 </td>
-                                <td className="h-px w-px whitespace-nowrap">
+                                <td className="px-6 whitespace-nowrap">
                                     <input type="checkbox" name={`featureid[${item.id}]`} value={item.id} onChange={featueCheckboxChange} />
                                 </td>
                                 <td className="h-px w-px whitespace-nowrap">
@@ -169,22 +158,17 @@ export default function Create({ auth, services, features,service}) {
                                         <span className="text-sm text-gray-600 dark:text-gray-400">{item.category.name}</span>
                                     </div>
                                 </td>
-                                <td className="h-px w-px whitespace-nowrap">
+                                <td className="px-10 whitespace-nowrap">
                                     <input type="checkbox" name={`basic[${item.id}]`} value={item.id} onChange={basicCheckboxChange} />
                                 </td>
-                                <td className="h-px w-px whitespace-nowrap">
+                                <td className="px-12 whitespace-nowrap">
                                     <input type="checkbox" name={`standart[${item.id}]`} value={item.id} onChange={standardCheckboxChange} />
-
                                 </td>
-                                <td className="h-px w-px whitespace-nowrap">
+                                <td className="px-12 whitespace-nowrap">
                                     <input type="checkbox" name={`premium[${item.id}]`} value={item.id} onChange={premiumCheckboxChange} />
                                 </td>
                             </tr>
-                        })
-
-                        }
-
-
+                        })}
                     </tbody>
                 </table>
                 <SubmitButton />
