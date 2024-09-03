@@ -11,7 +11,7 @@ class OrderController extends Controller
     public function order($id)
     {
         $service = Service::firstWhere('id', $id);
-        return   $service;
+        // return   $service;
         return Inertia::render('Order',['service'=>$service]);
     }
 }

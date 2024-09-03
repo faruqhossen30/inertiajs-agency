@@ -11,7 +11,7 @@ export default function Header() {
             <nav className="container relative w-full mx-auto sm:flex sm:items-center sm:justify-between" aria-label="Global">
                 <div className="flex items-center justify-between">
                     <Link href={route('homepage')} className="flex-none text-xl font-semibold dark:text-gray-400" aria-label="Brand">
-                        <img src="./boostcareit.png" className="h-10 rounded-lg" alt="" />
+                        <img src={window.location.origin+'/boostcareit.png'} className="h-10 rounded-lg" alt="" />
                         {/* Boost Care IT */}
                     </Link>
                     <div className="sm:hidden">

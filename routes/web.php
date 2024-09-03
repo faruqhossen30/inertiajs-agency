@@ -31,6 +31,7 @@ Route::get('/', [HomepageController::class, 'index'])->name('homepage');
 
 Route::get('faq', [FaqpageController::class, 'index'])->name('faq.page');
 Route::get('contact', [ContactController::class, 'index'])->name('contact');
+Route::get('contact/calendy', [ContactController::class, 'calendy'])->name('calendypage');
 Route::get('about-us', [AboutpageController::class, 'index'])->name('aboutpage');
 Route::get('teams', [TeamPageController::class, 'teamPage'])->name('teampage');
 Route::get('services', [ServicepageController::class, 'index'])->name('servicepage');

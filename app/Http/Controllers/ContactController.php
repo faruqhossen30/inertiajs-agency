@@ -8,7 +8,12 @@ use Inertia\Response;
 
 class ContactController extends Controller
 {
-    function index() : Response {
+    function index(): Response
+    {
         return Inertia::render('ContactPage');
+    }
+    function calendy(): Response
+    {
+        return Inertia::render('CalandyPage');
     }
 }

@@ -1,15 +1,17 @@
 import AppLayout from '@/Layouts/AppLayout';
-import { Head } from '@inertiajs/react';
+import { Head, usePage } from '@inertiajs/react';
 
 export default function FaqPage({ auth, user,service, laravelVersion, phpVersion }) {
 
+const {params} = usePage().props;
+console.log(params);
 
 
     return (
         <AppLayout>
 
 
-            <div className="grid grid-cols-12 gap-6">
+            <div className="container grid grid-cols-12 gap-6">
 
                 <div className="col-span-6">
                     <div className="py-10">

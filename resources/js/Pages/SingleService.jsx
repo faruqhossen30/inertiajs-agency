@@ -43,7 +43,7 @@ export default function SingleService({ service }) {
                             business</p>
 
                         <ul className="mt-7 space-y-2.5 text-sm">
-                            {service.items.map((feature, index) => {
+                            {service.items.slice(0, 5).map((feature, index) => {
                                 return <li className="flex gap-x-2" key={index}>
                                     {feature.basic == '1' ?
                                         <CheckIcon className="w-5 text-green-500" /> :
@@ -57,10 +57,10 @@ export default function SingleService({ service }) {
                             }
                         </ul>
 
-                        <a href={route('order', service.id)} className="mt-5 py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm  disabled:pointer-events-none   dark:bg-transparent dark:border-neutral-700 dark:text-neutral-300 hover:text-white dark:hover:bg-neutral-800 dark:focus:bg-neutral-800 hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50"
+                        <Link href={route('order', {id:service.id,package:'basic'})} className="mt-5 py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm  disabled:pointer-events-none   dark:bg-transparent dark:border-neutral-700 dark:text-neutral-300 hover:text-white dark:hover:bg-neutral-800 dark:focus:bg-neutral-800 hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50"
                         >
                             Order Now
-                        </a>
+                        </Link>
                         <a href="#comparebasic" className="text-blue-500 block mt-3  text-sm underline ">
                             Compare Now
                         </a>
@@ -75,7 +75,7 @@ export default function SingleService({ service }) {
                         <p className="mb-3"><span
                             className="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-lg text-xs uppercase font-semibold bg-blue-100 text-blue-800 dark:bg-blue-600 dark:text-white">Most
                             popular</span></p>
-                        <h4 className="font-medium text-lg text-gray-800 dark:text-neutral-200">Team</h4>
+                        <h4 className="font-medium text-lg text-gray-800 dark:text-neutral-200">Standard</h4>
                         <span className="mt-5 font-bold text-5xl text-gray-800 dark:text-neutral-200">
                             <span className="font-bold text-2xl pr-1">$</span>
                             {service.standard_price}
@@ -84,7 +84,7 @@ export default function SingleService({ service }) {
                             business</p>
 
                         <ul className="mt-7 space-y-2.5 text-sm">
-                            {service.items.map((feature, index) => {
+                            {service.items.slice(0, 5).map((feature, index) => {
                                 return <li className="flex gap-x-2" key={index}>
                                     {feature.standard == '1' ?
                                         <CheckIcon className="w-5 text-green-500" /> :
@@ -99,10 +99,10 @@ export default function SingleService({ service }) {
 
                         </ul>
 
-                        <a href={route('order', service.id)} className="mt-5 py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm  disabled:pointer-events-none   dark:bg-transparent dark:border-neutral-700 dark:text-neutral-300 hover:text-white dark:hover:bg-neutral-800 dark:focus:bg-neutral-800 hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50"
+                        <Link href={route('order', {id:service.id,package:'standard'})} className="mt-5 py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm  disabled:pointer-events-none   dark:bg-transparent dark:border-neutral-700 dark:text-neutral-300 hover:text-white dark:hover:bg-neutral-800 dark:focus:bg-neutral-800 hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50"
                         >
                             Order Now
-                        </a>
+                        </Link>
 
                         <a href="#comparebasic" className="text-blue-500 block mt-3  text-sm underline ">
                             Compare Now
@@ -113,7 +113,7 @@ export default function SingleService({ service }) {
 
                     <div
                         className="flex flex-col border-2 hover:border-blue-600 text-center shadow-xl rounded-xl p-8 dark:border-blue-700">
-                        <h4 className="font-medium text-lg text-gray-800 dark:text-neutral-200">Enterprise</h4>
+                        <h4 className="font-medium text-lg text-gray-800 dark:text-neutral-200">Premium</h4>
                         <span className="mt-5 font-bold text-5xl text-gray-800 dark:text-neutral-200">
                             <span className="font-bold text-2xl pr-1">$</span>
                             {service.premium_price}
@@ -122,7 +122,7 @@ export default function SingleService({ service }) {
                             business</p>
 
                         <ul className="mt-7 space-y-2.5 text-sm">
-                            {service.items.map((feature, index) => {
+                            {service.items.slice(0, 5).map((feature, index) => {
                                 return <li className="flex gap-x-2" key={index}>
                                     {feature.premium == '1' ?
                                         <CheckIcon className="w-5 text-green-500" /> :
@@ -136,10 +136,10 @@ export default function SingleService({ service }) {
                             }
                         </ul>
 
-                        <a href={route('order', service.id)} className="mt-5 py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm  disabled:pointer-events-none   dark:bg-transparent dark:border-neutral-700 dark:text-neutral-300 hover:text-white dark:hover:bg-neutral-800 dark:focus:bg-neutral-800 hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50"
+                        <Link href={route('order', {id:service.id,package:'premium'})} className="mt-5 py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm  disabled:pointer-events-none   dark:bg-transparent dark:border-neutral-700 dark:text-neutral-300 hover:text-white dark:hover:bg-neutral-800 dark:focus:bg-neutral-800 hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50"
                         >
                             Order Now
-                        </a>
+                        </Link>
 
                         <a href="#comparebasic" className="text-blue-500 block mt-3  text-sm underline ">
                             Compare Now
@@ -1270,59 +1270,60 @@ export default function SingleService({ service }) {
                                     <th className="py-3 ps-6 bg-gray-50 font-bold text-gray-800 text-start dark:bg-neutral-800 dark:text-white"
                                         colSpan="5" scope="colgroup">Financial data</th>
                                 </tr>
+                                {service.items.map((feature, index) => {
+                                    return <tr>
+                                        <th className="py-5 ps-6 pe-6 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
+                                            scope="row">{feature.feature.title}</th>
 
-                                <tr>
-                                    <th className="py-5 ps-6 pe-6 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                        scope="row">Open/High/Low/Close</th>
+                                        <td className="py-5 px-6">
 
-                                    <td className="py-5 px-6">
+                                            {feature.basic == '1' ?
+                                                <CheckIcon className="mx-auto w-5 text-green-500" /> :
+                                                <MinusIcon className="mx-auto w-5" />}
 
-                                        <svg className="mx-auto shrink-0 size-5 text-blue-600 dark:text-blue-500"
-                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                            strokeLinecap="round" strokeLinejoin="round">
-                                            <polyline points="20 6 9 17 4 12" />
-                                        </svg>
+                                            <span className="sr-only">Included in Free</span>
+                                        </td>
 
-                                        <span className="sr-only">Included in Free</span>
+                                        <td className="py-5 px-6">
+
+                                            {feature.standard == '1' ?
+                                                <CheckIcon className="mx-auto w-5 text-green-500" /> :
+                                                <MinusIcon className="mx-auto w-5" />}
+
+                                            <span className="sr-only">Included in Startup</span>
+                                        </td>
+
+
+
+                                        <td className="py-5 px-6">
+
+                                            {feature.premium == '1' ?
+                                                <CheckIcon className="mx-auto w-5 text-green-500" /> :
+                                                <MinusIcon className="mx-auto w-5" />}
+                                            <span className="sr-only">Included in Enterprise</span>
+                                        </td>
+                                    </tr>
+                                })
+                                }
+                                <tr className="text-center">
+                                    <td></td>
+                                    <td>
+                                        <Link href={route('order',{id:service.id,package:'basic'})} className="mt-5 py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm  disabled:pointer-events-none   dark:bg-transparent dark:border-neutral-700 dark:text-neutral-300 hover:text-white dark:hover:bg-neutral-800 dark:focus:bg-neutral-800 hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50">
+                                            Order Now
+                                        </Link>
                                     </td>
-
-                                    <td className="py-5 px-6">
-
-                                        <svg className="mx-auto shrink-0 size-5 text-blue-600 dark:text-blue-500"
-                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                            strokeLinecap="round" strokeLinejoin="round">
-                                            <polyline points="20 6 9 17 4 12" />
-                                        </svg>
-
-                                        <span className="sr-only">Included in Startup</span>
+                                    <td>
+                                        <Link href={route('order', {id:service.id,package:'standard'})} className="mt-5 py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm  disabled:pointer-events-none   dark:bg-transparent dark:border-neutral-700 dark:text-neutral-300 hover:text-white dark:hover:bg-neutral-800 dark:focus:bg-neutral-800 hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50">
+                                            Order Now
+                                        </Link>
                                     </td>
-
-                                    <td className="py-5 px-6">
-
-                                        <svg className="mx-auto shrink-0 size-5 text-blue-600 dark:text-blue-500"
-                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                            strokeLinecap="round" strokeLinejoin="round">
-                                            <polyline points="20 6 9 17 4 12" />
-                                        </svg>
-
-                                        <span className="sr-only">Included in Team</span>
-                                    </td>
-
-                                    <td className="py-5 px-6">
-
-                                        <svg className="mx-auto shrink-0 size-5 text-blue-600 dark:text-blue-500"
-                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                            strokeLinecap="round" strokeLinejoin="round">
-                                            <polyline points="20 6 9 17 4 12" />
-                                        </svg>
-
-                                        <span className="sr-only">Included in Enterprise</span>
+                                    <td>
+                                        <Link href={route('order', {id:service.id,package:'premium'})} className="mt-5 py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm  disabled:pointer-events-none   dark:bg-transparent dark:border-neutral-700 dark:text-neutral-300 hover:text-white dark:hover:bg-neutral-800 dark:focus:bg-neutral-800 hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50">
+                                            Order Now
+                                        </Link>
                                     </td>
                                 </tr>
+
                             </tbody>
                         </table>
                     </div>

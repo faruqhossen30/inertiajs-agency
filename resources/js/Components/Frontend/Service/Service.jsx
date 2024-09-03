@@ -7,7 +7,7 @@ export default function Service({service}) {
         <div className="col-span-6 md:col-span-4">
             <Link href={route('single.service',service.slug)} className="flex flex-col group bg-white border shadow-sm rounded-md overflow-hidden hover:shadow-lg transition dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7]" >
                 <div className=" overflow-hidden">
-                    <img className="w-full object-fill group-hover:scale-105 transition-transform duration-500 ease-in-out" src="./marketing.png" alt="Image Description" />
+                    <img className="w-full object-fill group-hover:scale-105 transition-transform duration-500 ease-in-out" src={service.thumbnail ? window.location.origin + '/storage/' + service.thumbnail : './marketing.png'} alt="Image Description" />
                 </div>
                 <div className="text-center">
                     <h3 className="text-lg font-bold text-gray-800 dark:text-gray-400 py-3">
@@ -29,10 +29,10 @@ export default function Service({service}) {
 
                 </div>
                 <div className="flex items-center justify-between p-3 border-t sm:px-5 dark:border-gray-700">
-                    <span className="font-bold text-gray-800 dark:text-gray-400">Start $10</span>
-                    <button type="button" className="py-2 px-4 inline-flex justify-center items-center gap-2 rounded-md border-2 border-gray-200 font-semibold text-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-200 focus:ring-offset-2 transition-all text-sm  dark:hover:bg-gray-600 dark:border-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-600 dark:focus:ring-offset-gray-800">
-                        Order Now !
-                    </button>
+                    <span className="font-bold text-gray-800 dark:text-gray-400">Start ${service.basic_price}</span>
+                    <Link href={route('single.service',service.slug)} className="py-2 px-4 inline-flex justify-center items-center gap-2 rounded-md border-2 border-gray-200 font-semibold text-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-200 focus:ring-offset-2 transition-all text-sm  dark:hover:bg-gray-600 dark:border-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-600 dark:focus:ring-offset-gray-800">
+                       View more
+                    </Link>
                 </div>
             </Link>
         </div>

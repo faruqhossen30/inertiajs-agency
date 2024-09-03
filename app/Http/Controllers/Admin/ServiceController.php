@@ -45,7 +45,7 @@ class ServiceController extends Controller
 
         $data = [
             'title'             => $request->title,
-            'slug'              => Str::slug($request->name),
+            'slug'              => Str::slug($request->title),
             'short_description' => $request->short_description,
             'description_code'  => $request->description_code,
             'description'       => $request->description,

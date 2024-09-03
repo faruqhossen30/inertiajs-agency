@@ -139,6 +139,8 @@ export default function Create({ auth, services, features,service}) {
                     <tbody className="divide-y divide-gray-200 dark:divide-gray-700 space-y-5 ">
 
                         {features.map((item, index) => {
+                            console.log(item);
+
                             return <tr key={index} className="items-center">
                                 <td className="h-px w-px whitespace-nowrap">
                                     <div className="px-6 py-2">
@@ -155,7 +157,7 @@ export default function Create({ auth, services, features,service}) {
                                 </td>
                                 <td className="h-px w-px whitespace-nowrap">
                                     <div className="px-6 py-2">
-                                        <span className="text-sm text-gray-600 dark:text-gray-400">{item.category.name}</span>
+                                        <span className="text-sm text-gray-600 dark:text-gray-400">{item.category_id && item.category.name}</span>
                                     </div>
                                 </td>
                                 <td className="px-10 whitespace-nowrap">
