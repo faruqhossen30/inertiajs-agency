@@ -20,16 +20,16 @@ export default function ServiceSection({ categories }) {
                 </div>
                 <div className="grid grid-cols-12 2xl:grid-cols-12 gap-8 py-10">
                     {categories.map((item, index) => {
-                        return <div key={index} className="group col-span-12 sm:col-span-6 md:col-span-6 lg:col-span-6 xl:col-span-3 2xl:col-span-3 border-2 border-gray-200 hover:border-blue-200 hover:shadow-blue-100 hover:scale-105 hover:transition-all duration-700 rounded-md shadow-lg ">
+                        return <div key={index} className="group col-span-12 sm:col-span-6 md:col-span-6 lg:col-span-6 xl:col-span-3 2xl:col-span-3 border-2 dark:border-gray-700  dark:hover:shadow-xl  hover:shadow-gray-500 hover:border-blue-200 hover:scale-105 hover:transition-all duration-700 rounded-md shadow-lg ">
                             <div className="space-y-5 px-8 py-8 ">
                                 <div className="flex justify-center">
-                                    <img src={window.location.origin + '/storage/' + item.thumbnail} className="w-16 h-16" alt={item.name} />
+                                    <img src={window.location.origin + '/storage/' + item.thumbnail} className="w-16 h-16 dark:text-gray-400" alt={item.name} />
                                 </div>
                                 <div className="flex justify-center">
-                                    <span className="text-3xl sm:text-xl font-extrabold ">{item.name}</span>
+                                    <span className="text-3xl sm:text-xl dark:text-gray-400 font-extrabold ">{item.name}</span>
                                 </div>
                                 <div className="flex justify-center text-center">
-                                    <p className='text-md text-gray-800  font-medium'>
+                                    <p className='text-md text-gray-800  dark:text-gray-400 font-medium'>
                                         {item.description}
                                     </p>
                                 </div>

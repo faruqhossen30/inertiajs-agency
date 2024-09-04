@@ -33,6 +33,7 @@ export default function Header() {
                         <Link href={route('contact')} className="font-medium text-gray-500 hover:text-blue-600 sm:py-6 dark:text-gray-400 dark:hover:text-gray-500" >Contact</Link>
                         <Link href={route('servicepage')} className="font-medium text-gray-800 hover:text-blue-600 sm:py-6 dark:text-gray-400 dark:hover:text-gray-500" >Service</Link>
                         <Link href={route('blogpage')} className="font-medium text-gray-500 hover:text-blue-600 sm:py-6 dark:text-gray-400 dark:hover:text-gray-500" >Blog</Link>
+                        <Link href={route('teampage')} className="font-medium text-gray-500 hover:text-blue-600 sm:py-6 dark:text-gray-400 dark:hover:text-gray-500" >Teams</Link>
                         <Link href={route('aboutpage')} className="font-medium text-gray-500 hover:text-blue-600 sm:py-6 dark:text-gray-400 dark:hover:text-gray-500" >About Us</Link>
                         <Switcher />
                         {

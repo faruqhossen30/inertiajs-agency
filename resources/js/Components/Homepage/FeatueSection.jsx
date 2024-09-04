@@ -18,16 +18,16 @@ function FeatueSection() {
     return (
 
         <div className="container px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto space-y-10">
-            <h2 className="text-5xl font-bold text-center capitalize">What we are different</h2>
+            <h2 className="text-5xl font-bold text-center capitalize dark:text-gray-400">What we are different</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-2  gap-6">
 
                 {
                     features.map((feature, index) => {
-                        return <div key={index} className="group md:flex  gap-y-6 size-full space-x-5 bg-gray-50 focus:outline-none focus:bg-gray-100 rounded-lg p-3 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800 border hover:scale-105 transition-all">
+                        return <div key={index} className="group md:flex  gap-y-6 size-full space-x-5 bg-gray-50 focus:outline-none focus:bg-gray-100 dark:bg-slate-800 rounded-lg p-3 dark:hover:bg-slate-900 dark:focus:bg-neutral-800 border-2 hover:scale-105  dark:border-gray-700 transition-all">
                             <span className="sm:flex md:flex-none justify-center">{icons[index]}</span>
                             <div>
                                 <div className="space-y-2">
-                                    <h3 className="block font-bold text-xl text-gray-800 dark:text-white">{feature.title}</h3>
+                                    <h3 className="block font-bold text-xl text-gray-800 dark:text-gray-400">{feature.title}</h3>
                                     <p className="text-gray-600 dark:text-neutral-400">{feature.description}</p>
                                 </div>
 

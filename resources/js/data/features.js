@@ -22,7 +22,7 @@ export const features = [
     {
         "id": 5,
         "title": "Working together using a combined plan.",
-        "description": "What makes us amazing is our team's effort to turn cool ideas into successful online businesses with smart planning."
+        "description": "Our incredible digital plan turns creative ideas into successful online businesses. By working together, we bring your ideas to life, helping you grow and thrive in the online world. Let's make it happen!"
     },
     {
         "id": 6,

@@ -21,18 +21,7 @@ function UserSidebarComponent() {
                     <span>Profile</span>
                 </Link>
             </li>
-            <li className="inline-flex items-center text-sm font-medium text-gray-800 dark:text-gray-400">
-                <Link href={route('user.post.create')} className="flex space-x-2 py-2 px-3 hover:bg-gray-300 dark:hover:bg-slate-900 w-full">
-                    <PlusIcon className="w-4 h-4" />
-                    <span>Add Post</span>
-                </Link>
-            </li>
-            <li className="inline-flex items-center text-sm font-medium text-gray-800 dark:text-gray-400">
-                <Link href="#" className="flex space-x-2 py-2 px-3 hover:bg-gray-300 dark:hover:bg-slate-900 w-full">
-                    <ListBulletIcon className="w-4 h-4" />
-                    <span>My Post</span>
-                </Link>
-            </li>
+
         </ul>
     )
 }

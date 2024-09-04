@@ -78,7 +78,7 @@ export default function Create({ auth, services, features,service}) {
             <BreadcumComponent pageOne="Service Feature" pageOneRoute="service.index" />
 
             <form onSubmit={submit} className="">
-                <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700 bg-white p-5 border">
+                <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700 bg-white dark:border-gray-700 p-5 border">
                     <thead className="bg-gray-50 dark:bg-slate-800">
                         <tr>
                             <th scope="col" className="px-6 py-3 text-left">
@@ -141,7 +141,7 @@ export default function Create({ auth, services, features,service}) {
                         {features.map((item, index) => {
                             console.log(item);
 
-                            return <tr key={index} className="items-center">
+                            return <tr key={index} className="items-center dark:bg-slate-900 dark:border-gray-700">
                                 <td className="h-px w-px whitespace-nowrap">
                                     <div className="px-6 py-2">
                                         <span className="text-sm text-gray-600 dark:text-gray-400">{index + 1}</span>

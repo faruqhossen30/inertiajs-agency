@@ -5,269 +5,68 @@ export default function AboutPage({ auth, user, laravelVersion, phpVersion }) {
 
     return (
         <AppLayout>
-            <Head title="About Us" />
+            <Head title="About Us" className="" />
 
-            <section className="py-16">
-  <div className="container px-4 mx-auto">
-    <div className="flex flex-wrap mb-32 mt-14 -mx-8">
-      <div className="w-full lg:w-1/2 px-8">
-        <div className="flex items-center justify-between flex-wrap gap-4 mb-14">
-          <div className="py-1 px-3 rounded-lg border border-orange-100 bg-orange-50 flex items-center gap-2">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width={8}
-              height={8}
-              viewBox="0 0 8 8"
-              fill="none"
-            >
-              <circle cx={4} cy={4} r={3} fill="#FF7100" />
-            </svg>
-            <span className="text-orange-500 text-sm font-medium">
-              About Us
-            </span>
-          </div>
-          <div className="flex items-center flex-wrap gap-3">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width={16}
-              height={16}
-              viewBox="0 0 16 16"
-              fill="none"
-            >
-              <circle cx={8} cy={8} r={5} stroke="#6F0B45" strokeWidth="1.25" />
-              <circle
-                cx={8}
-                cy={8}
-                r="7.375"
-                stroke="#FFC96D"
-                strokeWidth="1.25"
-              />
-              <circle cx={8} cy={8} r={3} fill="#FF7100" />
-            </svg>
-            <span className="text-sm font-semibold">Meet Solstice</span>
-          </div>
-        </div>
-        <img
-          className="rounded-3xl w-full mb-8"
-          src="solstice-assets/images/about/picture4.png"
-          alt=""
-        />
-      </div>
-      <div className="w-full lg:w-1/2 px-8">
-        <h1 className="text-5xl lg:text-7xl font-bold font-heading mb-10 max-w-xs lg:max-w-lg">
-          On a mission to make learning fun
-        </h1>
-        <p className="text-gray-600 text-lg">
-          We are driven to transform the landscape of learning into a
-          captivating journey of excitement and discovery. Our aim is to infuse
-          every educational experience with the essence of joy, making learning
-          an immersive adventure that fuels curiosity and fosters growth.
-        </p>
-      </div>
-    </div>
-    <div className="border border-gray-200 bg-white rounded-3xl flex flex-wrap mb-32">
-      <div className="w-full md:w-1/2 lg:w-1/4 py-8">
-        <div className="md:border-r border-gray-200 px-12">
-          <p className="text-gray-600 mb-2 text-center">Founded</p>
-          <h2 className="text-4xl lg:text-5xl font-semibold text-center">
-            2023
-          </h2>
-        </div>
-      </div>
-      <div className="w-full md:w-1/2 lg:w-1/4 py-8">
-        <div className="lg:border-r border-gray-200 px-12">
-          <p className="text-gray-600 mb-2 text-center">Total funding</p>
-          <h2 className="text-4xl lg:text-5xl font-semibold text-center">
-            $9.6M
-          </h2>
-        </div>
-      </div>
-      <div className="w-full md:w-1/2 lg:w-1/4 py-8">
-        <div className="md:border-r border-gray-200 px-12">
-          <p className="text-gray-600 mb-2 text-center">Team members</p>
-          <h2 className="text-4xl lg:text-5xl font-semibold text-center">
-            110
-          </h2>
-        </div>
-      </div>
-      <div className="w-full md:w-1/2 lg:w-1/4 py-8">
-        <div className="px-12">
-          <p className="text-gray-600 mb-2 text-center">Nationalities</p>
-          <h2 className="text-4xl lg:text-5xl font-semibold text-center">24</h2>
-        </div>
-      </div>
-    </div>
-    <div className="flex flex-wrap mb-32 -mx-8">
-      <div className="w-full lg:w-1/2 px-8">
-        <h2 className="text-3xl lg:text-5xl font-bold font-heading mb-20 max-w-xs lg:max-w-lg">
-          A company with values
-        </h2>
-        <img
-          className="rounded-3xl w-full mb-8"
-          src="solstice-assets/images/about/picture2.png"
-          alt=""
-        />
-        <img
-          className="rounded-3xl w-full mb-8"
-          src="solstice-assets/images/about/picture5.png"
-          alt=""
-        />
-      </div>
-      <div className="w-full lg:w-1/2 px-8">
-        <img
-          className="rounded-3xl w-full mb-24"
-          src="solstice-assets/images/about/picture3.png"
-          alt=""
-        />
-        <p className="text-gray-600 text-lg mb-10">
-          Diversity, inclusion, and belonging are fundamental to our success. We
-          believe the best solutions occur when a plurality of backgrounds,
-          experiences, and identities work together.
-        </p>
-        <p className="text-gray-600 text-lg">
-          All your operations are connected in a single platform, transforming
-          work into a visible, automated, and collaborative experience. At every
-          turn, you’re supported by smart suggestions and interventions that
-          understand your business and anticipate your needs.
-        </p>
-      </div>
-    </div>
-    <h2 className="text-center text-4xl lg:text-5xl mb-9 font-bold font-heading">
-      Our investors
-    </h2>
-    <div className="bg-gray-50 rounded-3xl mb-32 flex flex-wrap py-8">
-      <div className="w-full md:w-1/2 lg:w-1/3 py-8 px-16 flex justify-center items-center">
-        <img src="solstice-assets/images/logos/placeholder-logo1.png" alt="" />
-      </div>
-      <div className="w-full md:w-1/2 lg:w-1/3 py-8 px-16 flex justify-center items-center">
-        <img src="solstice-assets/images/logos/placeholder-logo2.png" alt="" />
-      </div>
-      <div className="w-full md:w-1/2 lg:w-1/3 py-8 px-16 flex justify-center items-center">
-        <img src="solstice-assets/images/logos/placeholder-logo3.png" alt="" />
-      </div>
-      <div className="w-full md:w-1/2 lg:w-1/3 py-8 px-16 flex justify-center items-center">
-        <img src="solstice-assets/images/logos/placeholder-logo4.png" alt="" />
-      </div>
-      <div className="w-full md:w-1/2 lg:w-1/3 py-8 px-16 flex justify-center items-center">
-        <img src="solstice-assets/images/logos/placeholder-logo5.png" alt="" />
-      </div>
-      <div className="w-full md:w-1/2 lg:w-1/3 py-8 px-16 flex justify-center items-center">
-        <img src="solstice-assets/images/logos/placeholder-logo6.png" alt="" />
-      </div>
-    </div>
-    <div
-      className="bg-orange-50 rounded-3xl pt-24 pb-16 px-4 overflow-hidden mb-24 relative"
-      style={{ height: 900 }}
-    >
-      <h2 className="text-4xl font-bold font-heading text-center mb-4">
-        Meet the team
-      </h2>
-      <p className="text-center text-gray-600 mb-12">
-        A dynamic group of individuals united by passion and expertise
-      </p>
-      <div className="flex absolute left-0" style={{ height: 440 }}>
-        <div className="w-80 mx-4 flex justify-center">
-          <div
-            className="relative bg-no-repeat bg-cover rounded-3xl w-full"
-            style={{
-              height: 440,
-              backgroundImage:
-                'url("solstice-assets/images/about/men-picture.png")'
-            }}
-          >
-            <div className="absolute bottom-0 left-0 bg-orange-50 rounded-tr-3xl rounded-bl-3xl px-6 py-3">
-              <h2 className="text-2xl font-bold font-heading mb-2">
-                David Petrucci
-              </h2>
-              <p className="text-sm text-gray-600">Founder &amp; CEO</p>
-            </div>
-          </div>
-        </div>
-        <div className="w-80 mx-4 flex justify-center">
-          <div
-            className="relative bg-no-repeat bg-cover rounded-3xl w-full"
-            style={{
-              height: 440,
-              backgroundImage:
-                'url("solstice-assets/images/about/woman-picture1.png")'
-            }}
-          >
-            <div className="absolute bottom-0 left-0 bg-orange-50 rounded-tr-3xl rounded-bl-3xl px-6 py-3">
-              <h2 className="text-2xl font-bold font-heading mb-2">
-                Erika Newton
-              </h2>
-              <p className="text-sm text-gray-600">Growth Marketer</p>
-            </div>
-          </div>
-        </div>
-        <div className="w-80 mx-4 flex justify-center">
-          <div
-            className="relative bg-no-repeat bg-cover rounded-3xl w-full"
-            style={{
-              height: 440,
-              backgroundImage:
-                'url("solstice-assets/images/about/woman-picture2.png")'
-            }}
-          >
-            <div className="absolute bottom-0 left-0 bg-orange-50 rounded-tr-3xl rounded-bl-3xl px-6 py-3">
-              <h2 className="text-2xl font-bold font-heading mb-2">
-                Malika Gil
-              </h2>
-              <p className="text-sm text-gray-600">Operations Manager</p>
-            </div>
-          </div>
-        </div>
-        <div className="w-80 mx-4 flex justify-center">
-          <div
-            className="relative bg-no-repeat bg-cover rounded-3xl w-full"
-            style={{
-              height: 440,
-              backgroundImage:
-                'url("solstice-assets/images/about/men-picture2.png")'
-            }}
-          >
-            <div className="absolute bottom-0 left-0 bg-orange-50 rounded-tr-3xl rounded-bl-3xl px-6 py-3">
-              <h2 className="text-2xl font-bold font-heading mb-2">
-                Josh Tyler
-              </h2>
-              <p className="text-sm text-gray-600">People Operations</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="w-full lg:max-w-4xl px-4 absolute bottom-4 lg:bottom-12 left-1/2 transform -translate-x-1/2">
-        <div className="py-6 px-10 bg-white rounded-3xl flex items-center justify-between flex-wrap gap-4">
-          <h2 className="text-2xl font-bold font-heading">
-            Join us on our mission
-          </h2>
-          <a
-            className="w-full sm:w-auto h-12 py-3 px-5 rounded-full bg-orange-500 border border-orange-600 shadow hover:bg-orange-600 focus:ring focus:ring-orange-200 transition duration-200 flex items-center justify-center gap-2"
-            href="#"
-          >
-            <span className="text-sm font-semibold text-white">
-              View Careers
-            </span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width={20}
-              height={20}
-              viewBox="0 0 20 20"
-              fill="none"
-            >
-              <path
-                d="M5.00002 10H15.4167M15.4167 10L10.4167 5M15.4167 10L10.4167 15"
-                stroke="white"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+            <section className="py-16 dark:text-gray-400">
+                <div className="container px-4 mx-auto space-y-10">
+                    <div className=" border px-10 py-6 dark:hover:border-gray-700 dark:border-gray-700  dark:hover:shadow-xl  hover:shadow-gray-500 hover:border-blue-200  rounded-tl-[100px] rounded-br-[100px]">
+
+                        <h2 className=' py-3 text-3xl text-center font-extrabold dar'>About Us
+                        </h2>
+                        <p >We offer a wide range of services, including Creative Design, Development, Content Writing, SEO, Video & Animation, Digital Marketing, and Brand Consultancy. Our company’s owner leads every project and personally works with all of our customers. This makes us different from other big design firms.</p>
+                        <p className='py-3'>
+                            Whether you need a website, a re-brand, a phone app, web development, or print design, we’re here to help. We might not have a bunch of awards, but our creative and digital solutions are made just for you. We focus on understanding and creating simple, portable, and beautiful ideas.
+
+                        </p>
+                        <p>
+                            We value our customers and want to create designs they’ll love for years. To help businesses connect better with their customers, Boost Care It,  does research focusing on what people want and builds digital experiences. Our team comprises experts who think creatively and work hard to deliver top-quality work quickly.
+                        </p>
+
+                    </div>
+                    <div className=" border px-10 py-6  dark:hover:border-gray-700 dark:border-gray-700  dark:hover:shadow-xl  hover:shadow-gray-500 hover:border-blue-200  rounded-tl-[100px] rounded-br-[100px]">
+
+                        <h2 className=' py-3 text-3xl text-center font-extrabold dar'>Our Vision
+                        </h2>
+                        <p>We want to lead the way in the digital world, helping companies shine with our fast and creative services like Design, Development, Content Writing, SEO, Video & Animation, Digital Marketing, Ecommerce, and Brand Consultancy. Our goal is to make your brand known locally and globally with services that are quick, effective, and affordable.</p>
+
+                    </div>
+                    <div className=" border px-10 py-6  dark:hover:border-gray-700 dark:border-gray-700  dark:hover:shadow-xl  hover:shadow-gray-500 hover:border-blue-200  rounded-tl-[100px] rounded-br-[100px]">
+
+                        <h2 className=' py-3 text-3xl text-center font-extrabold dar'>Our Mission
+                        </h2>
+                        <p>Our mission is to help people who need smart and modern solutions in design, development, SEO, content writing, eCommerce, digital marketing, and more. We work really hard to offer a lot of different services with the best quality, passion, and dedication. Our top priority is to make sure you have a great experience while we work on your project.</p>
+
+                    </div>
+                    <div className=" border px-10 py-6  dark:hover:border-gray-700 dark:border-gray-700  dark:hover:shadow-xl  hover:shadow-gray-500 hover:border-blue-200  rounded-tl-[100px] rounded-br-[100px]">
+
+                        <h2 className=' py-3 text-3xl text-center font-extrabold dar'>Our values are:
+                        </h2>
+                        {/* <h2 className='pt-16 pb-6 text-xl font-extrabold'>Our values are:</h2> */}
+
+                        <div className=" space-y-3">
+                            <p> <strong>Honesty:</strong> We always tell the truth and do the right thing, even when it's hard.
+                            </p>
+                            <p> <strong>Doing Our Best:</strong>  We aim to be the best in everything we do. We promise to give our clients top-quality service.
+                            </p>
+                            <p> <strong>New Ideas:</strong>  We're always thinking of new and better ways to do things. We're not afraid to try something different.
+                            </p>
+                            <p> <strong>Working Together:</strong>   We believe teamwork is key to success. We work closely with our clients and team to reach our goals
+                            </p>
+                            <p> <strong> Caring for Our Clients:</strong>   We care about our clients’ success. We take the time to understand what they need and create solutions just for them.
+
+                            </p>
+                        </div>
+
+                    </div>
+
+
+
+
+                </div>
+
+
+
+            </section>
 
 
         </AppLayout>

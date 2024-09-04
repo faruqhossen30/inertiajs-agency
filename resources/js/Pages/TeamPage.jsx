@@ -10,7 +10,7 @@ export default function TeamPage({ auth, user, laravelVersion, phpVersion }) {
             <div className="container px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
 
                 <div className="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
-                    <h2 className="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">Our leadership</h2>
+                    <h2 className="text-2xl font-bold md:text-4xl md:leading-tight text-gray-800 dark:text-gray-400">Our leadership</h2>
                     <p className="mt-1 text-gray-600 dark:text-neutral-400">Creative people</p>
                 </div>
 
@@ -18,20 +18,20 @@ export default function TeamPage({ auth, user, laravelVersion, phpVersion }) {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
                     {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((member, index) => {
-                        return <div key={index} className="group hover:shadow-md hover:scale-105 hover:transition-all duration-1000 flex flex-col rounded-xl p-4 md:p-6 bg-white border border-gray-200 dark:bg-neutral-900 dark:border-neutral-700">
-                            <div className="flex items-center gap-x-4">
+                        return <div key={index} className="group hover:shadow-md hover:scale-105 hover:transition-all duration-1000 flex flex-col rounded-xl p-4 md:p-6 bg-white border border-gray-200 dark:bg-slate-900 dark:border-gray-700">
+                            <div className="flex items-center gap-x-4 ">
                                 <img className="rounded-full w-20" src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar" />
                                 <div className="grow">
-                                    <h3 className="font-medium text-gray-800 dark:text-neutral-200">
+                                    <h3 className="font-medium text-gray-800 dark:text-gray-400">
                                         David Forren
                                     </h3>
-                                    <p className="text-xs uppercase text-gray-500 dark:text-neutral-500">
+                                    <p className="text-xs uppercase text-gray-500 ddark:text-gray-400">
                                         Founder / CEO
                                     </p>
                                 </div>
                             </div>
 
-                            <p className="mt-3 text-gray-500 dark:text-neutral-500">
+                            <p className="mt-3 text-gray-500 ddark:text-gray-400">
                                 I am an ambitious workaholic, but apart from that, pretty simple person.
                             </p>
 
@@ -60,17 +60,6 @@ export default function TeamPage({ auth, user, laravelVersion, phpVersion }) {
 
                     }
 
-                    <a className="col-span-full lg:col-span-1 group flex flex-col justify-center text-center rounded-xl p-4 md:p-6 border border-dashed border-gray-200 hover:shadow-sm focus:outline-none focus:shadow-sm dark:border-neutral-700" href="#">
-                        <h3 className="text-lg text-gray-800 dark:text-neutral-200">
-                            We are hiring!
-                        </h3>
-                        <div>
-                            <span className="inline-flex items-center gap-x-2 text-blue-600 group-hover:text-blue-700 group-focus:text-blue-700 dark:text-blue-500 dark:group-hover:text-blue-400 dark:group-focus:text-blue-400">
-                                See all opening positions
-                                <svg className="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6" /></svg>
-                            </span>
-                        </div>
-                    </a>
 
                 </div>
 

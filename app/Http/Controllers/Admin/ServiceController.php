@@ -77,7 +77,9 @@ class ServiceController extends Controller
      */
     public function edit(string $id)
     {
-
+        $service = Service::where('id', $id)->first();
+        $categories = Category::get();
+        return Inertia::render('Admin/Service/Edit', ['service'=>$service,'categories'=>$categories]);
     }
 
     /**

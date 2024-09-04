@@ -18,6 +18,10 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique()->nullable();
             $table->string('password')->nullable();
+            $table->string('mobile')->nullable();
+            $table->string('address')->nullable();
+            $table->string('avatar')->nullable();
+            $table->string('bio')->nullable();
             $table->string('google_id')->nullable();
             $table->boolean('is_admin')->default(false);
             $table->boolean('is_user')->default(true);

@@ -82,7 +82,7 @@ export default function BlogPage({ blogs }) {
                         </div>
                     </div>
                 </div>
-                <hr />
+                <hr className='dark:border-gray-700' />
                 <div className="grid py-5 lg:grid-cols-2 lg:gap-y-16 gap-10">
 
                     {
@@ -97,10 +97,10 @@ export default function BlogPage({ blogs }) {
                                         <h3 className="text-xl font-semibold text-gray-800 group-hover:text-blue-600 dark:text-neutral-300 dark:group-hover:text-white">
                                             {blog.title}
                                         </h3>
-                                        <p className="mt-3 text-gray-600 dark:text-neutral-400">
+                                        <p className="mt-3 text-gray-600 dark:text-gray-400">
                                             Produce professional, reliable streams easily leveraging Preline's innovative broadcast studio
                                         </p>
-                                        <Link className="mt-4 inline-flex items-center gap-x-1 group-hover:text-blue-600 font-bold decoration-2 hover:underline ">
+                                        <Link className="mt-4 inline-flex items-center gap-x-1 dark:text-gray-400 group-hover:text-blue-600 font-bold decoration-2 hover:underline ">
                                             Read more
                                             <ArrowRightIcon className="w-4 hidden group-hover:block group-hover:transition-all duration-700" />
                                         </Link>
@@ -112,7 +112,7 @@ export default function BlogPage({ blogs }) {
 
 
                 </div>
-                <hr />
+                <hr className='dark:border-gray-700' />
                 <div className="py-5 px-3">
                     <Pagination pagination={blogs} links={blogs.links} />
                 </div>
