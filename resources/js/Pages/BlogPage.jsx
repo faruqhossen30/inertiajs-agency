@@ -1,16 +1,11 @@
 import AppLayout from '@/Layouts/AppLayout';
-import { Link, Head } from '@inertiajs/react';
-import HeroSection from '@/Components/Homepage/HeroSection';
-import ServiceSection from '@/Components/Homepage/ServiceSection';
-import FeatureStatus from '@/Components/Homepage/FeatureStatus';
-import Feature from '@/Components/Homepage/Feature';
-import Testimonial from '@/Components/Homepage/Testimonial';
+import { Link, Head, router, usePage } from '@inertiajs/react';
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import Pagination from '@/Components/Pagination';
 
 export default function BlogPage({ blogs }) {
     console.log(blogs.data);
-
+    const {params} = usePage()
 
     return (
         <AppLayout>
@@ -44,7 +39,7 @@ export default function BlogPage({ blogs }) {
                             <label htmlFor="show" className="text-gray-800 dark:text-gray-400">Order:</label>
                             <select name="show"
                                 onChange={(e) => {
-                                    return router.get(route('servicepage', params),
+                                    return router.get(route('blogpage', params),
                                         {
                                             show: e.target.value
                                         },
@@ -64,7 +59,7 @@ export default function BlogPage({ blogs }) {
                             <label htmlFor="orderby" className="text-gray-800 dark:text-gray-400">Sort:</label>
                             <select name="orderby"
                                 onChange={(e) => {
-                                    return router.get(route('servicepage', params),
+                                    return router.get(route('blogpage', params),
                                         {
                                             orderby: e.target.value
                                         },
@@ -75,9 +70,9 @@ export default function BlogPage({ blogs }) {
                                     )
                                 }}
                                 className="py-1 px-4 pe-9 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600">
-                                <option value="">Price:</option>
-                                <option value="asc">Low to Hith</option>
-                                <option value="desc">High to low</option>
+                                <option value="">Default:</option>
+                                <option value="asc">Oldest</option>
+                                <option value="desc">Latest</option>
                             </select>
                         </div>
                     </div>
@@ -90,16 +85,16 @@ export default function BlogPage({ blogs }) {
                             return <Link key={index} href={route('single.blog', 'abc')} className="group rounded-xl overflow-hidden">
                                 <div className="sm:flex">
                                     <div className="flex-shrink-0 relative rounded-xl overflow-hidden w-full sm:w-56 h-44">
-                                        <img className="group-hover:scale-105 transition-transform duration-500 ease-in-out size-full absolute top-0 start-0 object-cover rounded-xl" src="https://images.unsplash.com/photo-1540575861501-7cf05a4b125a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="Image Description" />
+                                        <img className="group-hover:scale-105 transition-transform duration-500 ease-in-out size-full absolute top-0 start-0 object-cover rounded-xl" src={window.location.protocol + '/storage/' + blog.thumbnail} alt="Image Description" />
                                     </div>
 
                                     <div className="grow mt-4 sm:mt-0 sm:ms-6 px-4 sm:px-0">
                                         <h3 className="text-xl font-semibold text-gray-800 group-hover:text-blue-600 dark:text-neutral-300 dark:group-hover:text-white">
                                             {blog.title}
                                         </h3>
-                                        <p className="mt-3 text-gray-600 dark:text-gray-400">
-                                            Produce professional, reliable streams easily leveraging Preline's innovative broadcast studio
-                                        </p>
+
+                                            <div className="prose dark:text-gray-400" dangerouslySetInnerHTML={{ __html: blog.description }}></div>
+
                                         <Link className="mt-4 inline-flex items-center gap-x-1 dark:text-gray-400 group-hover:text-blue-600 font-bold decoration-2 hover:underline ">
                                             Read more
                                             <ArrowRightIcon className="w-4 hidden group-hover:block group-hover:transition-all duration-700" />

@@ -18,7 +18,8 @@ class Blog extends Model
         'user_id',
         'meta_title',
         'meta_description',
-        'meta_keyword',
+        'meta_tag',
+        'status',
     ];
 
     public function categories(){

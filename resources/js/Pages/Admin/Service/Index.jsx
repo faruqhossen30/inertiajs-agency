@@ -73,8 +73,6 @@ export default function Index({ auth, services }) {
                                                 </span>
                                             </div>
                                         </th>
-
-
                                     </tr>
                                 </thead>
 
@@ -104,7 +102,6 @@ export default function Index({ auth, services }) {
                                                         <Link href={route('service.feature', item.id)}><Cog6ToothIcon className="w-5" /></Link>
                                                     </div>
                                                 </td>
-
                                                 <td className="h-px w-px whitespace-nowrap">
                                                     <div className="px-6 py-2">
                                                         <span className="inline-flex items-center gap-1.5 py-0.5 px-2 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">

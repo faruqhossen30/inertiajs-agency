@@ -9,15 +9,15 @@ import Select from 'react-select'
 import RichTextEditor from '@/Components/RichTextEditor';
 import ImageFile from '@/Components/Form/ImageFile';
 
-
-
-
 export default function Create({ auth, categories }) {
     const { data, setData, post, processing, errors, reset } = useForm({
         title: '',
         description: '',
-        thumbnail: null,
         category_ids: [],
+        thumbnail: '',
+        meta_title: '',
+        meta_description: '',
+        meta_tag: '',
         status: 1,
     });
 
@@ -91,6 +91,27 @@ export default function Create({ auth, categories }) {
                                     getOptionLabel={option => option.name}
                                     getOptionValue={option => option.id}
                                 />
+
+
+                                <div>
+                                    <InputLabel isRequired={true} labelFor="Meta_title" />
+                                    <Input id="Meta_title" type="text" name="meta_title" value={data.meta_title} autoComplete="meta_title"
+                                        placeholder="meta_title" onChange={(e) => setData('meta_title', e.target.value)} />
+                                    <p className="text-sm text-red-600 mt-2">{errors.meta_title}</p>
+                                </div>
+
+                                <div className="mt-2">
+                                    <label for="meta_description" className="sr-only">Meta Description</label>
+                                    <textarea id="meta_description" name="meta_description" rows="4" onChange={(e) => setData('meta_description', e.target.value)} className="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400" placeholder="Meta_description" ></textarea>
+                                </div>
+
+                                <div>
+                                    <InputLabel isRequired={true} labelFor="meta_tag" />
+                                    <Input id="meta_tag" type="text" name="meta_tag" value={data.meta_tag} autoComplete="meta_tag"
+                                        placeholder="meta_tag" onChange={(e) => setData('meta_tag', e.target.value)} />
+                                    <p className="text-sm text-red-600 mt-2">{errors.meta_tag}</p>
+                                </div>
+
 
                             </div>
                         </div>

@@ -1,6 +1,5 @@
 import UserSidebarComponent from '@/Components/User/UserSidebarComponent';
 import AppLayout from '@/Layouts/AppLayout';
-import { HomeIcon, ListBulletIcon, MapPinIcon, PlusIcon, UserIcon } from '@heroicons/react/24/outline';
 import { Head, Link } from '@inertiajs/react';
 
 export default function PostPage() {

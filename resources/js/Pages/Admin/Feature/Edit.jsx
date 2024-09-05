@@ -5,7 +5,6 @@ import Input from '@/Components/Form/Input';
 import SubmitButton from '@/Components/Form/SubmitButton';
 import InputLabel from '@/Components/Form/InputLabel';
 import BreadcumComponent from '@/Components/Dashboard/BreadcumComponent';
-import ThumbnailInput from '@/Components/Form/ThumbnailInput';
 
 export default function Create({ auth, feature ,categories}) {
     console.log(feature);

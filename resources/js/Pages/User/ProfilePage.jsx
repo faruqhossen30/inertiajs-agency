@@ -1,6 +1,6 @@
 import UserSidebarComponent from '@/Components/User/UserSidebarComponent';
 import AppLayout from '@/Layouts/AppLayout';
-import { HomeIcon, ListBulletIcon, MapPinIcon, PlusIcon, UserIcon } from '@heroicons/react/24/outline';
+import { MapPinIcon } from '@heroicons/react/24/outline';
 import { InformationCircleIcon, UsersIcon } from '@heroicons/react/24/solid';
 import { Head, Link, usePage } from '@inertiajs/react';
 

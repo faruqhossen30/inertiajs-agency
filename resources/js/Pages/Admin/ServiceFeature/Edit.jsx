@@ -6,7 +6,6 @@ import SubmitButton from '@/Components/Form/SubmitButton';
 import InputLabel from '@/Components/Form/InputLabel';
 import BreadcumComponent from '@/Components/Dashboard/BreadcumComponent';
 
-
 export default function Create({ auth,category }) {
     console.log(category);
     const { data, setData, put, processing, errors, reset } = useForm({

@@ -2,7 +2,7 @@ import ButtonPlus from '@/Components/Button/ButtonPlus';
 import BreadcumComponent from '@/Components/Dashboard/BreadcumComponent';
 import { PencilIcon, TrashIcon } from '@heroicons/react/24/outline';
 import { EyeIcon } from '@heroicons/react/24/solid';
-import { Head, Link } from '@inertiajs/react';
+import {  Link } from '@inertiajs/react';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import SearchFilter from '@/Components/Table/SearchFilter';
 import Pagination from '@/Components/Pagination';

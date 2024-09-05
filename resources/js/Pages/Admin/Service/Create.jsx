@@ -5,14 +5,9 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import InputLabel from '@/Components/Form/InputLabel';
 import Input from '@/Components/Form/Input';
 import SubmitButton from '@/Components/Form/SubmitButton';
-
 import Select from 'react-select'
 import RichTextEditor from '@/Components/RichTextEditor';
 import ImageFile from '@/Components/Form/ImageFile';
-// import { Alignment } from '@ckeditor/ckeditor5-alignment';
-
-
-
 
 export default function Create({ auth, packages, categories }) {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -28,14 +23,11 @@ export default function Create({ auth, packages, categories }) {
         status: 1,
     });
 
-
-
     function submit(e) {
         e.preventDefault()
         post(route('service.store'));
 
     }
-
     return (
         <AuthenticatedLayout>
             <BreadcumComponent pageOne="Services" pageOneRoute="service.index" />
@@ -55,7 +47,7 @@ export default function Create({ auth, packages, categories }) {
                                         <Input id="title" type="text" name="title" value={data.title} autoComplete="title" placeholder="Title" onChange={(e) => setData('title', e.target.value)} />
                                         <p className="text-sm text-red-600 mt-2">{errors.title}</p>
                                     </div>
-                                    <div>
+                                    <div className='pb-6'>
                                         <InputLabel isRequired={true} labelFor="Description" />
                                         <RichTextEditor setData={setData} data={data} />
                                     </div>

@@ -8,7 +8,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Illuminate\Support\Str;
-
+use Illuminate\Support\Facades\Auth;
 class BlogController extends Controller
 {
     /**
@@ -53,15 +53,22 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
+
+
+
         $request->validate([
             'title' => 'required',
             'description' => 'required',
         ]);
 
         $data = [
-            'title' => $request->title,
-            'slug' => Str::slug($request->title),
-            'description' => $request->description,
+            'title'            => $request->title,
+            'slug'             => Str::slug($request->title),
+            'description'      => $request->description,
+            'meta_title'       => $request->meta_title,
+            'meta_tag'         => $request->meta_tag,
+            'meta_description' => $request->meta_description,
+            'user_id'          => Auth::user()->id,
         ];
         if ($request->file('thumbnail')) {
             $file_name = $request->file('thumbnail')->store('blogs');
@@ -89,6 +96,8 @@ class BlogController extends Controller
     {
         $blog = Blog::firstWhere('id', $id);
         $categories = Category::get();
+// return $blog;
+
         return Inertia::render('Admin/Blog/Edit', ['blog' => $blog, 'categories' => $categories]);
     }
 
@@ -97,15 +106,22 @@ class BlogController extends Controller
      */
     public function update(Request $request, string $id)
     {
+
+        // return $request ->all();
         $request->validate([
             'title' => 'required',
             'description' => 'required',
         ]);
 
         $data = [
-            'title' => $request->title,
-            'slug' => Str::slug($request->title),
-            'description' => $request->description,
+           'title'             => $request->title,
+            'slug'             => Str::slug($request->title),
+            'description'      => $request->description,
+            'meta_title'       => $request->meta_title,
+            'meta_tag'         => $request->meta_tag,
+            'status'         => $request->status,
+            'meta_description' => $request->meta_description,
+            'user_id'          => Auth::user()->id,
         ];
         if ($request->file('thumbnail')) {
             $file_name = $request->file('thumbnail')->store('blogs');

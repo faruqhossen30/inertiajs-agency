@@ -28,7 +28,7 @@ const PageLink = ({ active, label, url }) => {
 // and dots, if exists (...)
 const PageInactive = ({ label }) => {
     const className = classNames(
-        'px-4 py-2 text-sm border rounded border-solid border-gray-300 text-gray'
+        'px-4 py-2 text-sm border rounded border-solid border-gray-300 text-gray dark:border-gray-700'
     );
     return (
         <div className={className} dangerouslySetInnerHTML={{ __html: label }} />
@@ -39,7 +39,7 @@ export default ({ pagination,links = [],meta = null }) => {
     // dont render, if there's only 1 page (previous, 1, next)
     if (links.length === 3) return null;
     return (
-        <div className="md:flex md:flex-1 md:items-center lg:justify-between">
+        <div className="md:flex md:flex-1 md:items-center lg:justify-between dark:text-gray-400 ">
             <p className="text-sm leading-5 text-gray-700 py-2">
                 Showing{' '}
                 <span className="font-medium">

@@ -2,11 +2,8 @@
 import { Head, useForm, usePage } from '@inertiajs/react';
 import BreadcumComponent from '@/Components/Dashboard/BreadcumComponent';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
-import InputLabel from '@/Components/Form/InputLabel';
-import Input from '@/Components/Form/Input';
 import SubmitButton from '@/Components/Form/SubmitButton';
 
-import Select from 'react-select'
 import { useState } from 'react';
 
 export default function Create({ auth, services, features,service}) {

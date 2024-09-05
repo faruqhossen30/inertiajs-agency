@@ -5,7 +5,6 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import InputLabel from '@/Components/Form/InputLabel';
 import Input from '@/Components/Form/Input';
 import SubmitButton from '@/Components/Form/SubmitButton';
-import Select from 'react-select';
 
 export default function Create({ auth, categories }) {
     const { data, setData, post, processing, errors, reset } = useForm({

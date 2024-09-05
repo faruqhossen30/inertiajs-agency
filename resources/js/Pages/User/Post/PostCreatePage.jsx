@@ -1,13 +1,10 @@
 import Input from '@/Components/Form/Input';
 import InputLabel from '@/Components/Form/InputLabel';
 import SubmitButton from '@/Components/Form/SubmitButton';
-import UserSidebarComponent from '@/Components/User/UserSidebarComponent';
 import AppLayout from '@/Layouts/AppLayout';
-import { HomeIcon, ListBulletIcon, MapPinIcon, PlusIcon, UserIcon } from '@heroicons/react/24/outline';
-import { Head, Link, router, useForm } from '@inertiajs/react';
+import { HomeIcon } from '@heroicons/react/24/outline';
+import { Head, Link, useForm } from '@inertiajs/react';
 import axios from 'axios';
-import { useEffect, useState } from 'react';
-import Select from 'react-select'
 import AsyncSelect from 'react-select/async';
 
 export default function PostCreatePage() {

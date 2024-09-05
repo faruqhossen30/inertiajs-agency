@@ -9,7 +9,7 @@ export default function SingleService({ service }) {
 
             <Head title="Service" />
             <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
-                <div className="max-w-2xl  mb-10 lg:mb-14">
+                <div className="max-w-4xl  mb-10 lg:mb-14">
                     <h2 className="text-2xl font-bold md:text-4xl md:leading-tight text-gray-800 dark:text-gray-400 pb-3">{service.title}</h2>
                     <div className="prose dark:text-gray-400" dangerouslySetInnerHTML={{__html:service.description}}></div>
                 </div>
@@ -34,7 +34,7 @@ export default function SingleService({ service }) {
                                 return <li className="flex gap-x-2" key={index}>
                                     {feature.basic == '1' ?
                                         <CheckIcon className="w-5 text-green-500" /> :
-                                        <MinusIcon className='w-5' />}
+                                        <MinusIcon className='w-5 dark:text-gray-400' />}
 
                                     <span className="text-gray-800 dark:text-neutral-400 text-start">
                                         {feature.feature.title}
@@ -69,7 +69,7 @@ export default function SingleService({ service }) {
                                 return <li className="flex gap-x-2" key={index}>
                                     {feature.standard == '1' ?
                                         <CheckIcon className="w-5 text-green-500" /> :
-                                        <MinusIcon className='w-5' />}
+                                        <MinusIcon className='w-5 dark:text-gray-400' />}
 
                                     <span className="text-gray-800 dark:text-gray-400 text-start">
                                         {feature.feature.title}
@@ -107,7 +107,7 @@ export default function SingleService({ service }) {
                                 return <li className="flex gap-x-2" key={index}>
                                     {feature.premium == '1' ?
                                         <CheckIcon className="w-5 text-green-500" /> :
-                                        <MinusIcon className='w-5' />}
+                                        <MinusIcon className='w-5 dark:text-gray-400' />}
 
                                     <span className="text-gray-800 dark:text-gray-400 text-start">
                                         {feature.feature.title}
@@ -1260,7 +1260,7 @@ export default function SingleService({ service }) {
 
                                             {feature.basic == '1' ?
                                                 <CheckIcon className="mx-auto w-5 text-green-500" /> :
-                                                <MinusIcon className="mx-auto w-5" />}
+                                                <MinusIcon className="mx-auto w-5 dark:text-gray-400" />}
 
                                             <span className="sr-only">Included in Free</span>
                                         </td>
@@ -1269,7 +1269,7 @@ export default function SingleService({ service }) {
 
                                             {feature.standard == '1' ?
                                                 <CheckIcon className="mx-auto w-5 text-green-500" /> :
-                                                <MinusIcon className="mx-auto w-5" />}
+                                                <MinusIcon className="mx-auto w-5 dark:text-gray-400" />}
 
                                             <span className="sr-only">Included in Startup</span>
                                         </td>
@@ -1280,7 +1280,7 @@ export default function SingleService({ service }) {
 
                                             {feature.premium == '1' ?
                                                 <CheckIcon className="mx-auto w-5 text-green-500" /> :
-                                                <MinusIcon className="mx-auto w-5" />}
+                                                <MinusIcon className="mx-auto w-5 dark:text-gray-400" />}
                                             <span className="sr-only">Included in Enterprise</span>
                                         </td>
                                     </tr>

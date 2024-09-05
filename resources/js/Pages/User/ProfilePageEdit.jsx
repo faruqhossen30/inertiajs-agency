@@ -3,8 +3,7 @@ import InputLabel from '@/Components/Form/InputLabel';
 import SubmitButton from '@/Components/Form/SubmitButton';
 import UserSidebarComponent from '@/Components/User/UserSidebarComponent';
 import AppLayout from '@/Layouts/AppLayout';
-import { HomeIcon, ListBulletIcon, MapPinIcon, PlusIcon, UserIcon } from '@heroicons/react/24/outline';
-import { Head, Link, useForm, usePage } from '@inertiajs/react';
+import { Head, useForm, usePage } from '@inertiajs/react';
 import { useState } from 'react';
 
 export default function ProfilePageEdit({ user }) {

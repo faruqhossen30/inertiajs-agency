@@ -20,7 +20,8 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id')->nullable();
             $table->string('meta_title')->nullable();
             $table->string('meta_description')->nullable();
-            $table->string('meta_keyword')->nullable();
+            $table->string('meta_tag')->nullable();
+            $table->boolean('status')->default(1);
             $table->timestamps();
         });
     }
