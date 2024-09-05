@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\faq;
+use App\Models\Faq;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 class FaqpageController extends Controller
 {
     public function index()  {
 
-        $faqs = faq::get();
+        $faqs = Faq::get();
         return Inertia::render('FaqPage',['faqs'=>$faqs]);
     }
 }

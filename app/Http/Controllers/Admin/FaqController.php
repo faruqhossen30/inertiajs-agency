@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\faq;
+use App\Models\Faq;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 class FaqController extends Controller
@@ -13,7 +13,7 @@ class FaqController extends Controller
      */
     public function index()
     {
-        $faqs = faq::paginate(10);
+        $faqs = Faq::paginate(10);
         return Inertia::render('Admin/Faq/Index', ['faqs' => $faqs]);
     }
 

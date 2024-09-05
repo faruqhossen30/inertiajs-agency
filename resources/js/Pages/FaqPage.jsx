@@ -1,34 +1,13 @@
+import Accordion from '@/Components/Accordion';
 import AppLayout from '@/Layouts/AppLayout';
+import FaqSection from '@/Layouts/FaqSection';
 import { Head } from '@inertiajs/react';
 
 export default function FaqPage({ auth, user, faqs, laravelVersion, phpVersion }) {
 
-    console.log(faqs);
-
     return (
         <AppLayout>
             <Head title="FAQ" />
-
-            {/* <div className="grid grid-cols-12 pb-24">
-                <div className="col-span-2"></div>
-                <div className="col-span-8 px-16 py-6">
-                    <div className="py-3 flex justify-center ">
-                        <span className='text-center text-3xl my-6 px-6 font-extrabold text-gray-950'>How Can We Help You?</span>
-                    </div>
-                    <form>
-                        <div className="mt-4 flex flex-col items-center border rounded-lg gap-6 py-3 px-6 sm:flex-row sm:gap-3  p-2 dark:bg-neutral-900 bg-gray-100">
-                            <div className="w-full">
-                                <label htmlFor="hero-input" className="sr-only">Subscribe</label>
-                                <input type="text" id="hero-input" name="hero-input" className="py-1 px-4  bg-gray-100 block w-full border-transparent text-sm focus:border-blue-500 focus:ring-blue-500  disabled:opacity-50 disabled:pointer-events-none placeholder:text-lg  " placeholder="Enter Address Website" />
-                            </div>
-                            <a className="w-full sm:w-auto whitespace-nowrap rounded px-6 py-4  text-white inline-flex justify-center items-center gap-x-2 text-sm  border border-transparent bg-blue-700  font-extrabold   text-blackfocus:outline-none focus:bg-gray-200 disabled:opacity-50 hover:bg-gray-200 hover:text-gray-600 hover:font-bold disabled:pointer-events-none" href="#">
-                                Send Us a Proposal
-                            </a>
-                        </div>
-                    </form>
-                </div>
-                <div className="col-span-2 "></div>
-            </div> */}
 
             <section className="relative h-screen py-20 md:py-24 overflow-hidden w-full">
                 <img className="absolute top-0 left-0" src="https://static.shuffle.dev/components/preview/2f808e47-944e-42cf-b821-2358251e0600/assets/public/saturn-assets/images/newsletter/light-left-top-double.png" alt="" />
@@ -73,43 +52,8 @@ export default function FaqPage({ auth, user, faqs, laravelVersion, phpVersion }
                 </div>
             </section>
 
+            <FaqSection />
 
-            <div className="">
-                <div className="w-full px-6 pb-20 pt-12 mx-auto ">
-                    < div className=" flex justify-center pb-6  ">
-                        <span className='text-center text-3xl px-6 font-extrabold text-gray-950'>FAQ</span>
-                    </div>
-                    <div className="grid grid-cols-12 gap-6  pt-12">
-                        {faqs.map((item, index) => {
-                            return <div key={index} className="col-span-6">
-                                <div className="hs-accordion-group ">
-                                    <div className="hs-accordion " id={`hs-basic-with-title-and-arrow-stretched-heading-${item.id}`}>
-                                        <button className="hs-accordion-toggle hs-accordion-active:text-blue-600 py-3 bg-white border hs-accordion-active:border-b-gray-50  px-4 inline-flex items-center justify-between gap-x-3 w-full font-semibold text-start text-gray-800 hover:text-gray-500  rounded-t-lg disabled:opacity-50 disabled:pointer-events-none  "   data-accordion-target={`hs-basic-with-title-and-arrow-stretched-collapse-${item.id}`} aria-expanded="true" aria-controls={`hs-basic-with-title-and-arrow-stretched-collapse-${item.id}`}>
-                                            <span className='hs-accordion-active:bg-green-500 border  px-3 py-1 rounded-md text-white bg-blue-500'>Q</span>
-                                            <p className='pr-10 text-lg'>{item.title}</p>
-
-                                            <svg className="hs-accordion-active:hidden block size-4.5 px-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                                <path d="M5 12h14"></path>
-                                                <path d="M12 5v14"></path>
-                                            </svg>
-
-                                            <svg className="hs-accordion-active:block hidden size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                                <path d="M5 12h14"></path>
-                                            </svg>
-                                        </button>
-                                        <div id={`hs-basic-with-title-and-arrow-stretched-collapse-${item.id}`} className="hs-accordion-content hs-accordion-active:block  hidden w-full overflow-hidden transition-[height] duration-400" role="region" aria-labelledby={`hs-basic-with-title-and-arrow-stretched-heading-${item.id}`}>
-                                            <p className="text-base text-gray-800 dark:text-neutral-200 border-t-0 rounded border px-4 py-2">
-                                               {item.description}
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        })}
-                    </div>
-                </div>
-
-            </div>
-        </AppLayout>
+        </AppLayout >
     );
 }
