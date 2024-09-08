@@ -7,15 +7,35 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import SearchFilter from '@/Components/Table/SearchFilter';
 import Pagination from '@/Components/Pagination';
 import { features } from '@/data/features';
+import { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 export default function Index({ auth, services }) {
+
+    const notify = () => {
+        toast.warning('The service has been deleted successfully!', {
+            position: "top-right",
+            autoClose: 3000, // Auto close after 3 seconds
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+        });
+    };
     return (
         <AuthenticatedLayout>
             <div className="flex justify-between items-center">
                 <BreadcumComponent pageOne="services" pageOneRoute="service.index" />
                 <ButtonPlus routeName={route("service.create")} />
             </div>
+
+            <button onClick={() => toast("Hello, this is a toast!")}>
+                Show Toast
+            </button>
 
             <div className="flex flex-col">
                 <div className="-m-1.5 overflow-x-auto">
@@ -121,7 +141,7 @@ export default function Index({ auth, services }) {
                                                         <Link href={route('service.edit', item.id)} className="border p-1 rounded-md dark:border-gray-700 text-green-500">
                                                             <PencilIcon className="w-4 h-5" />
                                                         </Link>
-                                                        <Link href={route('service.destroy', item.id)} method="Delete" as="button" className="border p-1 rounded-md dark:border-gray-700 text-red-500">
+                                                        <Link href={route('service.destroy', item.id)} onClick={notify} method="Delete" as="button" className="border p-1 rounded-md dark:border-gray-700 text-red-500">
                                                             <TrashIcon className="w-4 h-4 " />
                                                         </Link>
                                                     </div>

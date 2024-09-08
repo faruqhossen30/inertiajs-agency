@@ -114,7 +114,7 @@ class BlogController extends Controller
         ]);
 
         $data = [
-           'title'             => $request->title,
+            'title'             => $request->title,
             'slug'             => Str::slug($request->title),
             'description'      => $request->description,
             'meta_title'       => $request->meta_title,

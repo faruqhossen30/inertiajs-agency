@@ -10,7 +10,7 @@ import BreadcumComponent from '@/Components/Dashboard/BreadcumComponent';
 import ThumbnailInput from '@/Components/Form/ThumbnailInput';
 
 export default function Create({ blog, categories }) {
-    const { data, setData, put, processing, errors, reset } = useForm({
+    const { data, setData, put,post, processing, errors, reset } = useForm({
         title: blog.title,
         description: blog.description,
         thumbnail: blog.thumbnail,
@@ -26,7 +26,7 @@ export default function Create({ blog, categories }) {
 
     function submit(e) {
         e.preventDefault()
-        put(route('blogs.update', blog.id));
+        post(route('blogupdate', blog.id));
     }
 
     return (
@@ -54,7 +54,7 @@ export default function Create({ blog, categories }) {
                                         <RichTextEditor setData={setData} data={data} />
                                     </div>
                                     <div className="pt-12">
-                                        <SubmitButton />
+                                        <SubmitButton title={'Update'} />
                                     </div>
                                 </div>
                             </div>
@@ -73,14 +73,20 @@ export default function Create({ blog, categories }) {
                                     <input id="thumbnail" type="file" name="thumbnail" placeholder="thumbnail" onChange={(e) => setData('thumbnail', e.target.files[0])} />
                                     <p className="text-sm text-red-600 mt-2">{errors.thumbnail}</p>
                                 </div> */}
-                                <div className="w-full h-44 mb-20">
+                                {/* <div className="w-full h-44 mb-20">
                                     <InputLabel isRequired={true} labelFor="Thumbnail" />
                                     <ThumbnailInput name="thumbnail" thumbnail={blog.thumbnail} setData={setData} />
 
+                                </div> */}
+
+
+                                <div className="max-w-xs">
+                                    <InputLabel isRequired={true} labelFor="thumbnail" />
+                                    <ThumbnailInput name="thumbnail" thumbnail={data.thumbnail} setData={setData} errors={errors} placeholder="Thumbnail" />
                                 </div>
                                 <div>
                                     <InputLabel isRequired={true} labelFor="status" />
-                                    <select id="status" name="status"  defaultValue={blog.status} className="py-2 px-4 pr-9 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
+                                    <select id="status" name="status" defaultValue={blog.status} className="py-2 px-4 pr-9 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
                                         onChange={(e) => setData('status', e.target.value)}>
                                         <option value="1">Yes</option>
                                         <option value="0">No</option>
@@ -89,14 +95,16 @@ export default function Create({ blog, categories }) {
                                 </div>
 
 
-                                <InputLabel isRequired={true} labelFor="Category" />
+                                {/* <InputLabel isRequired={true} labelFor="Category" />
                                 <Select
                                     onChange={(e) => setData('category_ids', e.map(item => item.id))}
                                     isMulti
                                     options={categories}
                                     getOptionLabel={option => option.name}
                                     getOptionValue={option => option.id}
-                                />
+                                /> */}
+
+
 
 
                                 <div>

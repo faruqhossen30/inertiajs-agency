@@ -26,12 +26,14 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth','admin']], function (
 
     // Service
     Route::resource('service', ServiceController::class);
+    Route::post('service/{id}',[ServiceController::class,'update'])->name('serviceupdate');
     Route::get('service/{id}/feature',[ServiceFeatureController::class, 'create'])->name('service.feature');
     Route::post('service/{id}/feature',[ServiceFeatureController::class, 'store'])->name('service.feature.store');
     Route::resource('feature', FeatureController::class);
     Route::resource('faq', FaqController::class);
     // Blog
     Route::resource('blogs', BlogController::class);
+    Route::post('blog/{id}',[BlogController::class,'update'])->name('blogupdate');
     Route::resource('review', ReviewController::class);
     Route::post('review/{id}',[ReviewController::class,'update'])->name('reviewupdate');
     Route::resource('category', CategoryController::class);
