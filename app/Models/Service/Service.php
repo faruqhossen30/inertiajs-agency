@@ -4,6 +4,7 @@ namespace App\Models\Service;
 
 use App\Models\Category;
 use App\Models\Feature;
+use App\Models\Review;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -23,15 +24,22 @@ class Service extends Model
         'premium_price',
     ];
 
-    public function categories(){
-        return $this->belongsToMany(Category::class,'service_categories');
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class, 'service_categories');
     }
-    public function features(){
+    public function features()
+    {
 
         return $this->belongsToMany(Feature::class, 'service_features');
     }
-    public function items(){
+    public function items()
+    {
 
         return $this->hasMany(ServiceFeature::class);
+    }
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
     }
 }

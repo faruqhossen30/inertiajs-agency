@@ -36,6 +36,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth','admin']], function (
     Route::post('blog/{id}',[BlogController::class,'update'])->name('blogupdate');
     Route::resource('review', ReviewController::class);
     Route::post('review/{id}',[ReviewController::class,'update'])->name('reviewupdate');
+
     Route::resource('category', CategoryController::class);
     Route::post('category/{id}', [CategoryController::class, 'update'])->name('categoryupdate');
 

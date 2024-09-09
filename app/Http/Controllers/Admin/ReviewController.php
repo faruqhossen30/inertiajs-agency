@@ -36,9 +36,9 @@ class ReviewController extends Controller
     {
         // return $request->all();
 
-        $request->validate([
-            'name'=>'required'
-        ]);
+        // $request->validate([
+        //     'name'=>'required'
+        // ]);
 
         $data=[
             'name'        => $request->name,
@@ -115,4 +115,5 @@ class ReviewController extends Controller
         Review::where('id', $id)->delete();
         return redirect()->route('review.index');
     }
+
 }

@@ -1,13 +1,26 @@
 import SubmitButton from '@/Components/Form/SubmitButton';
+import InputLabel from '@/Components/InputLabel';
 import AppLayout from '@/Layouts/AppLayout';
 import { CheckIcon, MinusIcon } from '@heroicons/react/24/outline';
 import { StarIcon } from '@heroicons/react/24/solid';
-import { Link, Head } from '@inertiajs/react';
+import { Link, Head, useForm } from '@inertiajs/react';
+
+export default function SingleService({ service, reviews }) {
 
 
+    console.log(service);
 
+    const { data, setData, post, processing, errors, reset } = useForm({
+        review: '',
+        rating: '',
+        service_id: service.id
+    });
 
-export default function SingleService({ service }) {
+    function submit(e) {
+        e.preventDefault()
+        post(route('reviewstore'));
+
+    }
 
     return (
         <AppLayout>
@@ -1402,100 +1415,97 @@ export default function SingleService({ service }) {
 
                     </div>
 
-                    <section className="  bg-blueGray-100   " >
+                    <section className="  bg-blueGray-100" >
                         <div className="grid grid-cols-12 ">
                             <div className="col-span-8">
-                                <div className="border py-3 px-6 my-6">
-                                    <div className="">
 
-                                        <input type="radio" id="star5" name="rating" value="5" className="hidden" onChange={() => setRating(5)} />
-                                        <label htmlFor="star5" className='cursor-pointer text-2xl '>  ★ </label>
-
-                                        <input type="radio" id="star5" name="rating" value="5" className="hidden" onChange={() => setRating(5)} />
-                                        <label htmlFor="star5" className='cursor-pointer text-2xl '>  ★ </label>
-
-                                        <input type="radio" id="star5" name="rating" value="5" className="hidden" onChange={() => setRating(5)} />
-                                        <label htmlFor="star5" className='cursor-pointer text-2xl '>  ★ </label>
-
-                                        <input type="radio" id="star5" name="rating" value="5" className="hidden" onChange={() => setRating(5)} />
-                                        <label htmlFor="star5" className='cursor-pointer text-2xl '>  ★ </label>
-
-                                        <input type="radio" id="star5" name="rating" value="5" className="hidden" onChange={() => setRating(5)} />
-                                        <label htmlFor="star5" className='cursor-pointer text-2xl '>  ★ </label>
-                                    </div>
-
-
-
-                                    <div className="  py-2 mx-auto">
+                                <form onSubmit={submit}>
+                                    <div className="border py-3 px-6 my-6">
                                         <div>
-                                            <textarea id="review" rows={4} type="file" name="review" placeholder="Write about Category." onChange={(e) => setData('review', e.target.value)}
-                                                className="border py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"></textarea>
-                                            <p className="text-sm text-red-600 mt-2"></p>
+                                            <InputLabel isRequired={true} labelFor="Rating" />
+                                            <select id="rating" name="rating" className="py-2 px-4 pr-9 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
+                                                onChange={(e) => setData('rating', e.target.value)}>
+                                                <option value="1">Select rating </option>
+                                                <option value="1">One     ★</option>
+                                                <option value="2">Two    ★★</option>
+                                                <option value="3">Three ★★★</option>
+                                                <option value="4">Four ★★★★</option>
+                                                <option value="5">Five★★★★★</option>
+                                            </select>
+                                            <p className="text-sm text-red-600 mt-2">{errors.rating}</p>
                                         </div>
-                                    </div>
-
-                                    <SubmitButton/>
-
-                                </div>
-
-                                <div className="mb-2 border rounded-xl rounded-b-5xl overflow-hidden">
-                                    <div className="pt-3 pb-3 md:pb-1 bg-white bg-opacity-40">
-                                        <div className="flex flex-wrap items-center px-3">
-                                            <img className="mr-6 h-14 w-14 flex justify-center object-cover  items-center p-1 border shadow-md  rounded-full" src="/IMG_20220614_184834.jpg" alt="" />
-                                            <h4 className="w-full md:w-auto text-xl font-heading font-medium">Faustina H. Fawn</h4>
-                                            <div className="w-full md:w-px h-2 md:h-8 mx-8 bg-transparent md:bg-gray-200"></div>
-                                            <span className="mr-4 text-xl font-heading font-medium">5.0</span>
-                                            <div className="inline-flex">
-                                                <a className="inline-block mr-1" href="#">
-                                                    <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M20 7.91677H12.4167L10 0.416763L7.58333 7.91677H0L6.18335 12.3168L3.81668 19.5834L10 15.0834L16.1834 19.5834L13.8167 12.3168L20 7.91677Z" fill="#FFCB00"></path>
-                                                    </svg>
-                                                </a>
-                                                <a className="inline-block mr-1" href="#">
-                                                    <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M20 7.91677H12.4167L10 0.416763L7.58333 7.91677H0L6.18335 12.3168L3.81668 19.5834L10 15.0834L16.1834 19.5834L13.8167 12.3168L20 7.91677Z" fill="#FFCB00"></path>
-                                                    </svg>
-                                                </a>
-                                                <a className="inline-block mr-1" href="#">
-                                                    <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M20 7.91677H12.4167L10 0.416763L7.58333 7.91677H0L6.18335 12.3168L3.81668 19.5834L10 15.0834L16.1834 19.5834L13.8167 12.3168L20 7.91677Z" fill="#FFCB00"></path>
-                                                    </svg>
-                                                </a>
-                                                <a className="inline-block mr-1" href="#">
-                                                    <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M20 7.91677H12.4167L10 0.416763L7.58333 7.91677H0L6.18335 12.3168L3.81668 19.5834L10 15.0834L16.1834 19.5834L13.8167 12.3168L20 7.91677Z" fill="#FFCB00"></path>
-                                                    </svg>
-                                                </a>
-                                                <a className="inline-block text-gray-200" href="#">
-                                                    <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M20 7.91677H12.4167L10 0.416763L7.58333 7.91677H0L6.18335 12.3168L3.81668 19.5834L10 15.0834L16.1834 19.5834L13.8167 12.3168L20 7.91677Z" fill="#FFCB00"></path>
-                                                    </svg>
-                                                </a>
+                                        <div className="py-2 mx-auto">
+                                            <div>
+                                                <textarea id="review" rows={4} type="file" name="review" placeholder="Write about review." onChange={(e) => setData('review', e.target.value)}
+                                                    className="border py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"></textarea>
+                                                <p className="text-sm text-red-600 mt-2"></p>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div className=" overflow-hidden   bg-white">
-                                        <div className="flex flex-wrap">
-                                            <div className="w-full md:w-3/5 mb-6 md:mb-0">
-                                                <p className="mb-8 px-6 text-darkBlueGray-400 leading-loose">I haretra neque non mi aliquam, finibus hart bibendum molestie. Vestibulum suscipit sagittis dignissim mauris.</p>
 
+                                        <SubmitButton />
+
+                                    </div>
+
+                                </form>
+
+
+
+                                {
+                                    service.reviews.map((item, index) => {
+                                        return <div key={index} className="mb-2 border rounded-xl rounded-b-5xl overflow-hidden">
+                                            <div className="pt-3 pb-3 md:pb-1 bg-white bg-opacity-40">
+                                                <div className="flex flex-wrap items-center px-3">
+                                                    <img className="mr-6 h-14 w-14 flex justify-center object-cover  items-center p-1 border shadow-md  rounded-full" src="/IMG_20220614_184834.jpg" alt="" />
+                                                    <h4 className="w-full md:w-auto text-xl font-heading font-medium">{item.id}</h4>
+                                                    <div className="w-full md:w-px h-2 md:h-8 mx-8 bg-transparent md:bg-gray-200"></div>
+                                                    <span className="mr-4 text-xl font-heading font-medium">5.0</span>
+                                                    <div className="inline-flex">
+                                                        <a className="inline-block mr-1" href="#">
+                                                            <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M20 7.91677H12.4167L10 0.416763L7.58333 7.91677H0L6.18335 12.3168L3.81668 19.5834L10 15.0834L16.1834 19.5834L13.8167 12.3168L20 7.91677Z" fill="#FFCB00"></path>
+                                                            </svg>
+                                                        </a>
+                                                        <a className="inline-block mr-1" href="#">
+                                                            <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M20 7.91677H12.4167L10 0.416763L7.58333 7.91677H0L6.18335 12.3168L3.81668 19.5834L10 15.0834L16.1834 19.5834L13.8167 12.3168L20 7.91677Z" fill="#FFCB00"></path>
+                                                            </svg>
+                                                        </a>
+                                                        <a className="inline-block mr-1" href="#">
+                                                            <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M20 7.91677H12.4167L10 0.416763L7.58333 7.91677H0L6.18335 12.3168L3.81668 19.5834L10 15.0834L16.1834 19.5834L13.8167 12.3168L20 7.91677Z" fill="#FFCB00"></path>
+                                                            </svg>
+                                                        </a>
+                                                        <a className="inline-block mr-1" href="#">
+                                                            <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M20 7.91677H12.4167L10 0.416763L7.58333 7.91677H0L6.18335 12.3168L3.81668 19.5834L10 15.0834L16.1834 19.5834L13.8167 12.3168L20 7.91677Z" fill="#FFCB00"></path>
+                                                            </svg>
+                                                        </a>
+                                                        <a className="inline-block text-gray-200" href="#">
+                                                            <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M20 7.91677H12.4167L10 0.416763L7.58333 7.91677H0L6.18335 12.3168L3.81668 19.5834L10 15.0834L16.1834 19.5834L13.8167 12.3168L20 7.91677Z" fill="#FFCB00"></path>
+                                                            </svg>
+                                                        </a>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div className="w-full md:w-1/3 text-right">
-                                                <p className="mb-8 text-sm text-gray-300">Added 2 months ago</p>
+                                            <div className=" overflow-hidden   bg-white">
+                                                <div className="flex flex-wrap">
+                                                    <div className="w-full md:w-3/5 mb-6 md:mb-0">
+                                                        <p className="mb-8 px-6 text-darkBlueGray-400 leading-loose">{item.review}</p>
+
+                                                    </div>
+                                                    <div className="w-full md:w-1/3 text-right">
+                                                        <p className="mb-8 text-sm text-gray-300">Added 2 months ago</p>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-
+                                    })
+                                }
                             </div>
                         </div>
-
-
                     </section>
                 </div>
-
-
-
             </div>
 
 
