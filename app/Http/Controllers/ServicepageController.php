@@ -12,8 +12,6 @@ class ServicepageController extends Controller
     function index(Request $request)
     {
 
-
-
         $show = null;
         if (isset($_GET['show']) && $_GET['show']) {
             $show = $_GET['show'];
@@ -40,15 +38,16 @@ class ServicepageController extends Controller
 
         $services = $services->paginate($show ?? 9)->appends($_GET);
 
-
-
         return Inertia::render('ServicePage', ['services' => $services, 'request' => $_GET]);
     }
 
     function SingleService($slug)
     {
-        $service = Service::with(['items.feature','reviews'])->firstWhere('slug', $slug);
+        $service = Service::with(['items.feature','reviews.users'])->firstWhere('slug', $slug);
         // $service = Service::with('reviews')->firstWhere('slug', $slug);
+
+
+
         // return $service;
         return Inertia::render('SingleService', ['service' => $service]);
     }

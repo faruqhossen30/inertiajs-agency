@@ -27,6 +27,7 @@ class ServiceFeatureController extends Controller
         $services = Service::get();
         $features = Feature::with('category')->orderBy('category_id')->get();
         $service = Service::firstWhere('id', $id);
+        // return  $service;
         return Inertia::render('Admin/ServiceFeature/Create', ['services' => $services, 'features' => $features, 'service' => $service]);
     }
 
