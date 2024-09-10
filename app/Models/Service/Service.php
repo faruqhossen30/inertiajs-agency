@@ -30,13 +30,11 @@ class Service extends Model
     }
     public function features()
     {
-
         return $this->belongsToMany(Feature::class, 'service_features');
     }
     public function items()
     {
-
-        return $this->hasMany(ServiceFeature::class);
+        return $this->hasMany(ServiceFeature::class)->orderBy('id', 'desc');
     }
     public function reviews()
     {

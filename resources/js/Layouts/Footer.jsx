@@ -1,10 +1,13 @@
 import { Menu } from '@headlessui/react'
 import { HomeModernIcon, UserCircleIcon, UsersIcon } from '@heroicons/react/24/outline'
 import { BanknotesIcon, ClipboardIcon, HomeIcon, UserIcon, WalletIcon } from '@heroicons/react/24/solid'
-import { Link } from '@inertiajs/react'
+import { Link, usePage } from '@inertiajs/react'
 import React from 'react'
 
 export default function Footer({ auth }) {
+    const { categories } = usePage().props;
+    // console.log(categories);
+
     return (
         <>
             {/* Footer For Mobile */}
@@ -111,20 +114,14 @@ export default function Footer({ auth }) {
                         </div>
                         <div className="col-span-2">
                             <h6 className='text-gray-800   font-bold dark:text-gray-400 capitalize  pb-5'>Services</h6>
-                            <p><a href="#" className='text-gray-800  dark:text-gray-400  capitalize text-sm'>Creative & Design
-                            </a></p>
-                            <p><a href="#" className='text-gray-800  dark:text-gray-400  capitalize text-sm'>Development</a></p>
-                            <p><a href="#" className='text-gray-800  dark:text-gray-400  capitalize text-sm'>SEO</a></p>
-                            <p><a href="#" className='text-gray-800  dark:text-gray-400  capitalize text-sm'>Content Writing
-                            </a></p>
-                            <p><a href="#" className='text-gray-800  dark:text-gray-400 capitalize  text-sm'>Video & Animation
-                            </a></p>
-                            <p><a href="#" className='text-gray-800  dark:text-gray-400  capitalize text-sm'>e-Commerce
-                            </a></p>
-                            <p><a href="#" className='text-gray-800  dark:text-gray-400  capitalize text-sm'>Digital Marketing
-                            </a></p>
-                            <p><a href="#" className='text-gray-800  dark:text-gray-400  capitalize text-sm'>Business Consultants
-                            </a></p>
+
+                            {/* <div className="space-y-1">
+                                {
+                                    categories.map((item, index) => {
+                                        return <Link href={route('servicepage',{category: item.id})} className='text-gray-800 block  dark:text-gray-400 capitalize text-sm'>{item.name}</Link>
+                                    })
+                                }
+                            </div> */}
 
                         </div>
                         <div className="col-span-3">

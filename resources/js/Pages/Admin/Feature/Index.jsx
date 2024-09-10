@@ -71,7 +71,7 @@ export default function Index({ auth, features }) {
                                             return <tr key={index}>
                                                 <td className="h-px w-px whitespace-nowrap">
                                                     <div className="px-6 py-2">
-                                                        <span className="text-sm text-gray-600 dark:text-gray-400">{item.id}</span>
+                                                        <span className="text-sm text-gray-600 dark:text-gray-400">{index+1}</span>
                                                     </div>
                                                 </td>
                                                 <td className="h-px w-px whitespace-nowrap">

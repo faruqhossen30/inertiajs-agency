@@ -1,7 +1,7 @@
 import SubmitButton from "@/Components/Form/SubmitButton";
 import InputLabel from "@/Components/InputLabel";
 import AppLayout from "@/Layouts/AppLayout";
-import { CheckIcon, MinusIcon } from "@heroicons/react/24/outline";
+import { CheckCircleIcon, CheckIcon, MinusIcon, XCircleIcon } from "@heroicons/react/24/outline";
 import { StarIcon } from "@heroicons/react/24/solid";
 import { Link, Head, useForm } from "@inertiajs/react";
 import moment from "moment";
@@ -24,18 +24,18 @@ export default function SingleService({ service, reviews, item }) {
             <Head title="Service" />
             <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
                 <div className="grid grid-cols-12 ">
-                    <div className="col-span-9  mb-10 lg:mb-14">
-                        <h2 className="text-2xl font-bold md:text-4xl md:leading-tight text-gray-800 dark:text-gray-400 pb-3">
+                    <div className="col-span-10  mb-10 lg:mb-14">
+                        <h2 className="text-2xl font-bold md:text-4xl md:leading-tight text-gray-800 dark:text-gray-400 pb-10">
                             {service.title}
                         </h2>
                         <div
-                            className="prose-lg w-full dark:text-gray-400"
+                            className="prose-base prose-p:py-0 prose-ul:list-disc prose-ul:py-0 prose-ol:list-decimal prose-ol:py-0 w-full dark:text-gray-400"
                             dangerouslySetInnerHTML={{
                                 __html: service.description,
                             }}
                         ></div>
                     </div>
-                    <div className="col-span-3 "></div>
+                    <div className="col-span-2"></div>
                 </div>
                 <hr className="py-10 dark:border-gray-700" />
                 <div className="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
@@ -61,17 +61,17 @@ export default function SingleService({ service, reviews, item }) {
                         <p className="mt-2 text-sm text-gray-500 dark:text-neutral-500">
                             All the basics for starting a new business
                         </p>
-                        <ul className="mt-7 space-y-2.5 text-sm">
+                        <ul className="mt-7 text-sm bg-gray-50 border rounded-lg mx-5">
                             {service.items.slice(0, 5).map((feature, index) => {
                                 return (
-                                    <li className="flex gap-x-2" key={index}>
-                                        {feature.basic == "1" ? (
+                                    <li className="flex items-center gap-x-2 py-3 px-4 text-sm font-medium text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg dark:bg-neutral-900 dark:border-neutral-700 dark:text-white" key={index}>
+                                        {feature.standard == "1" ? (
                                             <CheckIcon className="w-5 text-green-500" />
                                         ) : (
-                                            <MinusIcon className="w-5 dark:text-gray-400" />
+                                            <MinusIcon className="w-5 text-gray-400" />
                                         )}
 
-                                        <span className="text-gray-800 dark:text-neutral-400 text-start">
+                                        <span className="text-gray-800 dark:text-neutral-400 text-start text-lg">
                                             {feature.feature.title}
                                         </span>
                                     </li>
@@ -83,7 +83,7 @@ export default function SingleService({ service, reviews, item }) {
                                 id: service.id,
                                 package: "basic",
                             })}
-                            className="mt-5 py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm  disabled:pointer-events-none   dark:bg-transparent dark:border-gray-700  hover:text-white dark:hover:bg-slate-900 dark:focus:bg-neutral-800 hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 dark:text-gray-400"
+                            className="mt-5 py-3 px-5 mx-5 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm  disabled:pointer-events-none   dark:bg-transparent dark:border-gray-700  hover:text-white dark:hover:bg-slate-900 dark:focus:bg-neutral-800 hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 dark:text-gray-400"
                         >
                             Order Now
                         </Link>
@@ -111,17 +111,17 @@ export default function SingleService({ service, reviews, item }) {
                             Everything you need for a growing business
                         </p>
 
-                        <ul className="mt-7 space-y-2.5 text-sm">
+                        <ul className="mt-7 text-sm bg-gray-50 border rounded-lg mx-5">
                             {service.items.slice(0, 5).map((feature, index) => {
                                 return (
-                                    <li className="flex gap-x-2" key={index}>
+                                    <li className="flex items-center gap-x-2 py-3 px-4 text-sm font-medium text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg dark:bg-neutral-900 dark:border-neutral-700 dark:text-white" key={index}>
                                         {feature.standard == "1" ? (
                                             <CheckIcon className="w-5 text-green-500" />
                                         ) : (
-                                            <MinusIcon className="w-5 dark:text-gray-400" />
+                                            <MinusIcon className="w-5 text-gray-400" />
                                         )}
 
-                                        <span className="text-gray-800 dark:text-gray-400 text-start">
+                                        <span className="text-gray-800 dark:text-gray-400 text-center text-lg">
                                             {feature.feature.title}
                                         </span>
                                     </li>
@@ -134,7 +134,7 @@ export default function SingleService({ service, reviews, item }) {
                                 id: service.id,
                                 package: "standard",
                             })}
-                            className="mt-5 py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm  disabled:pointer-events-none   dark:bg-transparent dark:border-gray-700  hover:text-white dark:hover:bg-slate-900 dark:focus:bg-neutral-800 hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 dark:text-gray-400"
+                            className="mt-5 py-3 px-5 mx-5 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm  disabled:pointer-events-none   dark:bg-transparent dark:border-gray-700  hover:text-white dark:hover:bg-slate-900 dark:focus:bg-neutral-800 hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 dark:text-gray-400"
                         >
                             Order Now
                         </Link>
@@ -161,17 +161,17 @@ export default function SingleService({ service, reviews, item }) {
                             Advanced features for scaling your business
                         </p>
 
-                        <ul className="mt-7 space-y-2.5 text-sm">
+                        <ul className="mt-7 text-sm bg-gray-50 border rounded-lg mx-5">
                             {service.items.slice(0, 5).map((feature, index) => {
                                 return (
-                                    <li className="flex gap-x-2" key={index}>
-                                        {feature.premium == "1" ? (
+                                    <li className="flex items-center gap-x-2 py-3 px-4 text-sm font-medium text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg dark:bg-neutral-900 dark:border-neutral-700 dark:text-white" key={index}>
+                                         {feature.premium == "1" ? (
                                             <CheckIcon className="w-5 text-green-500" />
                                         ) : (
-                                            <MinusIcon className="w-5 dark:text-gray-400" />
+                                            <MinusIcon className="w-5 text-gray-400" />
                                         )}
 
-                                        <span className="text-gray-800 dark:text-gray-400 text-start">
+                                        <span className="text-gray-800 dark:text-gray-400 text-start text-lg">
                                             {feature.feature.title}
                                         </span>
                                     </li>
@@ -184,7 +184,7 @@ export default function SingleService({ service, reviews, item }) {
                                 id: service.id,
                                 package: "premium",
                             })}
-                            className="mt-5 py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm  disabled:pointer-events-none   dark:bg-transparent dark:border-gray-700 dark:text-gray-400 hover:text-white dark:hover:bg-slate-900 dark:focus:bg-neutral-800 hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50"
+                            className="mt-5 py-3 px-5 mx-5 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm  disabled:pointer-events-none   dark:bg-transparent dark:border-gray-700  hover:text-white dark:hover:bg-slate-900 dark:focus:bg-neutral-800 hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 dark:text-gray-400"
                         >
                             Order Now
                         </Link>
@@ -212,1089 +212,11 @@ export default function SingleService({ service, reviews, item }) {
                                     Free
                                 </h2>
                             </div>
-                            {/* <table className="w-full hover:bg-gray-50">
-                                <caption
-                                    className="bg-gray-50 border-t border-gray-200  py-3 px-4 text-sm font-bold text-gray-800 text-start dark:bg-neutral-700 dark:border-neutral-700 dark:text-white">
-                                    Financial data
-                                </caption>
-                                <thead>
-                                    <tr>
-                                        <th className="sr-only" scope="col">Feature</th>
-                                        <th className="sr-only" scope="col">Included</th>
-                                    </tr>
-                                </thead>
-                                <tbody className="divide-y divide-gray-200 dark:divide-neutral-700">
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">Open/High/Low/Close</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-blue-600 dark:text-blue-500"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <polyline points="20 6 9 17 4 12" />
-                                            </svg>
-
-                                            <span className="sr-only">Yes</span>
-                                        </td>
-                                    </tr>
-
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">Price-volume difference indicator</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-gray-400 dark:text-neutral-600"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <path d="M5 12h14" />
-                                            </svg>
-
-                                            <span className="sr-only">No</span>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table> */}
-
-                            {/* <table className="w-full">
-                                <caption
-                                    className="bg-gray-50 border-t border-gray-200 py-3 px-4 text-sm font-bold text-gray-800 text-start dark:bg-neutral-700 dark:border-neutral-700 dark:text-white">
-                                    On-chain data
-                                </caption>
-                                <thead>
-                                    <tr>
-                                        <th className="sr-only" scope="col">Feature</th>
-                                        <th className="sr-only" scope="col">Included</th>
-                                    </tr>
-                                </thead>
-                                <tbody className="divide-y divide-gray-200 dark:divide-neutral-700">
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">Network growth</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-gray-400 dark:text-neutral-600"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <path d="M5 12h14" />
-                                            </svg>
-
-                                            <span className="sr-only">No</span>
-                                        </td>
-                                    </tr>
-
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">Average token age consumed</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-blue-600 dark:text-blue-500"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <polyline points="20 6 9 17 4 12" />
-                                            </svg>
-
-                                            <span className="sr-only">Yes</span>
-                                        </td>
-                                    </tr>
-
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">Exchange flow</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-gray-400 dark:text-neutral-600"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <path d="M5 12h14" />
-                                            </svg>
-
-                                            <span className="sr-only">No</span>
-                                        </td>
-                                    </tr>
-
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">Total ERC20 exchange funds flow</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-gray-400 dark:text-neutral-600"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <path d="M5 12h14" />
-                                            </svg>
-
-                                            <span className="sr-only">No</span>
-                                        </td>
-                                    </tr>
-
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">Transaction volume</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-blue-600 dark:text-blue-500"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <polyline points="20 6 9 17 4 12" />
-                                            </svg>
-
-                                            <span className="sr-only">Yes</span>
-                                        </td>
-                                    </tr>
-
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">Total circulation (beta)</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-gray-400 dark:text-neutral-600"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <path d="M5 12h14" />
-                                            </svg>
-
-                                            <span className="sr-only">No</span>
-                                        </td>
-                                    </tr>
-
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">Velocity of tokens (beta)</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-blue-600 dark:text-blue-500"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <polyline points="20 6 9 17 4 12" />
-                                            </svg>
-
-                                            <span className="sr-only">Yes</span>
-                                        </td>
-                                    </tr>
-
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">ETH gas used</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-gray-400 dark:text-neutral-600"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <path d="M5 12h14" />
-                                            </svg>
-
-                                            <span className="sr-only">No</span>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table> */}
-
-                            {/* <table className="w-full">
-                                <caption
-                                    className="bg-gray-50 border-t border-gray-200 py-3 px-4 text-sm font-bold text-gray-800 text-start dark:bg-neutral-700 dark:border-neutral-700 dark:text-white">
-                                    Social data
-                                </caption>
-                                <thead>
-                                    <tr>
-                                        <th className="sr-only" scope="col">Feature</th>
-                                        <th className="sr-only" scope="col">Included</th>
-                                    </tr>
-                                </thead>
-                                <tbody className="divide-y divide-gray-200 dark:divide-neutral-700">
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">Dev activity</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-gray-400 dark:text-neutral-600"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <path d="M5 12h14" />
-                                            </svg>
-
-                                            <span className="sr-only">No</span>
-                                        </td>
-                                    </tr>
-
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">Topic search</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-blue-600 dark:text-blue-500"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <polyline points="20 6 9 17 4 12" />
-                                            </svg>
-
-                                            <span className="sr-only">Yes</span>
-                                        </td>
-                                    </tr>
-
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">Relative social dominance</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-gray-400 dark:text-neutral-600"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <path d="M5 12h14" />
-                                            </svg>
-
-                                            <span className="sr-only">No</span>
-                                        </td>
-                                    </tr>
-
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">Total social volume</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-gray-400 dark:text-neutral-600"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <path d="M5 12h14" />
-                                            </svg>
-
-                                            <span className="sr-only">No</span>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table> */}
                         </section>
-                        {/*
-                        <section>
-                            <div className="px-4 mb-4">
-                                <h2 className="text-lg leading-6 font-medium text-gray-800">Startup</h2>
-                            </div>
-                            <table className="w-full">
-                                <caption
-                                    className="bg-gray-50 border-t border-gray-200 py-3 px-4 text-sm font-bold text-gray-800 text-start dark:bg-neutral-700 dark:border-neutral-700 dark:text-white">
-                                    Financial data
-                                </caption>
-                                <thead>
-                                    <tr>
-                                        <th className="sr-only" scope="col">Feature</th>
-                                        <th className="sr-only" scope="col">Included</th>
-                                    </tr>
-                                </thead>
-                                <tbody className="divide-y divide-gray-200 dark:divide-neutral-700">
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">Open/High/Low/Close</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-blue-600 dark:text-blue-500"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <polyline points="20 6 9 17 4 12" />
-                                            </svg>
-
-                                            <span className="sr-only">Yes</span>
-                                        </td>
-                                    </tr>
-
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">Price-volume difference indicator</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-blue-600 dark:text-blue-500"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <polyline points="20 6 9 17 4 12" />
-                                            </svg>
-
-                                            <span className="sr-only">Yes</span>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-
-                            <table className="w-full">
-                                <caption
-                                    className="bg-gray-50 border-t border-gray-200 py-3 px-4 text-sm font-bold text-gray-800 text-start dark:bg-neutral-700 dark:border-neutral-700 dark:text-white">
-                                    On-chain data
-                                </caption>
-                                <thead>
-                                    <tr>
-                                        <th className="sr-only" scope="col">Feature</th>
-                                        <th className="sr-only" scope="col">Included</th>
-                                    </tr>
-                                </thead>
-                                <tbody className="divide-y divide-gray-200 dark:divide-neutral-700">
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">Network growth</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-gray-400 dark:text-neutral-600"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <path d="M5 12h14" />
-                                            </svg>
-
-                                            <span className="sr-only">No</span>
-                                        </td>
-                                    </tr>
-
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">Average token age consumed</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-gray-400 dark:text-neutral-600"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <path d="M5 12h14" />
-                                            </svg>
-
-                                            <span className="sr-only">No</span>
-                                        </td>
-                                    </tr>
-
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">Exchange flow</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-gray-400 dark:text-neutral-600"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <path d="M5 12h14" />
-                                            </svg>
-
-                                            <span className="sr-only">No</span>
-                                        </td>
-                                    </tr>
-
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">Total ERC20 exchange funds flow</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-gray-400 dark:text-neutral-600"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <path d="M5 12h14" />
-                                            </svg>
-
-                                            <span className="sr-only">No</span>
-                                        </td>
-                                    </tr>
-
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">Transaction volume</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-blue-600 dark:text-blue-500"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <polyline points="20 6 9 17 4 12" />
-                                            </svg>
-
-                                            <span className="sr-only">Yes</span>
-                                        </td>
-                                    </tr>
-
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">Total circulation (beta)</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-blue-600 dark:text-blue-500"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <polyline points="20 6 9 17 4 12" />
-                                            </svg>
-
-                                            <span className="sr-only">Yes</span>
-                                        </td>
-                                    </tr>
-
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">Velocity of tokens (beta)</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-blue-600 dark:text-blue-500"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <polyline points="20 6 9 17 4 12" />
-                                            </svg>
-
-                                            <span className="sr-only">Yes</span>
-                                        </td>
-                                    </tr>
-
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">ETH gas used</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-blue-600 dark:text-blue-500"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <polyline points="20 6 9 17 4 12" />
-                                            </svg>
-
-                                            <span className="sr-only">Yes</span>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-
-                            <table className="w-full">
-                                <caption
-                                    className="bg-gray-50 border-t border-gray-200 py-3 px-4 text-sm font-bold text-gray-800 text-start dark:bg-neutral-700 dark:border-neutral-700 dark:text-white">
-                                    Social data
-                                </caption>
-                                <thead>
-                                    <tr>
-                                        <th className="sr-only" scope="col">Feature</th>
-                                        <th className="sr-only" scope="col">Included</th>
-                                    </tr>
-                                </thead>
-                                <tbody className="divide-y divide-gray-200 dark:divide-neutral-700">
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">Dev activity</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-blue-600 dark:text-blue-500"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <polyline points="20 6 9 17 4 12" />
-                                            </svg>
-
-                                            <span className="sr-only">Yes</span>
-                                        </td>
-                                    </tr>
-
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">Topic search</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-blue-600 dark:text-blue-500"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <polyline points="20 6 9 17 4 12" />
-                                            </svg>
-
-                                            <span className="sr-only">Yes</span>
-                                        </td>
-                                    </tr>
-
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">Relative social dominance</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-gray-400 dark:text-neutral-600"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <path d="M5 12h14" />
-                                            </svg>
-
-                                            <span className="sr-only">No</span>
-                                        </td>
-                                    </tr>
-
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">Total social volume</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-blue-600 dark:text-blue-500"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <polyline points="20 6 9 17 4 12" />
-                                            </svg>
-
-                                            <span className="sr-only">Yes</span>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </section>
-
-                        <section>
-                            <div className="px-4 mb-4">
-                                <h2 className="text-lg leading-6 font-medium text-gray-800">Team</h2>
-                            </div>
-                            <table className="w-full">
-                                <caption
-                                    className="bg-gray-50 border-t border-gray-200 py-3 px-4 text-sm font-bold text-gray-800 text-start dark:bg-neutral-700 dark:border-neutral-700 dark:text-white">
-                                    Financial data
-                                </caption>
-                                <thead>
-                                    <tr>
-                                        <th className="sr-only" scope="col">Feature</th>
-                                        <th className="sr-only" scope="col">Included</th>
-                                    </tr>
-                                </thead>
-                                <tbody className="divide-y divide-gray-200 dark:divide-neutral-700">
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">Open/High/Low/Close</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-blue-600 dark:text-blue-500"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <polyline points="20 6 9 17 4 12" />
-                                            </svg>
-
-                                            <span className="sr-only">Yes</span>
-                                        </td>
-                                    </tr>
-
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">Price-volume difference indicator</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-blue-600 dark:text-blue-500"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <polyline points="20 6 9 17 4 12" />
-                                            </svg>
-
-                                            <span className="sr-only">Yes</span>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-
-                            <table className="w-full">
-                                <caption
-                                    className="bg-gray-50 border-t border-gray-200 py-3 px-4 text-sm font-bold text-gray-800 text-start dark:bg-neutral-700 dark:border-neutral-700 dark:text-white">
-                                    On-chain data
-                                </caption>
-                                <thead>
-                                    <tr>
-                                        <th className="sr-only" scope="col">Feature</th>
-                                        <th className="sr-only" scope="col">Included</th>
-                                    </tr>
-                                </thead>
-                                <tbody className="divide-y divide-gray-200 dark:divide-neutral-700">
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">Network growth</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-blue-600 dark:text-blue-500"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <polyline points="20 6 9 17 4 12" />
-                                            </svg>
-
-                                            <span className="sr-only">Yes</span>
-                                        </td>
-                                    </tr>
-
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">Average token age consumed</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-blue-600 dark:text-blue-500"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <polyline points="20 6 9 17 4 12" />
-                                            </svg>
-
-                                            <span className="sr-only">Yes</span>
-                                        </td>
-                                    </tr>
-
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">Exchange flow</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-blue-600 dark:text-blue-500"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <polyline points="20 6 9 17 4 12" />
-                                            </svg>
-
-                                            <span className="sr-only">Yes</span>
-                                        </td>
-                                    </tr>
-
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">Total ERC20 exchange funds flow</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-blue-600 dark:text-blue-500"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <polyline points="20 6 9 17 4 12" />
-                                            </svg>
-
-                                            <span className="sr-only">Yes</span>
-                                        </td>
-                                    </tr>
-
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">Transaction volume</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-blue-600 dark:text-blue-500"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <polyline points="20 6 9 17 4 12" />
-                                            </svg>
-
-                                            <span className="sr-only">Yes</span>
-                                        </td>
-                                    </tr>
-
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">Total circulation (beta)</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-blue-600 dark:text-blue-500"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <polyline points="20 6 9 17 4 12" />
-                                            </svg>
-
-                                            <span className="sr-only">Yes</span>
-                                        </td>
-                                    </tr>
-
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">Velocity of tokens (beta)</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-gray-400 dark:text-neutral-600"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <path d="M5 12h14" />
-                                            </svg>
-
-                                            <span className="sr-only">No</span>
-                                        </td>
-                                    </tr>
-
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">ETH gas used</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-blue-600 dark:text-blue-500"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <polyline points="20 6 9 17 4 12" />
-                                            </svg>
-
-                                            <span className="sr-only">Yes</span>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-
-                            <table className="w-full">
-                                <caption
-                                    className="bg-gray-50 border-t border-gray-200 py-3 px-4 text-sm font-bold text-gray-800 text-start dark:bg-neutral-700 dark:border-neutral-700 dark:text-white">
-                                    Social data
-                                </caption>
-                                <thead>
-                                    <tr>
-                                        <th className="sr-only" scope="col">Feature</th>
-                                        <th className="sr-only" scope="col">Included</th>
-                                    </tr>
-                                </thead>
-                                <tbody className="divide-y divide-gray-200 dark:divide-neutral-700">
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">Dev activity</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-gray-400 dark:text-neutral-600"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <path d="M5 12h14" />
-                                            </svg>
-
-                                            <span className="sr-only">No</span>
-                                        </td>
-                                    </tr>
-
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">Topic search</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-blue-600 dark:text-blue-500"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <polyline points="20 6 9 17 4 12" />
-                                            </svg>
-
-                                            <span className="sr-only">Yes</span>
-                                        </td>
-                                    </tr>
-
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">Relative social dominance</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-blue-600 dark:text-blue-500"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <polyline points="20 6 9 17 4 12" />
-                                            </svg>
-
-                                            <span className="sr-only">Yes</span>
-                                        </td>
-                                    </tr>
-
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">Total social volume</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-gray-400 dark:text-neutral-600"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <path d="M5 12h14" />
-                                            </svg>
-
-                                            <span className="sr-only">No</span>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </section>
-
-                        <section>
-                            <div className="px-4 mb-4">
-                                <h2 className="text-lg leading-6 font-medium text-gray-800">Enterprise</h2>
-                            </div>
-                            <table className="w-full">
-                                <caption
-                                    className="bg-gray-50 border-t border-gray-200 py-3 px-4 text-sm font-bold text-gray-800 text-start dark:bg-neutral-700 dark:border-neutral-700 dark:text-white">
-                                    Financial data
-                                </caption>
-                                <thead>
-                                    <tr>
-                                        <th className="sr-only" scope="col">Feature</th>
-                                        <th className="sr-only" scope="col">Included</th>
-                                    </tr>
-                                </thead>
-                                <tbody className="divide-y divide-gray-200 dark:divide-neutral-700">
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">Open/High/Low/Close</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-blue-600 dark:text-blue-500"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <polyline points="20 6 9 17 4 12" />
-                                            </svg>
-
-                                            <span className="sr-only">Yes</span>
-                                        </td>
-                                    </tr>
-
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">Price-volume difference indicator</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-blue-600 dark:text-blue-500"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <polyline points="20 6 9 17 4 12" />
-                                            </svg>
-
-                                            <span className="sr-only">Yes</span>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-
-                            <table className="w-full">
-                                <caption
-                                    className="bg-gray-50 border-t border-gray-200 py-3 px-4 text-sm font-bold text-gray-800 text-start dark:bg-neutral-700 dark:border-neutral-700 dark:text-white">
-                                    On-chain data
-                                </caption>
-                                <thead>
-                                    <tr>
-                                        <th className="sr-only" scope="col">Feature</th>
-                                        <th className="sr-only" scope="col">Included</th>
-                                    </tr>
-                                </thead>
-                                <tbody className="divide-y divide-gray-200 dark:divide-neutral-700">
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">Network growth</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-blue-600 dark:text-blue-500"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <polyline points="20 6 9 17 4 12" />
-                                            </svg>
-
-                                            <span className="sr-only">Yes</span>
-                                        </td>
-                                    </tr>
-
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">Average token age consumed</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-blue-600 dark:text-blue-500"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <polyline points="20 6 9 17 4 12" />
-                                            </svg>
-
-                                            <span className="sr-only">Yes</span>
-                                        </td>
-                                    </tr>
-
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">Exchange flow</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-blue-600 dark:text-blue-500"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <polyline points="20 6 9 17 4 12" />
-                                            </svg>
-
-                                            <span className="sr-only">Yes</span>
-                                        </td>
-                                    </tr>
-
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">Total ERC20 exchange funds flow</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-blue-600 dark:text-blue-500"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <polyline points="20 6 9 17 4 12" />
-                                            </svg>
-
-                                            <span className="sr-only">Yes</span>
-                                        </td>
-                                    </tr>
-
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">Transaction volume</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-blue-600 dark:text-blue-500"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <polyline points="20 6 9 17 4 12" />
-                                            </svg>
-
-                                            <span className="sr-only">Yes</span>
-                                        </td>
-                                    </tr>
-
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">Total circulation (beta)</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-blue-600 dark:text-blue-500"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <polyline points="20 6 9 17 4 12" />
-                                            </svg>
-
-                                            <span className="sr-only">Yes</span>
-                                        </td>
-                                    </tr>
-
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">Velocity of tokens (beta)</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-blue-600 dark:text-blue-500"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <polyline points="20 6 9 17 4 12" />
-                                            </svg>
-
-                                            <span className="sr-only">Yes</span>
-                                        </td>
-                                    </tr>
-
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">ETH gas used</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-blue-600 dark:text-blue-500"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <polyline points="20 6 9 17 4 12" />
-                                            </svg>
-
-                                            <span className="sr-only">Yes</span>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-
-                            <table className="w-full">
-                                <caption
-                                    className="bg-gray-50 border-t border-gray-200 py-3 px-4 text-sm font-bold text-gray-800 text-start dark:bg-neutral-700 dark:border-neutral-700 dark:text-white">
-                                    Social data
-                                </caption>
-                                <thead>
-                                    <tr>
-                                        <th className="sr-only" scope="col">Feature</th>
-                                        <th className="sr-only" scope="col">Included</th>
-                                    </tr>
-                                </thead>
-                                <tbody className="divide-y divide-gray-200 dark:divide-neutral-700">
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">Dev activity</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-blue-600 dark:text-blue-500"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <polyline points="20 6 9 17 4 12" />
-                                            </svg>
-
-                                            <span className="sr-only">Yes</span>
-                                        </td>
-                                    </tr>
-
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">Topic search</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-blue-600 dark:text-blue-500"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <polyline points="20 6 9 17 4 12" />
-                                            </svg>
-
-                                            <span className="sr-only">Yes</span>
-                                        </td>
-                                    </tr>
-
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">Relative social dominance</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-blue-600 dark:text-blue-500"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <polyline points="20 6 9 17 4 12" />
-                                            </svg>
-
-                                            <span className="sr-only">Yes</span>
-                                        </td>
-                                    </tr>
-
-                                    <tr className="border-t border-gray-200 dark:border-neutral-700">
-                                        <th className="py-5 px-4 text-sm font-normal text-gray-600 text-start whitespace-nowrap dark:text-neutral-400"
-                                            scope="row">Total social volume</th>
-                                        <td className="py-5 pe-4">
-
-                                            <svg className="shrink-0 ms-auto size-5 text-blue-600 dark:text-blue-500"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round">
-                                                <polyline points="20 6 9 17 4 12" />
-                                            </svg>
-
-                                            <span className="sr-only">Yes</span>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </section> */}
                     </div>
 
                     <div className="hidden lg:block ">
-                        <table className="w-full h-px  divide-x divide-y divide-slate-200">
+                        <table className="w-full h-px border divide-x divide-y divide-slate-200">
                             <caption className="sr-only">
                                 Pricing plan comparison
                             </caption>
@@ -1340,7 +262,7 @@ export default function SingleService({ service, reviews, item }) {
                                     return (
                                         <tr className="dark:hover:bg-slate-900 hover:bg-gray-100 divide-x divide-y">
                                             <th
-                                                className="py-4 ps-6 pe-6  text-base font-normal text-gray-600  text-start whitespace-nowrap  dark:text-gray-400 "
+                                                className="py-4 ps-6 pe-6 font-bold text-xl text-gray-600  text-start whitespace-nowrap  dark:text-gray-400 "
                                                 scope="row"
                                             >
                                                 {feature.feature.title}
@@ -1572,22 +494,22 @@ export default function SingleService({ service, reviews, item }) {
                                         >
                                             <div className=" ">
                                                 <div className="flex  items-center ">
-                                                   <div className="">
-                                                   <img
-                                                        className="mr-10 h-14 w-14 flex justify-center object-cover  items-center p-1 border shadow-md  rounded-full"
-                                                        src="{window.location.protocol + '/storage/' + item.reviews.users.avater}"
-                                                        alt=""
-                                                    />
-                                                   </div>
+                                                    <div className="">
+                                                        <img
+                                                            className="mr-10 h-14 w-14 flex justify-center object-cover  items-center p-1 border shadow-md  rounded-full"
+                                                            src="{window.location.protocol + '/storage/' + item.reviews.users.avater}"
+                                                            alt=""
+                                                        />
+                                                    </div>
                                                     <div className="w-full md:w-px h-2 md:h-8 mx-8 bg-transparent md:bg-gray-200"></div>
                                                     <span className="mr-4 text-lg font-heading font-medium">
                                                         {item.rating}.0
                                                     </span>
                                                     <div className="flex">
-                                                        { Array.from({ length: item.rating,}).map((_, index) => (
+                                                        {Array.from({ length: item.rating, }).map((_, index) => (
 
                                                             <a key={index} className="inline-block mr-1" href="#" >
-                                                                <svg width="20" height="20"  viewBox="0 0 20 20" fill="none"
+                                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
                                                                     xmlns="http://www.w3.org/2000/svg"  >
                                                                     <path
                                                                         d="M20 7.91677H12.4167L10 0.416763L7.58333 7.91677H0L6.18335 12.3168L3.81668 19.5834L10 15.0834L16.1834 19.5834L13.8167 12.3168L20 7.91677Z"
@@ -1595,11 +517,11 @@ export default function SingleService({ service, reviews, item }) {
                                                                     ></path>
                                                                 </svg>
                                                             </a>
-                                                        )) }
+                                                        ))}
                                                     </div>
                                                     <div className="  w-full text-right ">
                                                         <p className=" text-sm text-gray-300  ">
-                                                            {moment( item.created_at, "YYYY/MM/DD" ).fromNow()}
+                                                            {moment(item.created_at, "YYYY/MM/DD").fromNow()}
                                                         </p>
                                                     </div>
                                                 </div>
