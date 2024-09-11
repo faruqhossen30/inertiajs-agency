@@ -39,10 +39,16 @@ class ServiceController extends Controller
     public function store(Request $request)
     {
         // return $request->all();
-        // $request->validate([
-        //     'title' => 'required',
-        //     'description' => 'required',
-        // ]);
+        $request->validate([
+            'title'          => 'required',
+            'thumbnail'      => 'required | mimes:jpeg,jpg,png | max:1000',
+            'description'    => 'required',
+            'basic_price'    => 'required | integer',
+            'standard_price' => 'required | integer',
+            'premium_price'  => 'required | integer',
+            'status'         => 'required',
+            'category_ids'   => 'required',
+        ]);
 
         $data = [
             'title'             => $request->title,
@@ -50,6 +56,7 @@ class ServiceController extends Controller
             'short_description' => $request->short_description,
             'description_code'  => $request->description_code,
             'description'       => $request->description,
+            'status'            => $request->status,
             'basic_price'       => $request->basic_price,
             'standard_price'    => $request->standard_price,
             'premium_price'     => $request->premium_price,
@@ -92,8 +99,14 @@ class ServiceController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-            'title'        => 'required',
-            'description' => 'required'
+            'title'          => 'required',
+            'thumbnail'      => 'required | mimes:jpeg,jpg,png | max:1000',
+            'description'    => 'required',
+            'basic_price'    => 'required | number',
+            'standard_price' => 'required | number',
+            'premium_price'  => 'required | number',
+            'status'         => 'required',
+            'category_ids'   => 'required',
         ]);
 
         $data = [

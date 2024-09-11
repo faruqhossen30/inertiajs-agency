@@ -216,12 +216,12 @@ export default function SingleService({ service, reviews, item }) {
                     </div>
 
                     <div className="hidden lg:block ">
-                        <table className="w-full h-px border divide-x divide-y divide-slate-200">
+                        <table className="w-full h-px border dark:divide-gray-700 divide-slate-200 dark:border-gray-700">
                             <caption className="sr-only">
                                 Pricing plan comparison
                             </caption>
-                            <thead className="sticky top-0 inset-x-0 bg-white dark:bg-slate-800 dark:border dark:rounded-lg border-gray-700  divide-y ">
-                                <tr className="bg-gray-50 shadow divide-x ">
+                            <thead className="sticky top-0 inset-x-0 bg-white dark:bg-slate-800 dark:border dark:rounded-lg border-gray-700  ">
+                                <tr className="bg-gray-50 shadow divide-x  dark:bg-slate-900 dark:divide-gray-700">
                                     <th
                                         className="py-4 ps-6 pe-6 text-sm font-medium text-gray-800 text-start"
                                         scope="col"
@@ -253,14 +253,14 @@ export default function SingleService({ service, reviews, item }) {
                                     </th>
                                 </tr>
                             </thead>
-                            <tbody className="border-t border-gray-200 divide-y divide-gray-200 dark:border-neutral-700 dark:divide-neutral-700 ">
+                            <tbody className="border-t border-gray-200 divide-gray-200 dark:border-neutral-700 dark:divide-gray-700  ">
                                 {/* <tr>
                                     <th className="py-3 ps-6 bg-gray-50 font-bold text-gray-800 text-start dark:border border-gray-700  dark:bg-slate-800 dark:text-gray-400"
                                         colSpan="5" scope="colgroup">Financial data</th>
                                 </tr> */}
                                 {service.items.map((feature, index) => {
                                     return (
-                                        <tr className="dark:hover:bg-slate-900 hover:bg-gray-100 divide-x divide-y">
+                                        <tr className="dark:hover:bg-slate-900 hover:bg-gray-100  dark:divide-gray-700">
                                             <th
                                                 className="py-4 ps-6 pe-6 font-bold text-xl text-gray-600  text-start whitespace-nowrap  dark:text-gray-400 "
                                                 scope="row"
@@ -306,7 +306,7 @@ export default function SingleService({ service, reviews, item }) {
                                     );
                                 })}
 
-                                <tr className="text-center bg-gray-50   shadow-sm divide-x divide-y">
+                                <tr className="text-center bg-gray-50 dark:bg-slate-900  dark:divide-gray-700 shadow-sm divide-x dark:border-gray-700">
                                     <td></td>
                                     <td className="pb-4">
                                         <Link
@@ -342,7 +342,7 @@ export default function SingleService({ service, reviews, item }) {
                                         </Link>
                                     </td>
                                 </tr>
-                                <tr className="divide-x divide-y"></tr>
+                                {/* <tr className="divide dark:divide-gray-700"></tr> */}
                             </tbody>
                         </table>
                     </div>

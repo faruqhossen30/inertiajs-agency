@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('short_description',2000)->nullable();
             $table->longText('description')->nullable();
             $table->longText('description_code')->nullable();
+            $table->boolean('status')->default(1);
             $table->integer('basic_price')->nullable();
             $table->integer('standard_price')->nullable();
             $table->integer('premium_price')->nullable();

@@ -19,6 +19,7 @@ class Service extends Model
         'short_description',
         'description',
         'description_code',
+        'status',
         'basic_price',
         'standard_price',
         'premium_price',
