@@ -98,8 +98,9 @@ export default function Create({ auth, categories, service ,selectedCategories }
 
                                         <div>
                                             <InputLabel isRequired={true} labelFor="status" />
-                                            <select id="status" name="status" className="py-2 px-4 pr-9 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
+                                            <select id="status" defaultValue={service.status} name="status" className="py-2 px-4 pr-9 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
                                                 onChange={(e) => setData('status', e.target.value)}>
+                                                    <option value="">Select</option>
                                                 <option value="1">Yes</option>
                                                 <option value="0">No</option>
                                             </select>
