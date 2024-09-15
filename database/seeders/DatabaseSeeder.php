@@ -32,7 +32,9 @@ class DatabaseSeeder extends Seeder
             AdminSeeder::class,
             UserSeeder::class,
             PackageSeeder::class,
-            CategorySeeder::class
+            CategorySeeder::class,
+            FeatureSeeder::class,
+            FaqSeeder::class,
         ]);
         Category::factory(5)->create();
         Blog::factory(50)
