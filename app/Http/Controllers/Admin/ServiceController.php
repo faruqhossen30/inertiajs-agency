@@ -115,6 +115,7 @@ class ServiceController extends Controller
             'short_description' => $request->short_description,
             'description_code'  => $request->description_code,
             'description'       => $request->description,
+            'status'            => $request->status,
             'basic_price'       => $request->basic_price,
             'standard_price'    => $request->standard_price,
             'premium_price'     => $request->premium_price,
