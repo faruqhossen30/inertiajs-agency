@@ -13,16 +13,23 @@ class Service extends Model
     use HasFactory;
 
     protected $fillable = [
+        'id',
         'title',
         'slug',
         'thumbnail',
         'short_description',
         'description',
         'description_code',
-        'status',
         'basic_price',
         'standard_price',
         'premium_price',
+        'basic_day',
+        'standard_day',
+        'premium_day',
+        'basic_description',
+        'standard_description',
+        'premium_description',
+        'status'
     ];
 
     public function categories()

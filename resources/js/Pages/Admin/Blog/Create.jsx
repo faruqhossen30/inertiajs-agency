@@ -101,7 +101,7 @@ export default function Create({ auth, categories }) {
                                 </div>
 
                                 <div className="mt-2">
-                                    <label for="meta_description" className="sr-only">Meta Description</label>
+                                    <label htmlFor="meta_description" className="sr-only">Meta Description</label>
                                     <textarea id="meta_description" name="meta_description" rows="4" onChange={(e) => setData('meta_description', e.target.value)} className="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400" placeholder="Meta_description" ></textarea>
                                 </div>
 

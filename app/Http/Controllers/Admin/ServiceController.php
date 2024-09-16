@@ -43,9 +43,6 @@ class ServiceController extends Controller
             'title'          => 'required',
             'thumbnail'      => 'required | mimes:jpeg,jpg,png | max:1000',
             'description'    => 'required',
-            'basic_price'    => 'required | numeric',
-            'standard_price' => 'required | numeric',
-            'premium_price'  => 'required | numeric',
             'status'         => 'required',
             'category_ids'   => 'required',
         ]);
@@ -57,9 +54,6 @@ class ServiceController extends Controller
             'description_code'  => $request->description_code,
             'description'       => $request->description,
             'status'            => $request->status,
-            'basic_price'       => $request->basic_price,
-            'standard_price'    => $request->standard_price,
-            'premium_price'     => $request->premium_price,
         ];
         if ($request->file('thumbnail')) {
             $file_name = $request->file('thumbnail')->store('service');
@@ -69,7 +63,7 @@ class ServiceController extends Controller
         $service = Service::create($data);
         $service->categories()->attach($request->category_ids);
 
-        return to_route('service.index');
+        return to_route('service.package.create', $service->id);
     }
 
     /**

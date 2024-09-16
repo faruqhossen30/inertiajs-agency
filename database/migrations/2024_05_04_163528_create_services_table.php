@@ -19,10 +19,20 @@ return new class extends Migration
             $table->string('short_description',2000)->nullable();
             $table->longText('description')->nullable();
             $table->longText('description_code')->nullable();
-            $table->boolean('status')->default(1);
+            // Price
             $table->integer('basic_price')->nullable();
             $table->integer('standard_price')->nullable();
             $table->integer('premium_price')->nullable();
+            // Day
+            $table->integer('basic_day')->nullable();
+            $table->integer('standard_day')->nullable();
+            $table->integer('premium_day')->nullable();
+            // Description
+            $table->string('basic_description', 1000)->nullable();
+            $table->string('standard_description', 1000)->nullable();
+            $table->string('premium_description', 1000)->nullable();
+
+            $table->boolean('status')->default(1);
             $table->timestamps();
         });
     }
