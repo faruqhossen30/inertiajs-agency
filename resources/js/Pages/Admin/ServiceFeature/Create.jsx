@@ -7,10 +7,14 @@ import { useState } from "react";
 
 export default function Create({ auth, services, features, service }) {
     const { parmas } = usePage().props;
-    console.log(service);
+    // console.log(service.features);
+    // console.log(service.features.filter((ft)=>{
+    //     console.log(ft.id);
+
+    // }));
 
     const { data, setData, post, processing, errors, reset } = useForm({
-        featureids: [],
+        featureids: service.features.map(item => item.id),
         basic: [],
         standard: [],
         premium: [],
@@ -18,11 +22,7 @@ export default function Create({ auth, services, features, service }) {
 
     function submit(e) {
         e.preventDefault();
-        post(route("service.feature.store", service.id), {
-            onSuccess: function (res) {
-                // console.log(res);
-            },
-        });
+        // post(route("service.feature.store", service.id));
         console.log(data);
     }
     // Feature checkbox
@@ -151,8 +151,6 @@ export default function Create({ auth, services, features, service }) {
 
                     <tbody className="divide-y divide-gray-200 dark:divide-gray-700 space-y-5 ">
                         {features.map((item, index) => {
-                            console.log(item);
-
                             return (
                                 <tr
                                     key={index}
@@ -169,6 +167,7 @@ export default function Create({ auth, services, features, service }) {
                                             type="checkbox"
                                             name={`featureid[${item.id}]`}
                                             value={item.id}
+                                            checked={service.features.filter((ft)=> console.log(item.id) )}
                                             onChange={featueCheckboxChange}
                                         />
                                     </td>

@@ -1,6 +1,6 @@
 
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
-import { Head, useForm } from '@inertiajs/react';
+import { Head, Link, useForm } from '@inertiajs/react';
 import Input from '@/Components/Form/Input';
 import SubmitButton from '@/Components/Form/SubmitButton';
 import InputLabel from '@/Components/Form/InputLabel';
@@ -8,9 +8,10 @@ import BreadcumComponent from '@/Components/Dashboard/BreadcumComponent';
 import RichTextEditor from '@/Components/RichTextEditor';
 import Select from 'react-select'
 import ThumbnailInput from '@/Components/Form/ThumbnailInput';
+import { ChevronRightIcon } from '@heroicons/react/24/outline';
 
 
-export default function Create({ auth, categories, service ,selectedCategories }) {
+export default function Create({ auth, categories, service, selectedCategories }) {
     console.log(selectedCategories);
 
 
@@ -21,27 +22,29 @@ export default function Create({ auth, categories, service ,selectedCategories }
 
     const { data, setData, put, post, processing, errors, reset } = useForm({
 
-        title           : service.title,
+        title: service.title,
         description_code: service.description_code,
-        basic_price     : service.basic_price,
-        standard_price  : service.standard_price,
-        premium_price   : service.premium_price,
-        description     : service.description,
-        thumbnail       : service.thumbnail,
-        package         : service.package,
+        basic_price: service.basic_price,
+        standard_price: service.standard_price,
+        premium_price: service.premium_price,
+        description: service.description,
+        thumbnail: service.thumbnail,
+        package: service.package,
         // category_ids    : service.category_ids,
-        // category_ids: selectedCategories.map(item => item.id),
+        category_ids: selectedCategories.map(item => item.id),
         // });
-        status          : service.status,
+        status: service.status,
     });
 
-//  const handleCategoryChange = (e) => {
-//         setData('category_ids', e.map(item => item.id));
-//     };
+    //  const handleCategoryChange = (e) => {
+    //         setData('category_ids', e.map(item => item.id));
+    //     };
 
     function submit(e) {
         e.preventDefault()
-        post(route('serviceupdate', service.id));
+        console.log(data);
+
+        // post(route('serviceupdate', service.id));
     }
 
     return (
@@ -77,7 +80,7 @@ export default function Create({ auth, categories, service ,selectedCategories }
                                                 <InputLabel isRequired={true} labelFor="Description" />
                                                 <RichTextEditor setData={setData} data={data} />
                                             </div>
-                                            <SubmitButton />
+                                            <SubmitButton title="Update & Next" />
                                         </div>
                                     </div>
                                 </div>
@@ -100,7 +103,7 @@ export default function Create({ auth, categories, service ,selectedCategories }
                                             <InputLabel isRequired={true} labelFor="status" />
                                             <select id="status" defaultValue={service.status} name="status" className="py-2 px-4 pr-9 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
                                                 onChange={(e) => setData('status', e.target.value)}>
-                                                    <option value="">Select</option>
+                                                <option value="">Select</option>
                                                 <option value="1">Yes</option>
                                                 <option value="0">No</option>
                                             </select>
@@ -128,7 +131,7 @@ export default function Create({ auth, categories, service ,selectedCategories }
                                         <Select
                                             onChange={(e) => setData('category_ids', e.map(item => item.id))}
                                             isMulti
-
+                                            defaultValue={selectedCategories}
                                             options={categories}
                                             getOptionLabel={option => option.name}
                                             getOptionValue={option => option.id}
@@ -138,15 +141,25 @@ export default function Create({ auth, categories, service ,selectedCategories }
                                 </div>
                             </div>
                         </div>
+                        <div className="flex justify-between py-10">
+                            <div>
+                                <button type="submit" className="py-2 px-3 flex items-center gap-x-1 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none" data-hs-stepper-next-btn="">
+                                    Update & Next
+                                    <ChevronRightIcon className="w-5" />
+                                </button>
+                            </div>
+                            <div>
+                                <Link href={route('service.package.create', service.id)} className="py-2 px-3 flex items-center gap-x-1 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none" data-hs-stepper-next-btn="">
+                                    Next
+                                    <ChevronRightIcon className="w-5" />
+                                </Link>
+                            </div>
+                        </div>
 
                         {/* <SubmitButton /> */}
                     </form>
                 </div>
             </div>
-
-
-
-
 
         </AuthenticatedLayout>
     );

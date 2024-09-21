@@ -119,7 +119,7 @@ export default function Index({ auth, services }) {
 
                                                 <td className="h-px w-px whitespace-nowrap">
                                                     <div className="px-6 py-2">
-                                                        <Link href={route('service.feature', item.id)}><Cog6ToothIcon className="w-5" /></Link>
+                                                        <Link href={route('service.feature.create', item.id)}><Cog6ToothIcon className="w-5" /></Link>
                                                     </div>
                                                 </td>
                                                 <td className="h-px w-px whitespace-nowrap">

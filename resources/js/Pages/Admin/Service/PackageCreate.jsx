@@ -1,38 +1,36 @@
-import { Head, useForm, usePage } from "@inertiajs/react";
+import { Head, Link, useForm, usePage } from "@inertiajs/react";
 import BreadcumComponent from "@/Components/Dashboard/BreadcumComponent";
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import SubmitButton from "@/Components/Form/SubmitButton";
 
 import Input from "@/Components/Form/Input";
+import { ChevronRightIcon } from "@heroicons/react/24/outline";
 
 export default function PackageCreate({ service }) {
+    console.log(service);
+
     const { parmas } = usePage().props;
     const { data, setData, post, processing, errors, reset } = useForm({
         service_id: service.id,
         // Price
-        basic_price: '',
-        standard_price: '',
-        premium_price: '',
+        basic_price: service.basic_price,
+        standard_price: service.standard_price,
+        premium_price: service.premium_price,
         // Day
-        basic_day: '',
-        standard_day: '',
-        premium_day: '',
+        basic_day: service.basic_day,
+        standard_day: service.standard_day,
+        premium_day: service.premium_day,
         // Description
-        basic_description: '',
-        standard_description: '',
-        premium_description: ''
+        basic_description: service.basic_description,
+        standard_description: service.standard_description,
+        premium_description: service.premium_day
 
     });
-    const people = [
-        { name: 'Lindsay Walton', title: 'Front-end Developer', email: 'lindsay.walton@example.com', role: 'Member' },
-        // More people...
-    ]
 
     function submit(e) {
         e.preventDefault();
         post(route("service.package.store", service.id), {
             onSuccess: function (res) {
-                // console.log(res);
             },
         });
         console.log(data);
@@ -46,7 +44,10 @@ export default function PackageCreate({ service }) {
                 pageOne="Service Feature"
                 pageOneRoute="service.index"
             />
-
+            <div className=" flex border px-3 py-2 space-x-2 shadow-sm text-base text-gray-600 dark:text-gray-400 dark:border-gray-700">
+                <strong>Service Title :</strong>
+                <p>{service.title}</p>
+            </div>
 
             <form onSubmit={submit} className="">
                 <div className="px-4 sm:px-6 lg:px-8">
@@ -81,30 +82,30 @@ export default function PackageCreate({ service }) {
                                         <tr className="p-5 divide-x">
                                             <td className="px-5 py-2">Price</td>
                                             <td className="px-5 py-2">
-                                                <Input type="number" name="basic_price" placeholder="$50" onChange={(e) => setData("basic_price", e.target.value)} />
+                                                <Input type="number" name="basic_price" placeholder="$50" value={data.basic_price} onChange={(e) => setData("basic_price", e.target.value)} />
                                                 <span className="text-red-500">{errors.basic_price && errors.basic_price}</span>
                                             </td>
                                             <td className="px-5 py-2">
-                                                <Input type="number" name="standard_price" placeholder="$100"  onChange={(e) => setData("standard_price", e.target.value)} />
+                                                <Input type="number" name="standard_price" placeholder="$100" value={data.standard_price} onChange={(e) => setData("standard_price", e.target.value)} />
                                                 <span className="text-red-500">{errors.standard_price && errors.standard_price}</span>
                                             </td>
                                             <td className="px-5 py-2">
-                                                <Input type="number" name="premium_price" placeholder="$150"  onChange={(e) => setData("premium_price", e.target.value)} />
+                                                <Input type="number" name="premium_price" data={data.premium_price} placeholder="$150" onChange={(e) => setData("premium_price", e.target.value)} />
                                                 <span className="text-red-500">{errors.premium_price && errors.premium_price}</span>
                                             </td>
                                         </tr>
                                         <tr className="p-5 divide-x">
                                             <td className="px-5 py-2">Deliver Day</td>
                                             <td className="px-5 py-2">
-                                                <Input type="number" name="basic_day" placeholder="7"  onChange={(e) => setData("basic_day", e.target.value)} />
+                                                <Input type="number" name="basic_day" placeholder="7" value={data.basic_day} onChange={(e) => setData("basic_day", e.target.value)} />
                                                 <span className="text-red-500">{errors.basic_day && errors.basic_day}</span>
                                             </td>
                                             <td className="px-5 py-2">
-                                                <Input type="number" name="standard_day" placeholder="15"  onChange={(e) => setData("standard_day", e.target.value)} />
+                                                <Input type="number" name="standard_day" placeholder="15" value={data.standard_day} onChange={(e) => setData("standard_day", e.target.value)} />
                                                 <span className="text-red-500">{errors.standard_day && errors.standard_day}</span>
                                             </td>
                                             <td className="px-5 py-2">
-                                                <Input type="number" name="premium_day" placeholder="30"  onChange={(e) => setData("premium_day", e.target.value)} />
+                                                <Input type="number" name="premium_day" placeholder="30" value={data.premium_day} onChange={(e) => setData("premium_day", e.target.value)} />
                                                 <span className="text-red-500">{errors.premium_day && errors.premium_day}</span>
                                             </td>
                                         </tr>
@@ -131,7 +132,22 @@ export default function PackageCreate({ service }) {
                         </div>
                     </div>
                 </div>
-                <SubmitButton />
+
+
+                <div className="flex justify-between py-10">
+                    <div>
+                        <button type="submit" class="py-2 px-3 flex items-center gap-x-1 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none" data-hs-stepper-next-btn="">
+                            Update & Next
+                            <ChevronRightIcon className="w-5" />
+                        </button>
+                    </div>
+                    <div>
+                        <Link href={route('service.feature.create', service.id)} class="py-2 px-3 flex items-center gap-x-1 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none" data-hs-stepper-next-btn="">
+                            Next
+                            <ChevronRightIcon className="w-5" />
+                        </Link>
+                    </div>
+                </div>
             </form>
         </AuthenticatedLayout>
     );

@@ -43,7 +43,7 @@ class ServicePackageController extends Controller
 
         Service::firstWhere('id', $id)->update($data);
 
-        return to_route('service.index');
+        return to_route('service.feature.create', $id);
         // $service = Service::firstWhere('id', $id);
 
         // return $service;
