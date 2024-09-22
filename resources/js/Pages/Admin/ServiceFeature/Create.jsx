@@ -24,8 +24,8 @@ export default function Create({ auth, services, features, service }) {
 
     function submit(e) {
         e.preventDefault();
-        // post(route("service.feature.store", service.id));
-        console.log(data);
+        post(route("service.feature.store", service.id));
+        // console.log(data);
     }
     // Feature checkbox
     const [feature, setFeature] = useState([]);
