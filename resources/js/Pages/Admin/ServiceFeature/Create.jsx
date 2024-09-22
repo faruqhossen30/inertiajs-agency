@@ -7,14 +7,16 @@ import { useState } from "react";
 
 export default function Create({ auth, services, features, service }) {
     const { parmas } = usePage().props;
-    // console.log(service.features);
+    const featureids = service.items.map(item => item.feature_id);
+    console.log(service);
+
     // console.log(service.features.filter((ft)=>{
     //     console.log(ft.id);
 
     // }));
 
     const { data, setData, post, processing, errors, reset } = useForm({
-        featureids: service.features.map(item => item.id),
+        featureids: service.items.map(item => item.feature_id),
         basic: [],
         standard: [],
         premium: [],
@@ -151,6 +153,7 @@ export default function Create({ auth, services, features, service }) {
 
                     <tbody className="divide-y divide-gray-200 dark:divide-gray-700 space-y-5 ">
                         {features.map((item, index) => {
+
                             return (
                                 <tr
                                     key={index}
@@ -167,7 +170,8 @@ export default function Create({ auth, services, features, service }) {
                                             type="checkbox"
                                             name={`featureid[${item.id}]`}
                                             value={item.id}
-                                            checked={service.features.filter((ft)=> console.log(item.id) )}
+                                            // checked={service.features.filter((ft)=> console.log(item.id) )}
+                                            defaultChecked={data.featureids.includes(item.id)}
                                             onChange={featueCheckboxChange}
                                         />
                                     </td>
@@ -191,6 +195,7 @@ export default function Create({ auth, services, features, service }) {
                                             type="checkbox"
                                             name={`basic[${item.id}]`}
                                             value={item.id}
+                                            defaultChecked={item.basic}
                                             onChange={basicCheckboxChange}
                                         />
                                     </td>
@@ -199,6 +204,7 @@ export default function Create({ auth, services, features, service }) {
                                             type="checkbox"
                                             name={`standart[${item.id}]`}
                                             value={item.id}
+                                            defaultChecked={item.standart}
                                             onChange={standardCheckboxChange}
                                         />
                                     </td>
@@ -207,6 +213,7 @@ export default function Create({ auth, services, features, service }) {
                                             type="checkbox"
                                             name={`premium[${item.id}]`}
                                             value={item.id}
+                                            defaultChecked={item.premium=="1"}
                                             onChange={premiumCheckboxChange}
                                         />
                                     </td>
