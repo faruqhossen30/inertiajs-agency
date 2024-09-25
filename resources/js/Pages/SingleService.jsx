@@ -221,32 +221,32 @@ export default function SingleService({ service, reviews, item }) {
                                 Pricing plan comparison
                             </caption>
                             <thead className="sticky top-0 inset-x-0 bg-white dark:bg-slate-800 dark:border dark:rounded-lg border-gray-700  ">
-                                <tr className="bg-gray-50 shadow divide-x  dark:bg-slate-900 dark:divide-gray-700">
+                                <tr className="bg-gray-50 shadow  divide-x   dark:bg-slate-900 dark:divide-gray-700">
                                     <th
-                                        className="py-4 ps-6 pe-6 text-sm font-medium text-gray-800 text-start"
+                                        className="py-4 ps-6 pe-6 text-sm  font-medium text-gray-800 text-start"
                                         scope="col"
                                     >
                                         <span className="sr-only">
                                             Feature by
                                         </span>
-                                        <span className="w-1/4 py-4 px-1 text-base leading-6 font-medium text-gray-800 text-center dark:text-gray-400 uppercase ">
+                                        <span className="w-1/4 py-4 px-1 text-base  leading-6 font-medium text-gray-800 text-center dark:text-gray-400 uppercase ">
                                             Plans
                                         </span>
                                     </th>
                                     <th
-                                        className="w-1/4 py-4 px-6 text-base leading-6 font-medium text-gray-800 text-center dark:text-gray-400 uppercase"
+                                        className="w-2/12 py-4 px-6 text-base leading-6 font-medium text-gray-800 text-center dark:text-gray-400 uppercase"
                                         scope="col"
                                     >
                                         Startup
                                     </th>
                                     <th
-                                        className="w-1/4 py-4 px-6 text-base leading-6 font-medium text-gray-800 text-center dark:text-gray-400 uppercase"
+                                        className="w-2/12 py-4 px-6 text-base leading-6 font-medium text-gray-800 text-center dark:text-gray-400 uppercase"
                                         scope="col"
                                     >
                                         Team
                                     </th>
                                     <th
-                                        className="w-1/4 py-4 px-6 text-base leading-6 font-medium text-gray-800 text-center dark:text-gray-400 uppercase"
+                                        className="w-2/12 py-4 px-6 text-base leading-6 font-medium text-gray-800 text-center dark:text-gray-400 uppercase"
                                         scope="col"
                                     >
                                         Enterprise
@@ -260,9 +260,9 @@ export default function SingleService({ service, reviews, item }) {
                                 </tr> */}
                                 {service.items.map((feature, index) => {
                                     return (
-                                        <tr className="dark:hover:bg-slate-900 hover:bg-gray-100  dark:divide-gray-700">
+                                        <tr className=" divide-x divide-y dark:hover:bg-slate-900 hover:bg-gray-100  dark:divide-gray-700">
                                             <th
-                                                className="py-4 ps-6 pe-6 font-bold text-xl text-gray-600  text-start whitespace-nowrap  dark:text-gray-400 "
+                                                className="py-4 ps-6 pe-6 font-bold text-xl divide-x divide-y text-gray-600  text-start whitespace-nowrap  dark:text-gray-400 "
                                                 scope="row"
                                             >
                                                 {feature.feature.title}
@@ -306,7 +306,7 @@ export default function SingleService({ service, reviews, item }) {
                                     );
                                 })}
 
-                                <tr className="text-center bg-gray-50 dark:bg-slate-900  dark:divide-gray-700 shadow-sm divide-x dark:border-gray-700">
+                                <tr className="divide-y text-center bg-gray-50 dark:bg-slate-900  dark:divide-gray-700 shadow-sm divide-x dark:border-gray-700">
                                     <td></td>
                                     <td className="pb-4">
                                         <Link
