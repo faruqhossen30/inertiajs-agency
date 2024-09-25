@@ -7,25 +7,17 @@ import { useState } from "react";
 
 export default function Create({ auth, services, features, service }) {
     const { parmas } = usePage().props;
-    const featureids = service.items.map(item => item.feature_id);
-    console.log(service);
-
-    // console.log(service.features.filter((ft)=>{
-    //     console.log(ft.id);
-
-    // }));
 
     const { data, setData, post, processing, errors, reset } = useForm({
         featureids: service.items.map(item => item.feature_id),
-        basic: [],
-        standard: [],
-        premium: [],
+        basic:service.items.map(item => item.basic==1 && item.feature_id).filter(Boolean),
+        standard: service.items.map(item => item.standard==1 && item.feature_id).filter(Boolean),
+        premium: service.items.map(item => item.premium==1 && item.feature_id).filter(Boolean),
     });
 
     function submit(e) {
         e.preventDefault();
         post(route("service.feature.store", service.id));
-        // console.log(data);
     }
     // Feature checkbox
     const [feature, setFeature] = useState([]);
@@ -174,6 +166,7 @@ export default function Create({ auth, services, features, service }) {
                                             defaultChecked={data.featureids.includes(item.id)}
                                             onChange={featueCheckboxChange}
                                         />
+                                        {/* <span>{console.log(item)}</span> */}
                                     </td>
                                     <td className="h-px w-px whitespace-nowrap">
                                         <div className="px-6 py-2">
@@ -195,16 +188,17 @@ export default function Create({ auth, services, features, service }) {
                                             type="checkbox"
                                             name={`basic[${item.id}]`}
                                             value={item.id}
-                                            defaultChecked={item.basic}
+                                            defaultChecked={data.basic.includes(item.id)}
                                             onChange={basicCheckboxChange}
                                         />
+
                                     </td>
                                     <td className="px-12 whitespace-nowrap">
                                         <input
                                             type="checkbox"
                                             name={`standart[${item.id}]`}
                                             value={item.id}
-                                            defaultChecked={item.standart}
+                                            defaultChecked={data.standard.includes(item.id)}
                                             onChange={standardCheckboxChange}
                                         />
                                     </td>
@@ -213,7 +207,7 @@ export default function Create({ auth, services, features, service }) {
                                             type="checkbox"
                                             name={`premium[${item.id}]`}
                                             value={item.id}
-                                            defaultChecked={item.premium=="1"}
+                                            defaultChecked={data.premium.includes(item.id)}
                                             onChange={premiumCheckboxChange}
                                         />
                                     </td>

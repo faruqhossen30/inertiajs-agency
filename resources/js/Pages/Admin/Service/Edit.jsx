@@ -12,27 +12,12 @@ import { ChevronRightIcon } from '@heroicons/react/24/outline';
 
 
 export default function Create({ auth, categories, service, selectedCategories }) {
-    console.log(selectedCategories);
-
-
-    // const [data, setData] = useState({
-    //     category_ids: selectedCategories.map(item => item.id),
-    // });
-
-
     const { data, setData, put, post, processing, errors, reset } = useForm({
-
         title: service.title,
         description_code: service.description_code,
-        basic_price: service.basic_price,
-        standard_price: service.standard_price,
-        premium_price: service.premium_price,
         description: service.description,
-        thumbnail: service.thumbnail,
-        package: service.package,
-        // category_ids    : service.category_ids,
+        thumbnail: '',
         category_ids: selectedCategories.map(item => item.id),
-        // });
         status: service.status,
     });
 
@@ -42,9 +27,9 @@ export default function Create({ auth, categories, service, selectedCategories }
 
     function submit(e) {
         e.preventDefault()
+        post(route('serviceupdate', service.id));
         console.log(data);
 
-        // post(route('serviceupdate', service.id));
     }
 
     return (
@@ -80,7 +65,6 @@ export default function Create({ auth, categories, service, selectedCategories }
                                                 <InputLabel isRequired={true} labelFor="Description" />
                                                 <RichTextEditor setData={setData} data={data} />
                                             </div>
-                                            <SubmitButton title="Update & Next" />
                                         </div>
                                     </div>
                                 </div>
@@ -96,7 +80,7 @@ export default function Create({ auth, categories, service, selectedCategories }
 
                                         <div className="max-w-xs">
                                             <InputLabel isRequired={true} labelFor="thumbnail" />
-                                            <ThumbnailInput name="thumbnail" thumbnail={data.thumbnail} setData={setData} errors={errors} placeholder="Thumbnail" />
+                                            <ThumbnailInput name="thumbnail" thumbnail={service.thumbnail} setData={setData} errors={errors} placeholder="Thumbnail" />
                                         </div>
 
                                         <div>
@@ -109,23 +93,6 @@ export default function Create({ auth, categories, service, selectedCategories }
                                             </select>
                                             <p className="text-sm text-red-600 mt-2">{errors.status}</p>
                                         </div>
-
-                                        <div>
-                                            <InputLabel isRequired={true} labelFor="basic price" />
-                                            <Input id="basicprice" type="integer" name="premium_price" value={data.basic_price} autoComplete="basic_price" placeholder="basic" onChange={(e) => setData('basic_price', e.target.value)} />
-                                            <p className="text-sm text-red-600 mt-2">{errors.basic_price}</p>
-                                        </div>
-                                        <div>
-                                            <InputLabel isRequired={true} labelFor="standard price" />
-                                            <Input id="standard_price" type="integer" name="standard_price" value={data.standard_price} autoComplete="standard_price" placeholder="standard" onChange={(e) => setData('standard_price', e.target.value)} />
-                                            <p className="text-sm text-red-600 mt-2">{errors.standard_price}</p>
-                                        </div>
-                                        <div>
-                                            <InputLabel isRequired={true} labelFor="premium price" />
-                                            <Input id="premium_price" type="integer" name="premium_price" value={data.premium_price} autoComplete="premium_price" placeholder="premium" onChange={(e) => setData('premium_price', e.target.value)} />
-                                            <p className="text-sm text-red-600 mt-2">{errors.premium_price}</p>
-                                        </div>
-
 
                                         <InputLabel isRequired={true} labelFor="Category" />
                                         <Select
@@ -141,7 +108,8 @@ export default function Create({ auth, categories, service, selectedCategories }
                                 </div>
                             </div>
                         </div>
-                        <div className="flex justify-between py-10">
+                        <hr className='mt-5' />
+                        <div className="flex justify-between py-5">
                             <div>
                                 <button type="submit" className="py-2 px-3 flex items-center gap-x-1 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none" data-hs-stepper-next-btn="">
                                     Update & Next

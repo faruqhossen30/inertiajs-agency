@@ -12,12 +12,8 @@ export default function Create({ auth, packages, categories }) {
     const { data, setData, post, processing, errors, reset } = useForm({
         title: "",
         description_code: "",
-        basic_price: "",
-        standard_price: "",
-        premium_price: "",
         description: "",
         thumbnail: null,
-        package: [],
         category_ids: [],
         status: '',
     });
@@ -76,7 +72,7 @@ export default function Create({ auth, packages, categories }) {
                                             {errors.description}
                                         </p>
                                     </div>
-                                    <SubmitButton />
+                                    <SubmitButton title="Save & Next" />
                                 </div>
                             </div>
                         </div>
