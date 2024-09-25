@@ -90,7 +90,7 @@ export default function PackageCreate({ service }) {
                                                 <span className="text-red-500">{errors.standard_price && errors.standard_price}</span>
                                             </td>
                                             <td className="px-5 py-2">
-                                                <Input type="number" name="premium_price" data={data.premium_price} placeholder="$150" onChange={(e) => setData("premium_price", e.target.value)} />
+                                                <Input type="number" name="premium_price" value={data.premium_price} placeholder="$150" onChange={(e) => setData("premium_price", e.target.value)} />
                                                 <span className="text-red-500">{errors.premium_price && errors.premium_price}</span>
                                             </td>
                                         </tr>
@@ -134,18 +134,12 @@ export default function PackageCreate({ service }) {
                 </div>
 
 
-                <div className="flex justify-between py-10">
+                <div className="flex justify-end py-10">
                     <div>
                         <button type="submit" class="py-2 px-3 flex items-center gap-x-1 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none" data-hs-stepper-next-btn="">
-                            Update & Next
-                            <ChevronRightIcon className="w-5" />
-                        </button>
-                    </div>
-                    <div>
-                        <Link href={route('service.feature.create', service.id)} class="py-2 px-3 flex items-center gap-x-1 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none" data-hs-stepper-next-btn="">
                             Next
                             <ChevronRightIcon className="w-5" />
-                        </Link>
+                        </button>
                     </div>
                 </div>
             </form>
