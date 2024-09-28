@@ -216,7 +216,7 @@ export default function Create({ auth, services, features, service }) {
                         })}
                     </tbody>
                 </table>
-                <SubmitButton />
+                <SubmitButton title="Save & Next" />
             </form>
         </AuthenticatedLayout>
     );

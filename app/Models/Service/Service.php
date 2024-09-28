@@ -44,6 +44,11 @@ class Service extends Model
     {
         return $this->hasMany(ServiceFeature::class)->orderBy('id', 'desc');
     }
+    public function faqs()
+    {
+        return $this->hasMany(ServiceFaq::class);
+    }
+
     public function reviews()
     {
         return $this->hasMany(Review::class);

@@ -58,7 +58,7 @@ class ServiceFeatureController extends Controller
             }
         }
 
-        return to_route('service.index');
+        return to_route('service.faq.create',$id);
     }
 
 

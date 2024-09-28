@@ -23,7 +23,7 @@ export default function PackageCreate({ service }) {
         // Description
         basic_description: service.basic_description,
         standard_description: service.standard_description,
-        premium_description: service.premium_day
+        premium_description: service.premium_description
 
     });
 

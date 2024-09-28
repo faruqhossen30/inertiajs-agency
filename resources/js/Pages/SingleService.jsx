@@ -260,9 +260,9 @@ export default function SingleService({ service, reviews, item }) {
                                 </tr> */}
                                 {service.items.map((feature, index) => {
                                     return (
-                                        <tr className=" divide-x divide-y dark:hover:bg-slate-900 hover:bg-gray-100  dark:divide-gray-700">
+                                        <tr className="divide-x divide-y dark:hover:bg-slate-900 hover:bg-gray-100  dark:divide-gray-700">
                                             <th
-                                                className="py-4 ps-6 pe-6 font-bold text-xl divide-x divide-y text-gray-600  text-start whitespace-nowrap  dark:text-gray-400 "
+                                                className="py-4 ps-6 pe-6  border font-bold text-xl divide-x text-gray-600  text-start whitespace-nowrap  dark:text-gray-400 "
                                                 scope="row"
                                             >
                                                 {feature.feature.title}
