@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Service\Service;
+use App\Models\Service\ServiceFaq;
 use Inertia\Inertia;
 use Inertia\Response;
 use Illuminate\Http\Request;
@@ -43,11 +44,8 @@ class ServicepageController extends Controller
 
     function SingleService($slug)
     {
-        $service = Service::with(['items.feature','reviews.users'])->firstWhere('slug', $slug);
+        $service = Service::with(['items.feature','reviews.users','faqs'])->firstWhere('slug', $slug);
         // $service = Service::with('reviews')->firstWhere('slug', $slug);
-
-
-
         // return $service;
         return Inertia::render('SingleService', ['service' => $service]);
     }

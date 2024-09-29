@@ -1,7 +1,15 @@
+
 import SubmitButton from "@/Components/Form/SubmitButton";
 import InputLabel from "@/Components/InputLabel";
+import ServiceAccordion from "@/Components/ServiceAccordion";
 import AppLayout from "@/Layouts/AppLayout";
-import { CheckCircleIcon, CheckIcon, MinusIcon, XCircleIcon } from "@heroicons/react/24/outline";
+
+import {
+    CheckCircleIcon,
+    CheckIcon,
+    MinusIcon,
+    XCircleIcon,
+} from "@heroicons/react/24/outline";
 import { StarIcon } from "@heroicons/react/24/solid";
 import { Link, Head, useForm } from "@inertiajs/react";
 import moment from "moment";
@@ -64,7 +72,10 @@ export default function SingleService({ service, reviews, item }) {
                         <ul className="mt-7 text-sm bg-gray-50 border rounded-lg mx-5">
                             {service.items.slice(0, 5).map((feature, index) => {
                                 return (
-                                    <li className="flex items-center gap-x-2 py-3 px-4 text-sm font-medium text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg dark:bg-neutral-900 dark:border-neutral-700 dark:text-white" key={index}>
+                                    <li
+                                        className="flex items-center gap-x-2 py-3 px-4 text-sm font-medium text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg dark:bg-neutral-900 dark:border-neutral-700 dark:text-white"
+                                        key={index}
+                                    >
                                         {feature.standard == "1" ? (
                                             <CheckIcon className="w-5 text-green-500" />
                                         ) : (
@@ -114,7 +125,10 @@ export default function SingleService({ service, reviews, item }) {
                         <ul className="mt-7 text-sm bg-gray-50 border rounded-lg mx-5">
                             {service.items.slice(0, 5).map((feature, index) => {
                                 return (
-                                    <li className="flex items-center gap-x-2 py-3 px-4 text-sm font-medium text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg dark:bg-neutral-900 dark:border-neutral-700 dark:text-white" key={index}>
+                                    <li
+                                        className="flex items-center gap-x-2 py-3 px-4 text-sm font-medium text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg dark:bg-neutral-900 dark:border-neutral-700 dark:text-white"
+                                        key={index}
+                                    >
                                         {feature.standard == "1" ? (
                                             <CheckIcon className="w-5 text-green-500" />
                                         ) : (
@@ -164,8 +178,11 @@ export default function SingleService({ service, reviews, item }) {
                         <ul className="mt-7 text-sm bg-gray-50 border rounded-lg mx-5">
                             {service.items.slice(0, 5).map((feature, index) => {
                                 return (
-                                    <li className="flex items-center gap-x-2 py-3 px-4 text-sm font-medium text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg dark:bg-neutral-900 dark:border-neutral-700 dark:text-white" key={index}>
-                                         {feature.premium == "1" ? (
+                                    <li
+                                        className="flex items-center gap-x-2 py-3 px-4 text-sm font-medium text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg dark:bg-neutral-900 dark:border-neutral-700 dark:text-white"
+                                        key={index}
+                                    >
+                                        {feature.premium == "1" ? (
                                             <CheckIcon className="w-5 text-green-500" />
                                         ) : (
                                             <MinusIcon className="w-5 text-gray-400" />
@@ -234,19 +251,19 @@ export default function SingleService({ service, reviews, item }) {
                                         </span>
                                     </th>
                                     <th
-                                        className="w-2/12 py-4 px-6 text-base leading-6 font-medium text-gray-800 text-center dark:text-gray-400 uppercase"
+                                        className="w-1/5 py-4 px-6 text-base leading-6 font-medium text-gray-800 text-center dark:text-gray-400 uppercase"
                                         scope="col"
                                     >
                                         Startup
                                     </th>
                                     <th
-                                        className="w-2/12 py-4 px-6 text-base leading-6 font-medium text-gray-800 text-center dark:text-gray-400 uppercase"
+                                        className="w-1/5 py-4 px-6 text-base leading-6 font-medium text-gray-800 text-center dark:text-gray-400 uppercase"
                                         scope="col"
                                     >
                                         Team
                                     </th>
                                     <th
-                                        className="w-2/12 py-4 px-6 text-base leading-6 font-medium text-gray-800 text-center dark:text-gray-400 uppercase"
+                                        className="w-1/5 py-4 px-6 text-base leading-6 font-medium text-gray-800 text-center dark:text-gray-400 uppercase"
                                         scope="col"
                                     >
                                         Enterprise
@@ -254,10 +271,61 @@ export default function SingleService({ service, reviews, item }) {
                                 </tr>
                             </thead>
                             <tbody className="border-t border-gray-200 divide-gray-200 dark:border-neutral-700 dark:divide-gray-700  ">
-                                {/* <tr>
-                                    <th className="py-3 ps-6 bg-gray-50 font-bold text-gray-800 text-start dark:border border-gray-700  dark:bg-slate-800 dark:text-gray-400"
-                                        colSpan="5" scope="colgroup">Financial data</th>
-                                </tr> */}
+                                <tr className="divide-y text-start  dark:bg-slate-900 dark:divide-gray-700 shadow-sm divide-x dark:border-gray-700">
+                                    <td className="p-4 py-4 ps-6 pe-6 border font-bold text-xl divide-x text-gray-600 text-start whitespace-nowrap dark:text-gray-400">
+                                    Price
+                                    </td>
+                                    <td className="p-4 w-3 border font-bold text-base  text-center text-gray-600  whitespace-normal dark:text-gray-400">
+                                        <span className="">
+                                            {service.basic_price}$
+                                        </span>
+                                    </td>
+                                    <td className="p-4 border font-bold text-base  text-center text-gray-600  whitespace-normal dark:text-gray-400">
+                                        <span className="">
+                                            {service.standard_price}$
+                                        </span>
+                                    </td>
+                                    <td className="p-4 border font-bold text-base  text-center text-gray-600  whitespace-normal dark:text-gray-400">
+                                        <span className="">
+                                            {service.premium_price}$
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr className="divide-y text-start  dark:bg-slate-900 dark:divide-gray-700 shadow-sm divide-x dark:border-gray-700">
+                                    <td className="p-4 py-4 ps-6 pe-6 border font-bold text-xl divide-x text-gray-600 text-start whitespace-nowrap dark:text-gray-400">
+                                        Description
+                                    </td>
+                                    <td className="p-4 w-3 border font-bold text-base divide-x text-gray-600 text-start whitespace-normal dark:text-gray-400">
+                                        <span className="">
+                                            {service.basic_description}
+                                        </span>
+                                    </td>
+                                    <td className="p-4 border font-bold text-base divide-x text-gray-600 text-start whitespace-normal dark:text-gray-400">
+                                        <span className="">
+                                            {service.standard_description}
+                                        </span>
+                                    </td>
+                                    <td className="p-4 border font-bold text-base divide-x text-gray-600 text-start whitespace-normal dark:text-gray-400">
+                                        <span className="">
+                                            {service.premium_description}
+                                        </span>
+                                    </td>
+                                </tr>
+
+                                <tr className="divide-y text-center  dark:bg-slate-900  dark:divide-gray-700 shadow-sm divide-x dark:border-gray-700">
+                                    <td className="p-4 py-4 ps-6 pe-6  border font-bold text-xl divide-x text-gray-600  text-start whitespace-nowrap  dark:text-gray-400">
+                                        Deliver Day
+                                    </td>
+                                    <td className="p-4    border font-bold text-xl divide-x text-gray-600  text-center whitespace-nowrap  dark:text-gray-400">
+                                        <span>{service.basic_day}</span>
+                                    </td>
+                                    <td className="p-4 p   border font-bold text-xl divide-x text-gray-600  text-center whitespace-nowrap  dark:text-gray-400">
+                                        <span>{service.standard_day}</span>
+                                    </td>
+                                    <td className="p-4   border font-bold text-xl divide-x text-gray-600  text-center whitespace-nowrap  dark:text-gray-400">
+                                        <span>{service.premium_day}</span>
+                                    </td>
+                                </tr>
                                 {service.items.map((feature, index) => {
                                     return (
                                         <tr className="divide-x divide-y dark:hover:bg-slate-900 hover:bg-gray-100  dark:divide-gray-700">
@@ -347,6 +415,15 @@ export default function SingleService({ service, reviews, item }) {
                         </table>
                     </div>
 
+                    <div className="py-3">
+                        {service.faqs.map((item, index) => {
+                            return (
+                                <div className="col-span-12 ">
+                                    <ServiceAccordion key={index} item={item} />
+                                </div>
+                            );
+                        })}
+                    </div>
                     <div className="grid grid-cols-12 gap-6 py-20">
                         <div className="col-span-8">
                             <span className="text-xl font-bold text-gray-700">
@@ -506,11 +583,21 @@ export default function SingleService({ service, reviews, item }) {
                                                         {item.rating}.0
                                                     </span>
                                                     <div className="flex">
-                                                        {Array.from({ length: item.rating, }).map((_, index) => (
-
-                                                            <a key={index} className="inline-block mr-1" href="#" >
-                                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                                                    xmlns="http://www.w3.org/2000/svg"  >
+                                                        {Array.from({
+                                                            length: item.rating,
+                                                        }).map((_, index) => (
+                                                            <a
+                                                                key={index}
+                                                                className="inline-block mr-1"
+                                                                href="#"
+                                                            >
+                                                                <svg
+                                                                    width="20"
+                                                                    height="20"
+                                                                    viewBox="0 0 20 20"
+                                                                    fill="none"
+                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                >
                                                                     <path
                                                                         d="M20 7.91677H12.4167L10 0.416763L7.58333 7.91677H0L6.18335 12.3168L3.81668 19.5834L10 15.0834L16.1834 19.5834L13.8167 12.3168L20 7.91677Z"
                                                                         fill="#FFCB00"
@@ -521,7 +608,10 @@ export default function SingleService({ service, reviews, item }) {
                                                     </div>
                                                     <div className="  w-full text-right ">
                                                         <p className=" text-sm text-gray-300  ">
-                                                            {moment(item.created_at, "YYYY/MM/DD").fromNow()}
+                                                            {moment(
+                                                                item.created_at,
+                                                                "YYYY/MM/DD"
+                                                            ).fromNow()}
                                                         </p>
                                                     </div>
                                                 </div>

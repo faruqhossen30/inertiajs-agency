@@ -14,7 +14,7 @@ export default function ServiceSection({ categories }) {
     return (
         <>
             <div className="container mx-auto">
-                <div className="text-center py-10 space-y-5">
+                <div className="text-center md:py-10 space-y-5">
                     {/* <h1 className="text-5xl text-gray-800 font-bold">Innovative Business & Marketing Solutions</h1>
                     <p className="text-lg">Exceptional Website Design & Development, <br /> Expert SEO & Digital Marketing Strategies, Premier Graphics Design Services</p> */}
                 </div>
@@ -26,10 +26,10 @@ export default function ServiceSection({ categories }) {
                                     <img src={window.location.origin + '/storage/' + item.thumbnail} className="w-16 h-16 dark:text-gray-400" alt={item.name} />
                                 </div>
                                 <div className="flex justify-center">
-                                    <span className="text-3xl sm:text-xl dark:text-gray-400 font-extrabold ">{item.name}</span>
+                                    <span className="text-[24px] sm:text-xl dark:text-gray-400 font-extrabold ">{item.name}</span>
                                 </div>
                                 <div className="flex justify-center text-center">
-                                    <p className='text-md text-gray-800  dark:text-gray-400 font-medium'>
+                                    <p className='text-md text-gray-800 text-justify  dark:text-gray-400 font-medium'>
                                         {item.description}
                                     </p>
                                 </div>
