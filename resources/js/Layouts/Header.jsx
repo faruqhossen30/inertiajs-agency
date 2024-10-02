@@ -11,7 +11,7 @@ export default function Header() {
             <nav className="container relative w-full mx-auto sm:flex sm:items-center sm:justify-between" aria-label="Global">
                 <div className="flex items-center justify-between">
                     <Link href={route('homepage')} className="flex-none text-xl font-semibold dark:text-gray-400" aria-label="Brand">
-                        <img src={window.location.origin+'/boostcareit.png'} className="h-10 rounded-lg" alt="" />
+                        <img src={window.location.origin + '/boostcareit.png'} className="h-10 rounded-lg" alt="" />
                         {/* Boost Care IT */}
                     </Link>
                     <div className="sm:hidden">
@@ -38,10 +38,16 @@ export default function Header() {
                         <Switcher />
                         {
                             auth.user ?
-                                <Link href={route('logout')} method="post" as="button" className="flex items-center gap-x-2 font-medium text-gray-500 hover:text-blue-600 sm:border-l sm:border-gray-300 sm:my-6 sm:pl-6 dark:border-gray-700 dark:text-gray-400 dark:hover:text-blue-500" >
-                                    <PowerIcon className="w-4 h-4" />
-                                    Logout
-                                </Link>
+                                <>
+                                    <Link href={route('dashboard')} className="flex items-center gap-x-2 font-medium text-gray-500 hover:text-blue-600 sm:border-l sm:border-gray-300 sm:my-6 sm:pl-6 dark:border-gray-700 dark:text-gray-400 dark:hover:text-blue-500" >
+                                        <UserIcon className="w-4 h-4" />
+                                        Dashboard
+                                    </Link>
+                                    <Link href={route('logout')} method="post" as="button" className="flex items-center gap-x-2 font-medium text-gray-500 hover:text-blue-600 sm:border-l sm:border-gray-300 sm:my-6 sm:pl-6 dark:border-gray-700 dark:text-gray-400 dark:hover:text-blue-500" >
+                                        <PowerIcon className="w-4 h-4" />
+                                        Logout
+                                    </Link>
+                                </>
                                 :
                                 <Link href={route('login')} className="flex items-center gap-x-2 font-medium text-gray-500 hover:text-blue-600 sm:border-l sm:border-gray-300 sm:my-6 sm:pl-6 dark:border-gray-700 dark:text-gray-400 dark:hover:text-blue-500" >
                                     <UserIcon className="w-4 h-4" />

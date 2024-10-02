@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Feature extends Model
 {
     use HasFactory;
-    protected $fillable = ['title','category_id'];
+    protected $fillable = ['title','category_id','is_additional'];
 
     public function category()
     {

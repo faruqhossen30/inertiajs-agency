@@ -6,6 +6,7 @@ import InputLabel from '@/Components/Form/InputLabel';
 import Input from '@/Components/Form/Input';
 import SubmitButton from '@/Components/Form/SubmitButton';
 import ImageFile from '@/Components/Form/ImageFile';
+import ServiceStep from '@/Components/Admin/ServiceStep';
 
 
 export default function Create({ auth }) {
@@ -24,7 +25,7 @@ export default function Create({ auth }) {
     return (
         <AuthenticatedLayout>
             <BreadcumComponent pageOne="Packages" pageOneRoute="package.index" />
-
+            <ServiceStep service={service} />
             <div className="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-gray-800 dark:border-neutral-700 dark:shadow-neutral-700/70">
                 <div className="bg-gray-100 border-b rounded-t-xl py-3 px-4 md:py-4 md:px-5 dark:bg-gray-800 dark:border-neutral-700">
                     <p className="mt-1 text-sm text-gray-500 dark:text-neutral-500">

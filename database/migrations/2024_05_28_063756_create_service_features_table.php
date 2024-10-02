@@ -15,9 +15,10 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('service_id')->nullable();
             $table->unsignedBigInteger('feature_id')->nullable();
-            $table->boolean('basic')->default(false);
-            $table->boolean('standard')->default(false);
-            $table->boolean('premium')->default(false);
+            $table->string('basic')->default(false);
+            $table->string('standard')->default(false);
+            $table->string('premium')->default(false);
+            $table->boolean('is_additional')->default(false);
             $table->timestamps();
         });
     }

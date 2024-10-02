@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\Feature;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+
 class FeatureController extends Controller
 {
     /**
@@ -25,8 +26,7 @@ class FeatureController extends Controller
     public function create()
     {
         $categories = Category::get();
-        return Inertia::render('Admin/Feature/Create',['categories' => $categories]);
-
+        return Inertia::render('Admin/Feature/Create', ['categories' => $categories]);
     }
 
     /**
@@ -41,6 +41,7 @@ class FeatureController extends Controller
         $data = [
             'category_id' => $request->category_id,
             'title'       => $request->title,
+            'is_additional'       => $request->is_additional,
         ];
         Feature::create($data);
 
@@ -62,7 +63,7 @@ class FeatureController extends Controller
     {
         $categories = Category::get();
         $feature = Feature::where('id', $id)->first();
-        return Inertia::render('Admin/Feature/Edit', ['feature' => $feature,'categories' => $categories]);
+        return Inertia::render('Admin/Feature/Edit', ['feature' => $feature, 'categories' => $categories]);
     }
 
     /**
@@ -77,6 +78,7 @@ class FeatureController extends Controller
         $data = [
             'category_id' => $request->category_id,
             'title'       => $request->title,
+            'is_additional'       => $request->is_additional,
         ];
 
         Feature::firstwhere('id', $id)->update($data);

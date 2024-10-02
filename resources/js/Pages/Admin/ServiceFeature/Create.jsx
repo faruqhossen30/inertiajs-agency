@@ -4,6 +4,7 @@ import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import SubmitButton from "@/Components/Form/SubmitButton";
 
 import { useState } from "react";
+import ServiceStep from "@/Components/Admin/ServiceStep";
 
 export default function Create({ auth, services, features, service }) {
     const { parmas } = usePage().props;
@@ -80,7 +81,8 @@ export default function Create({ auth, services, features, service }) {
                 pageOne="Service Feature"
                 pageOneRoute="service.index"
             />
-            <div className=" flex border px-3 py-2 space-x-2 shadow-sm text-base text-gray-600 dark:text-gray-400 dark:border-gray-700">
+            <ServiceStep service={service} />
+            <div className=" flex border px-3 py-2 my-5 space-x-2 shadow-sm text-base text-gray-600 dark:text-gray-400 dark:border-gray-700">
                 <strong>Service Title :</strong>
                 <p>{service.title}</p>
             </div>

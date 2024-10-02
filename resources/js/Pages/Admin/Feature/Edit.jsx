@@ -11,6 +11,7 @@ export default function Create({ auth, feature ,categories}) {
     const { data, setData, put, post, processing, errors, reset } = useForm({
         title      : feature.title,
         category_id: feature.category_id,
+        is_additional: feature.is_additional,
 
     });
 
@@ -48,6 +49,30 @@ export default function Create({ auth, feature ,categories}) {
                                     }
                                 </select>
                                 <p className="text-sm text-red-600 mt-2">{errors.status}</p>
+                            </div>
+
+                            <div>
+                                <InputLabel
+                                    isRequired={true}
+                                    labelFor="Additional"
+                                />
+                                <select
+                                    id="status"
+                                    name="status"
+                                    className="py-2 px-4 pr-9 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
+                                    defaultValue={feature.is_additional}
+                                    onChange={(e) =>
+                                        setData("is_additional", e.target.value)
+                                    }
+                                >
+                                    <option value="0">No</option>
+                                    <option value="1">Yes</option>
+                                </select>
+                                {errors.status && (
+                                    <p className="text-sm text-red-600 mt-2">
+                                        {errors.is_additional}
+                                    </p>
+                                )}
                             </div>
 
                             <SubmitButton title={'Update'} />

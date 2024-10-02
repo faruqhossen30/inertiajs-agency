@@ -24,8 +24,8 @@ class ServiceFeatureController extends Controller
      */
     public function create(Request $request, $id)
     {
-        $features = Feature::with('category')->orderBy('category_id')->get();
-        $service = Service::with(['features','items'])->firstWhere('id', $id);
+        $features = Feature::where('is_additional', false)->with('category')->orderBy('category_id')->get();
+        $service = Service::with(['features', 'items'])->firstWhere('id', $id);
         // return  $service;
         return Inertia::render('Admin/ServiceFeature/Create', ['features' => $features, 'service' => $service]);
     }
@@ -58,9 +58,43 @@ class ServiceFeatureController extends Controller
             }
         }
 
-        return to_route('service.faq.create',$id);
+        return to_route('service.faq.create', $id);
     }
 
+    public function additionalFeatureCreate(Request $request, $id)
+    {
+        $features = Feature::where('is_additional', true)->get();
+        $service = Service::with(['features','additionalFeatures', 'items'])->firstWhere('id', $id);
 
+        $additionalfeatures = ServiceFeature::with('feature')->where(['service_id'=>$id, 'is_additional'=>true])->get();
 
+        // return  $additionalfeatures;
+        return Inertia::render('Admin/ServiceFeature/AdditionalFeature', ['features' => $features, 'service' => $service,'additionalfeatures'=>$additionalfeatures]);
+    }
+
+    public function additionalFeatureStore(Request $request, string $id)
+    {
+        $request->validate([
+            'feature_id' => 'required',
+            'basic'      => 'required',
+            'standard'   => 'required',
+            'premium'    => 'required',
+        ]);
+
+        ServiceFeature::create([
+            'service_id' => $id,
+            'feature_id' => $request->feature_id,
+            'basic'      => $request->basic,
+            'standard'   => $request->standard,
+            'premium'    => $request->premium,
+            'is_additional'    => true,
+        ]);
+
+        return redirect()->back();
+    }
+    public function additionalFeatureStoreDestroy(string $id)
+    {
+        ServiceFeature::firstWhere('id',$id)->delete();
+        return redirect()->back();
+    }
 }

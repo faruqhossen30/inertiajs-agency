@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->unsignedBigInteger('category_id')->nullable();
+            $table->boolean('is_additional')->default(false);
             $table->timestamps();
         });
     }

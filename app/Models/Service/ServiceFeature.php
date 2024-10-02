@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class ServiceFeature extends Model
 {
     use HasFactory;
-    protected $fillable = ['service_id', 'feature_id', 'basic', 'standard', 'premium'];
+    protected $fillable = ['service_id', 'feature_id', 'basic', 'standard', 'premium','is_additional'];
 
     public function feature()
     {

@@ -10,6 +10,7 @@ export default function Create({ auth, categories }) {
     const { data, setData, post, processing, errors, reset } = useForm({
         title: '',
         category_ids: '',
+        is_additional: 0,
     });
 
     function submit(e) {
@@ -50,6 +51,30 @@ export default function Create({ auth, categories }) {
                                 <Input id="title" type="text" name="title" value={data.title} autoComplete="title" placeholder="title" onChange={(e) => setData('title', e.target.value)} />
                                 <p className="text-sm text-red-600 mt-2">{errors.title}</p>
                             </div>
+
+                            <div>
+                                <InputLabel
+                                    isRequired={true}
+                                    labelFor="Additional"
+                                />
+                                <select
+                                    id="status"
+                                    name="status"
+                                    className="py-2 px-4 pr-9 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
+                                    onChange={(e) =>
+                                        setData("is_additional", e.target.value)
+                                    }
+                                >
+                                    <option value="0">No</option>
+                                    <option value="1">Yes</option>
+                                </select>
+                                {errors.status && (
+                                    <p className="text-sm text-red-600 mt-2">
+                                        {errors.is_additional}
+                                    </p>
+                                )}
+                            </div>
+
                             <SubmitButton />
                         </form>
                     </div>

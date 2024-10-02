@@ -40,10 +40,17 @@ class Service extends Model
     {
         return $this->belongsToMany(Feature::class, 'service_features');
     }
+
+    public function additionalFeatures()
+    {
+        return $this->belongsToMany(Feature::class, 'service_features');
+    }
+
     public function items()
     {
         return $this->hasMany(ServiceFeature::class)->orderBy('id', 'desc');
     }
+
     public function faqs()
     {
         return $this->hasMany(ServiceFaq::class);

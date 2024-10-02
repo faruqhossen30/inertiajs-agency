@@ -5,6 +5,7 @@ import SubmitButton from "@/Components/Form/SubmitButton";
 
 import Input from "@/Components/Form/Input";
 import { ChevronRightIcon } from "@heroicons/react/24/outline";
+import ServiceStep from "@/Components/Admin/ServiceStep";
 
 export default function PackageCreate({ service }) {
     console.log(service);
@@ -44,7 +45,8 @@ export default function PackageCreate({ service }) {
                 pageOne="Service Feature"
                 pageOneRoute="service.index"
             />
-            <div className=" flex border px-3 py-2 space-x-2 shadow-sm text-base text-gray-600 dark:text-gray-400 dark:border-gray-700">
+            <ServiceStep service={service} />
+            <div className="my-5 flex border px-3 py-2 space-x-2 shadow-sm text-base text-gray-600 dark:text-gray-400 dark:border-gray-700">
                 <strong>Service Title :</strong>
                 <p>{service.title}</p>
             </div>
@@ -52,7 +54,7 @@ export default function PackageCreate({ service }) {
             <form onSubmit={submit} className="">
                 <div className="px-4 sm:px-6 lg:px-8">
 
-                    <div className="mt-8 flow-root">
+                    <div className="flow-root">
                         <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                             <div className="inline-block min-w-full py-2 align-middle">
                                 <table className="min-w-full divide-y divide-gray-300 border">

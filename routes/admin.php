@@ -36,6 +36,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth','admin']], function (
     Route::get('service/{id}/feature',[ServiceFeatureController::class, 'create'])->name('service.feature.create');
     Route::post('service/{id}/feature',[ServiceFeatureController::class, 'store'])->name('service.feature.store');
 
+    Route::get('service/{id}/additional-feature',[ServiceFeatureController::class, 'additionalFeatureCreate'])->name('service.additional-feature.create');
+    Route::post('service/{id}/additional-feature',[ServiceFeatureController::class, 'additionalFeatureStore'])->name('service.additional-feature.store');
+    Route::delete('service/{id}/additional-feature',[ServiceFeatureController::class, 'additionalFeatureStoreDestroy'])->name('service.additional-feature.destroy');
+
     Route::get('service/{id}/faq',[ServiceFaqController::class, 'faqCreate'])->name('service.faq.create');
     Route::post('service/{id}/faq',[ServiceFaqController::class, 'faqStore'])->name('service.faq.store');
     Route::delete('service/{id}/faq',[ServiceFaqController::class, 'faqDestroy'])->name('service.faq.destroy');

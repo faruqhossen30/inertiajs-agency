@@ -8,6 +8,7 @@ import Input from "@/Components/Form/Input";
 
 import { ChevronRightIcon } from "@heroicons/react/24/outline";
 import Accordion from "@/Components/Admin/Accordion";
+import ServiceStep from "@/Components/Admin/ServiceStep";
 
 
 
@@ -42,6 +43,7 @@ export default function FaqCreate({ service }) {
                 pageOne="Service Feature"
                 pageOneRoute="service.index"
             />
+            <ServiceStep service={service} />
             <div className=" flex border px-3 py-2 space-x-2 shadow-sm text-base text-gray-600 dark:text-gray-400 dark:border-gray-700">
                 <strong>Service Title :</strong>
                 <p>{service.title}</p>
