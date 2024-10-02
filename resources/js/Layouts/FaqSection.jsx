@@ -9,7 +9,7 @@ const FaqSection = () => {
 
     return (
         <div className="">
-            <div className="w-full px-6 pb-20 pt-12 mx-auto ">
+            <div className="w-full px-6 pb-10 md:pb-20 md:pt-12 mx-auto ">
                 < div className=" flex justify-center pb-6  ">
                     <span className='text-center text-3xl px-6 font-extrabold text-gray-950'>FAQ</span>
                 </div>

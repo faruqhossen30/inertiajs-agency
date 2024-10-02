@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\AboutpageController;
-use App\Http\Controllers\Admin\ReviewController;
 use App\Http\Controllers\Auth\GoogleauthController;
 use App\Http\Controllers\BlogpageController;
 use App\Http\Controllers\ContactController;
@@ -12,11 +11,8 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServicepageController;
 use App\Http\Controllers\TeamPageController;
-use App\Http\Controllers\User\DepositController;
 use App\Http\Controllers\UserReviewController;
-use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
