@@ -270,12 +270,12 @@ export default function SingleService({ service, reviews, item }) {
                                     </th>
                                 </tr>
                             </thead>
-                            <tbody className="border-t border-gray-200 divide-gray-200 dark:border-neutral-700 dark:divide-gray-700  ">
-                                <tr className="divide-y text-start  dark:bg-slate-900 dark:divide-gray-700 shadow-sm divide-x dark:border-gray-700">
-                                    <td className="p-4 py-4 ps-6 pe-6 border font-bold text-xl divide-x text-gray-600 text-start whitespace-nowrap dark:text-gray-400">
+                            <tbody className=" ">
+                                <tr className="divide-y text-start dark:hover:bg-slate-900  dark:divide-gray-700 shadow-sm divide-x dark:border-gray-700">
+                                    <td className="p-4 py-4 ps-6 pe-6 border dark:border-gray-700 font-bold text-xl divide-x text-gray-600 text-start whitespace-nowrap dark:text-gray-400">
                                     Price
                                     </td>
-                                    <td className="p-4 w-3 border font-bold text-base  text-center text-gray-600  whitespace-normal dark:text-gray-400">
+                                    <td className="p-4 w-3 border dark:border-gray-700 font-bold text-base  text-center text-gray-600  whitespace-normal dark:text-gray-400">
                                         <span className="">
                                             {service.basic_price}$
                                         </span>
@@ -291,8 +291,8 @@ export default function SingleService({ service, reviews, item }) {
                                         </span>
                                     </td>
                                 </tr>
-                                <tr className="divide-y text-start  dark:bg-slate-900 dark:divide-gray-700 shadow-sm divide-x dark:border-gray-700">
-                                    <td className="p-4 py-4 ps-6 pe-6 border font-bold text-xl divide-x text-gray-600 text-start whitespace-nowrap dark:text-gray-400">
+                                <tr className="divide-y text-start dark:hover:bg-slate-900 dark:divide-gray-700 shadow-sm divide-x dark:border-gray-700">
+                                    <td className="p-4 py-4 ps-6 pe-6 border dark:border-gray-700 font-bold text-xl divide-x text-gray-600 text-start whitespace-nowrap dark:text-gray-400">
                                         Description
                                     </td>
                                     <td className="p-4 w-3 border font-bold text-base divide-x text-gray-600 text-start whitespace-normal dark:text-gray-400">
@@ -312,9 +312,9 @@ export default function SingleService({ service, reviews, item }) {
                                     </td>
                                 </tr>
 
-                                <tr className="divide-y text-center  dark:bg-slate-900  dark:divide-gray-700 shadow-sm divide-x dark:border-gray-700">
-                                    <td className="p-4 py-4 ps-6 pe-6  border font-bold text-xl divide-x text-gray-600  text-start whitespace-nowrap  dark:text-gray-400">
-                                        Deliver Day
+                                <tr className="divide-y text-center dark:hover:bg-slate-900 dark:divide-gray-700 shadow-sm divide-x dark:border-gray-700">
+                                    <td className="p-4 py-4 ps-6 pe-6  border dark:border-gray-700 font-bold text-xl divide-x text-gray-600  text-start whitespace-nowrap  dark:text-gray-400">
+                                    Delivery Day
                                     </td>
                                     <td className="p-4    border font-bold text-xl divide-x text-gray-600  text-center whitespace-nowrap  dark:text-gray-400">
                                         <span>{service.basic_day}</span>
@@ -328,44 +328,59 @@ export default function SingleService({ service, reviews, item }) {
                                 </tr>
                                 {service.items.map((feature, index) => {
                                     return (
-                                        <tr className="divide-x divide-y dark:hover:bg-slate-900 hover:bg-gray-100  dark:divide-gray-700">
+                                        <tr key={index} className="divide-x divide-y dark:hover:bg-slate-900 hover:bg-gray-100  dark:divide-gray-700">
                                             <th
-                                                className="py-4 ps-6 pe-6  border font-bold text-xl divide-x text-gray-600  text-start whitespace-nowrap  dark:text-gray-400 "
+                                                className="py-4 ps-6 pe-6  border dark:border-gray-700 font-bold text-xl divide-x text-gray-600  text-start whitespace-nowrap  dark:text-gray-400 "
                                                 scope="row"
                                             >
                                                 {feature.feature.title}
                                             </th>
 
-                                            <td className="py-2 px-6">
-                                                {feature.basic == "1" ? (
-                                                    <CheckIcon className="mx-auto w-5 text-green-500" />
-                                                ) : (
-                                                    <MinusIcon className="mx-auto w-5 dark:text-gray-400" />
-                                                )}
+                                            <td className="py-2 px-6 text-center">
+                                                {feature.is_additional ?
+                                                    <span className="text-gray-800 dark:text-gray-400">{feature.basic}</span>
+                                                    : (
+                                                        feature.basic == "1" ? (
+                                                            <CheckIcon className="mx-auto w-5 text-green-500" />
+                                                        ) : (
+                                                            <MinusIcon className="mx-auto w-5 dark:text-gray-400" />
+                                                        )
+                                                    )
+
+                                                }
 
                                                 <span className="sr-only">
                                                     Included in Free
                                                 </span>
                                             </td>
 
-                                            <td className="py-3 px-6 ">
-                                                {feature.standard == "1" ? (
-                                                    <CheckIcon className="mx-auto w-5 text-green-500" />
-                                                ) : (
-                                                    <MinusIcon className="mx-auto w-5 dark:text-gray-400" />
-                                                )}
+                                            <td className="py-3 px-6 text-center">
+                                                {feature.is_additional ?
+                                                    <span className="text-gray-800 dark:text-gray-400">{feature.standard}</span>
+                                                    : (feature.standard == "1" ? (
+                                                        <CheckIcon className="mx-auto w-5 text-green-500" />
+                                                    ) : (
+                                                        <MinusIcon className="mx-auto w-5 dark:text-gray-400" />
+                                                    ))
+                                                }
 
                                                 <span className="sr-only">
                                                     Included in Startup
                                                 </span>
                                             </td>
 
-                                            <td className="py-3 px-6">
-                                                {feature.premium == "1" ? (
-                                                    <CheckIcon className="mx-auto w-5 text-green-500" />
-                                                ) : (
-                                                    <MinusIcon className="mx-auto w-5 dark:text-gray-400" />
-                                                )}
+                                            <td className="py-3 px-6 text-center">
+
+                                                {feature.is_additional ?
+                                                    <span className="text-gray-800 dark:text-gray-400">{feature.premium}</span>
+                                                    : feature.premium == "1" ? (
+                                                        <CheckIcon className="mx-auto w-5 text-green-500" />
+                                                    ) : (
+                                                        <MinusIcon className="mx-auto w-5 dark:text-gray-400" />
+                                                    )
+                                                }
+
+
                                                 <span className="sr-only">
                                                     Included in Enterprise
                                                 </span>
@@ -502,11 +517,9 @@ export default function SingleService({ service, reviews, item }) {
                         <div className="grid grid-cols-12 ">
                             <div className="col-span-8">
                                 <form onSubmit={submit}>
-                                    <div className="border py-3 px-6 my-6">
+                                    <div className="border dark:border-gray-700 py-3 px-6 my-6">
                                         <div>
                                             <InputLabel
-                                                isRequired={true}
-                                                labelFor="Rating"
                                             />
                                             <select
                                                 id="rating"
