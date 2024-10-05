@@ -69,11 +69,11 @@ export default function SingleService({ service, reviews, item }) {
                         <p className="mt-2 text-sm text-gray-500 dark:text-neutral-500">
                             All the basics for starting a new business
                         </p>
-                        <ul className="mt-7 text-sm bg-gray-50 border rounded-lg mx-5">
+                        <ul className="mt-7 text-sm bg-gray-50 border dark:bg-slate-900 dark:border-gray-700 rounded-lg mx-5">
                             {service.items.slice(0, 5).map((feature, index) => {
                                 return (
                                     <li
-                                        className="flex items-center gap-x-2 py-3 px-4 text-sm font-medium text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg dark:bg-neutral-900 dark:border-neutral-700 dark:text-white"
+                                        className="flex items-center gap-x-2 py-3 px-4 text-sm font-medium text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg "
                                         key={index}
                                     >
                                         {feature.standard == "1" ? (
@@ -122,11 +122,11 @@ export default function SingleService({ service, reviews, item }) {
                             Everything you need for a growing business
                         </p>
 
-                        <ul className="mt-7 text-sm bg-gray-50 border rounded-lg mx-5">
+                        <ul className="mt-7 text-sm bg-gray-50 dark:bg-slate-900 border dark:border-gray-700 rounded-lg mx-5">
                             {service.items.slice(0, 5).map((feature, index) => {
                                 return (
                                     <li
-                                        className="flex items-center gap-x-2 py-3 px-4 text-sm font-medium text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg dark:bg-neutral-900 dark:border-neutral-700 dark:text-white"
+                                        className="flex items-center gap-x-2 py-3 px-4 text-sm font-medium text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg dark:text-white"
                                         key={index}
                                     >
                                         {feature.standard == "1" ? (
@@ -175,11 +175,11 @@ export default function SingleService({ service, reviews, item }) {
                             Advanced features for scaling your business
                         </p>
 
-                        <ul className="mt-7 text-sm bg-gray-50 border rounded-lg mx-5">
+                        <ul className="mt-7 text-sm bg-gray-50 dark:bg-slate-900 border dark:border-gray-700 border rounded-lg mx-5">
                             {service.items.slice(0, 5).map((feature, index) => {
                                 return (
                                     <li
-                                        className="flex items-center gap-x-2 py-3 px-4 text-sm font-medium text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg dark:bg-neutral-900 dark:border-neutral-700 dark:text-white"
+                                        className="flex items-center gap-x-2 py-3 px-4 text-sm font-medium text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg dark:text-white"
                                         key={index}
                                     >
                                         {feature.premium == "1" ? (
@@ -430,84 +430,82 @@ export default function SingleService({ service, reviews, item }) {
                         </table>
                     </div>
 
-                    <div className="py-3">
+                    <div className="py-10 mt-10 max-w-4xl mx-auto">
                         {service.faqs.map((item, index) => {
                             return (
-                                <div className="col-span-12 ">
-                                    <ServiceAccordion key={index} item={item} />
-                                </div>
+                                <ServiceAccordion key={index} item={item} />
                             );
                         })}
                     </div>
                     <div className="grid grid-cols-12 gap-6 py-20">
                         <div className="col-span-8">
-                            <span className="text-xl font-bold text-gray-700">
+                            <span className="text-xl font-bold text-gray-800 dark:text-gray-400">
                                 Reviews
                             </span>
-                            <p className="pt-6 pb-1 text-lg font-bold text-gray-500">
+                            <p className="pt-6 pb-1 text-lg font-bold text-gray-800 dark:text-gray-400">
                                 20 reviews for this Gig
                             </p>
                             <div className="flex items-center justify-start pb-6">
-                                <span className="h-4 w-4 text-sm pr-6 font-bold">
+                                <span className="h-4 w-4 text-sm pr-6 font-bold text-gray-800 dark:text-gray-400">
                                     5.0
                                 </span>
-                                <StarIcon className="h-4 w-4" />
-                                <StarIcon className="h-4 w-4" />
-                                <StarIcon className="h-4 w-4" />
-                                <StarIcon className="h-4 w-4" />
-                                <StarIcon className="h-4 w-4" />
+                                <StarIcon className="h-4 w-4 text-gray-800 dark:text-gray-400" />
+                                <StarIcon className="h-4 w-4 text-gray-800 dark:text-gray-400" />
+                                <StarIcon className="h-4 w-4 text-gray-800 dark:text-gray-400" />
+                                <StarIcon className="h-4 w-4 text-gray-800 dark:text-gray-400" />
+                                <StarIcon className="h-4 w-4 text-gray-800 dark:text-gray-400" />
                             </div>
 
                             <div className="space-y-3">
                                 <div className="flex justify-between items-center space-x-4">
-                                    <div className="flex space-x-2 hover:bg-gray-200 text-gray-700 px-2 py-1 rounded">
+                                    <div className="flex space-x-2 hover:bg-gray-200 text-gray-800 dark:text-gray-400 px-2 py-1 rounded">
                                         <strong>5</strong>
                                         <strong>Stars</strong>
                                     </div>
                                     <div className="w-full bg-gray-200 rounded-full h-2 dark:bg-gray-700">
                                         <div className="bg-gray-600 h-2 rounded-full "></div>
                                     </div>
-                                    <p> (20) </p>
+                                    <p className="text-gray-800 dark:text-gray-400"> (20) </p>
                                 </div>
                                 <div className="flex justify-between items-center space-x-4">
-                                    <div className="flex space-x-2 hover:bg-gray-200 text-gray-700 px-2  rounded">
+                                    <div className="flex space-x-2 hover:bg-gray-200 text-gray-800 dark:text-gray-400 px-2  rounded">
                                         <strong>4</strong>
                                         <strong>Stars</strong>
                                     </div>
                                     <div className="w-full bg-gray-200 rounded-full h-2 dark:bg-gray-700">
                                         <div className="bg-gray-600 h-2 rounded-full w-4/5 "></div>
                                     </div>
-                                    <p> (16) </p>
+                                    <p className="text-gray-800 dark:text-gray-400"> (16) </p>
                                 </div>
                                 <div className="flex justify-between items-center space-x-4">
-                                    <div className="flex space-x-2 hover:bg-gray-200 text-gray-700 px-2  rounded">
+                                    <div className="flex space-x-2 hover:bg-gray-200 text-gray-800 dark:text-gray-400 px-2  rounded">
                                         <strong>3</strong>
                                         <strong>Stars</strong>
                                     </div>
                                     <div className="w-full bg-gray-200 rounded-full h-2 dark:bg-gray-700">
                                         <div className="bg-gray-600 h-2 rounded-full w-3/5"></div>
                                     </div>
-                                    <p> (12) </p>
+                                    <p className="text-gray-800 dark:text-gray-400"> (12) </p>
                                 </div>
                                 <div className="flex justify-between items-center space-x-4">
-                                    <div className="flex space-x-2 hover:bg-gray-200 text-gray-700 px-2  rounded">
+                                    <div className="flex space-x-2 hover:bg-gray-200 text-gray-800 dark:text-gray-400 px-2  rounded">
                                         <strong>2</strong>
                                         <strong>Stars</strong>
                                     </div>
                                     <div className="w-full bg-gray-200 rounded-full h-2 dark:bg-gray-700">
                                         <div className="bg-gray-600 h-2 rounded-full w-2/5"></div>
                                     </div>
-                                    <p> (8) </p>
+                                    <p className="text-gray-800 dark:text-gray-400"> (8) </p>
                                 </div>
                                 <div className="flex justify-between items-center space-x-4">
-                                    <div className="flex space-x-2 hover:bg-gray-200 text-gray-700 px-2  rounded">
+                                    <div className="flex space-x-2 hover:bg-gray-200 text-gray-800 dark:text-gray-400 px-2  rounded">
                                         <strong>1</strong>
                                         <strong>Stars</strong>
                                     </div>
                                     <div className="w-full bg-gray-200 rounded-full h-2 dark:bg-gray-700">
                                         <div className="bg-gray-600 h-2 rounded-full w-1/5"></div>
                                     </div>
-                                    <p> (4) </p>
+                                    <p className="text-gray-800 dark:text-gray-400"> (4) </p>
                                 </div>
                             </div>
                         </div>

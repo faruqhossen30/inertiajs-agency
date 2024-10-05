@@ -10,7 +10,7 @@ export default function Service({service}) {
                     <img className="w-full object-fill group-hover:scale-105 transition-transform duration-500 ease-in-out" src={service.thumbnail ? window.location.origin + '/storage/' + service.thumbnail : './marketing.png'} alt="Image Description" />
                 </div>
                 <div className="text-center">
-                    <h3 className="text-lg font-bold text-gray-800 dark:text-gray-400 py-3">
+                    <h3 className="text-lg px-5 font-bold text-gray-800 dark:text-gray-400 py-3">
                         {service.title}
                     </h3>
                     <div className="text-center">

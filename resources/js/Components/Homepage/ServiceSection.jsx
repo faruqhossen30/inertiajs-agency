@@ -26,7 +26,7 @@ export default function ServiceSection({ categories }) {
                                     <img src={window.location.origin + '/storage/' + item.thumbnail} className="w-16 h-16 dark:text-gray-400" alt={item.name} />
                                 </div>
                                 <div className="flex justify-center">
-                                    <span className="text-[24px] sm:text-xl dark:text-gray-400 font-extrabold ">{item.name}</span>
+                                    <span className="text-[24px] sm:text-xl dark:text-gray-400 font-extrabold uppercase">{item.name}</span>
                                 </div>
                                 <div className="flex justify-center text-center">
                                     <p className='text-md text-gray-800 text-justify  dark:text-gray-400 font-medium'>

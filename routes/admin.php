@@ -44,7 +44,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth','admin']], function (
     Route::post('service/{id}/faq',[ServiceFaqController::class, 'faqStore'])->name('service.faq.store');
     Route::delete('service/{id}/faq',[ServiceFaqController::class, 'faqDestroy'])->name('service.faq.destroy');
 
-
     // Feature
     Route::resource('feature', FeatureController::class);
     Route::resource('faq', FaqController::class);
