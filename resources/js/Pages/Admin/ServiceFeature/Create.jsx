@@ -45,44 +45,76 @@ export default function Create({ auth, services, features, service }) {
     };
 
     // Basic checkbox
+    // const basicCheckboxChange = (e) => {
+    //     const { value, checked } = e.target;
+
+    //     if (checked) {
+    //         setData("basic", [...data.basic, value]);
+    //     } else {
+    //         setData(
+    //             "basic",
+    //             data.basic.filter((item) => item !== value)
+    //         );
+    //     }
+    // };
+
     const basicCheckboxChange = (e) => {
         const { value, checked } = e.target;
-
         if (checked) {
-            setData("basic", [...data.basic, value]);
+            setData("basic", [...data.basic, parseInt(value)]);
         } else {
-            setData(
-                "basic",
-                data.basic.filter((item) => item !== value)
-            );
+            setData("basic", data.basic.filter((item) => item !== parseInt(value)));
         }
+        console.log("basic: ", data.basic); // Debugging
     };
 
+
     // standard checkbox
+    // const standardCheckboxChange = (e) => {
+    //     const { value, checked } = e.target;
+    //     if (checked) {
+    //         setData("standard", [...data.standard, value]);
+    //     } else {
+    //         setData(
+    //             "standard",
+    //             data.standard.filter((item) => item !== value)
+    //         );
+    //     }
+    // };
+
+
     const standardCheckboxChange = (e) => {
         const { value, checked } = e.target;
         if (checked) {
-            setData("standard", [...data.standard, value]);
+            setData("standard", [...data.standard, parseInt(value)]);
         } else {
-            setData(
-                "standard",
-                data.standard.filter((item) => item !== value)
-            );
+            setData("standard", data.standard.filter((item) => item !== parseInt(value)));
         }
+        console.log("standard: ", data.standard); // Debugging
     };
 
     // Premium checkbox
-    const [premium, setPremium] = useState([]);
+    // const [premium, setPremium] = useState([]);
+    // const premiumCheckboxChange = (e) => {
+    //     const { value, checked } = e.target;
+    //     if (checked) {
+    //         setData("premium", [...data.premium, value]);
+    //     } else {
+    //         setData(
+    //             "premium",
+    //             data.premium.filter((item) => item !== value)
+    //         );
+    //     }
+    // };
+
     const premiumCheckboxChange = (e) => {
         const { value, checked } = e.target;
         if (checked) {
-            setData("premium", [...data.premium, value]);
+            setData("premium", [...data.premium, parseInt(value)]);
         } else {
-            setData(
-                "premium",
-                data.premium.filter((item) => item !== value)
-            );
+            setData("premium", data.premium.filter((item) => item !== parseInt(value)));
         }
+        console.log("premium: ", data.premium); // Debugging
     };
 
     return (
