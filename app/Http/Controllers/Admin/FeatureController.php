@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Feature;
+use App\Models\Service\ServiceFeature;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -15,7 +16,7 @@ class FeatureController extends Controller
      */
     public function index()
     {
-        $features = Feature::with('category')->paginate(10);
+        $features = Feature::with('category')->paginate(25);
         // return $features;
         return Inertia::render('Admin/Feature/Index', ['features' => $features]);
     }
@@ -82,6 +83,8 @@ class FeatureController extends Controller
         ];
 
         Feature::firstwhere('id', $id)->update($data);
+        ServiceFeature::where('feature_id',$id)->update($request->is_additional);
+
         return to_route('feature.index'); //
     }
 

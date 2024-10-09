@@ -44,13 +44,7 @@ export default function Index({ auth, faqs }) {
                                             </div>
                                         </th>
 
-                                        <th scope="col" className="px-6 py-3 text-left">
-                                            <div className="flex items-center gap-x-2">
-                                                <span className="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
-                                                    Photo
-                                                </span>
-                                            </div>
-                                        </th>
+
 
                                         <th scope="col" className="px-6 py-3 text-left">
                                             <div className="flex items-center gap-x-2">
@@ -86,11 +80,6 @@ export default function Index({ auth, faqs }) {
                                                 <td className="h-px w-px whitespace-nowrap">
                                                     <div className="px-6 py-2">
                                                         <span className="text-sm text-gray-600 dark:text-gray-400">{item.title}</span>
-                                                    </div>
-                                                </td>
-                                                <td className="h-px w-px whitespace-wrap">
-                                                    <div className="px-6 py-2">
-                                                        <span className="text-sm text-gray-600 dark:text-gray-400">{item.description}</span>
                                                     </div>
                                                 </td>
 
