@@ -38,7 +38,7 @@ class CategoryController extends Controller
         // return $request->all();
 
         $request->validate([
-            'name'=>'required'
+            'name' => 'required|unique:categories',
         ]);
 
         $data=[
@@ -80,7 +80,7 @@ class CategoryController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-            'name'=>'required'
+            'name' => 'required|unique:categories',
         ]);
 
         $data = [

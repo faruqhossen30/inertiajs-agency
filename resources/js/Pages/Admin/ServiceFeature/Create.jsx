@@ -21,17 +21,27 @@ export default function Create({ auth, services, features, service }) {
         post(route("service.feature.store", service.id));
     }
     // Feature checkbox
-    const [feature, setFeature] = useState([]);
+    // const [feature, setFeature] = useState([]);
+    // const featueCheckboxChange = (e) => {
+    //     const { value, checked } = e.target;
+    //     if (checked) {
+    //         setData("featureids", [...data.featureids, value]);
+    //     } else {
+    //         setData(
+    //             "featureids",
+    //             data.featureids.filter((item) => item !== value)
+    //         );
+    //     }
+    // };
+
     const featueCheckboxChange = (e) => {
         const { value, checked } = e.target;
         if (checked) {
-            setData("featureids", [...data.featureids, value]);
+            setData("featureids", [...data.featureids, parseInt(value)]);
         } else {
-            setData(
-                "featureids",
-                data.featureids.filter((item) => item !== value)
-            );
+            setData("featureids", data.featureids.filter((item) => item !== parseInt(value)));
         }
+        console.log("featureids: ", data.featureids); // Debugging
     };
 
     // Basic checkbox

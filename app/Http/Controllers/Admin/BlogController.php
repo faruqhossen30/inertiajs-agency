@@ -57,7 +57,7 @@ class BlogController extends Controller
 
 
         $request->validate([
-            'title' => 'required',
+            'title' => 'required|unique:blogs',
             'description' => 'required',
         ]);
 
@@ -109,17 +109,17 @@ class BlogController extends Controller
 
         // return $request ->all();
         $request->validate([
-            'title' => 'required',
+            'title' => 'required|unique:blogs',
             'description' => 'required',
         ]);
 
         $data = [
-            'title'             => $request->title,
+            'title'            => $request->title,
             'slug'             => Str::slug($request->title),
             'description'      => $request->description,
             'meta_title'       => $request->meta_title,
             'meta_tag'         => $request->meta_tag,
-            'status'         => $request->status,
+            'status'           => $request->status,
             'meta_description' => $request->meta_description,
             'user_id'          => Auth::user()->id,
         ];

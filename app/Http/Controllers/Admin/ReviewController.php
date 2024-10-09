@@ -36,9 +36,9 @@ class ReviewController extends Controller
     {
         // return $request->all();
 
-        // $request->validate([
-        //     'name'=>'required'
-        // ]);
+        $request->validate([
+            'name' => 'required|unique:reviews',
+        ]);
 
         $data=[
             'name'        => $request->name,
@@ -80,9 +80,9 @@ class ReviewController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        // $request->validate([
-        //     'name'=>'required'
-        // ]);
+        $request->validate([
+            'name' => 'required|unique:reviews',
+        ]);
 
         $data = [
             'name'        => $request->name,

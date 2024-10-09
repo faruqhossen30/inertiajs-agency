@@ -36,7 +36,7 @@ class PackageController extends Controller
     {
 
         $request->validate([
-            'name'        => 'required',
+            'name'        => 'required|unique:packages',
             'description' => 'required'
         ]);
 
@@ -60,7 +60,7 @@ class PackageController extends Controller
      */
     public function show(string $id)
     {
-       
+
     }
 
     /**
@@ -78,7 +78,7 @@ class PackageController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-            'name'        => 'required',
+           'name'         => 'required|unique:packages',
             'description' => 'required'
         ]);
 

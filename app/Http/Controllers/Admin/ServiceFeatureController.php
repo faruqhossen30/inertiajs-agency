@@ -36,40 +36,46 @@ class ServiceFeatureController extends Controller
     public function store(Request $request, $id)
     {
         // return $request->all();
-        $features = $request->featureids;
-        $basic = $request->basic;
-        $standard = $request->standard;
-        $premium = $request->premium;
 
-        if (!empty($features)) {
-            $service = ServiceFeature::where('service_id', $id)->delete();
-            foreach ($features as $key => $featue) {
-                $b = in_array($featue, $basic);
-                $s = in_array($featue, $standard);
-                $p = in_array($featue, $premium);
+        // return $id;
+        try {
+            $features = $request->featureids;
+            $basic = $request->basic;
+            $standard = $request->standard;
+            $premium = $request->premium;
 
-                ServiceFeature::create([
-                    'service_id' => $id,
-                    'feature_id' => $featue,
-                    'basic'      => $b,
-                    'standard'   => $s,
-                    'premium'    => $p
-                ]);
+            if (!empty($features)) {
+                $service = ServiceFeature::where('service_id', $id)->delete();
+                foreach ($features as $key => $featue) {
+                    $b = in_array($featue, $basic);
+                    $s = in_array($featue, $standard);
+                    $p = in_array($featue, $premium);
+
+                    ServiceFeature::create([
+                        'service_id' => $id,
+                        'feature_id' => $featue,
+                        'basic'      => $b,
+                        'standard'   => $s,
+                        'premium'    => $p
+                    ]);
+                }
             }
-        }
 
-        return to_route('service.faq.create', $id);
+            return to_route('service.faq.create', $id);
+        } catch (\Throwable $th) {
+            dd($th);
+        }
     }
 
     public function additionalFeatureCreate(Request $request, $id)
     {
         $features = Feature::where('is_additional', true)->get();
-        $service = Service::with(['features','additionalFeatures', 'items'])->firstWhere('id', $id);
+        $service = Service::with(['features', 'additionalFeatures', 'items'])->firstWhere('id', $id);
 
-        $additionalfeatures = ServiceFeature::with('feature')->where(['service_id'=>$id, 'is_additional'=>true])->get();
+        $additionalfeatures = ServiceFeature::with('feature')->where(['service_id' => $id, 'is_additional' => true])->get();
 
         // return  $additionalfeatures;
-        return Inertia::render('Admin/ServiceFeature/AdditionalFeature', ['features' => $features, 'service' => $service,'additionalfeatures'=>$additionalfeatures]);
+        return Inertia::render('Admin/ServiceFeature/AdditionalFeature', ['features' => $features, 'service' => $service, 'additionalfeatures' => $additionalfeatures]);
     }
 
     public function additionalFeatureStore(Request $request, string $id)
@@ -94,7 +100,7 @@ class ServiceFeatureController extends Controller
     }
     public function additionalFeatureStoreDestroy(string $id)
     {
-        ServiceFeature::firstWhere('id',$id)->delete();
+        ServiceFeature::firstWhere('id', $id)->delete();
         return redirect()->back();
     }
 }

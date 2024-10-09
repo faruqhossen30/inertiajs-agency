@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Faq;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+
 class FaqController extends Controller
 {
     /**
@@ -24,7 +25,6 @@ class FaqController extends Controller
     {
 
         return Inertia::render('Admin/Faq/Create');
-
     }
 
     /**
@@ -33,7 +33,8 @@ class FaqController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required'
+
+            'title' => 'required|unique:faqs'
         ]);
 
         $data = [
@@ -69,7 +70,7 @@ class FaqController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-            'title' => 'required'
+           'title' => 'required|unique:faqs'
         ]);
 
         $data = [

@@ -40,7 +40,7 @@ class ServiceController extends Controller
     {
         // return $request->all();
         $request->validate([
-            'title'          => 'required',
+            'title'          => 'required|unique:services',
             'thumbnail'      => 'required | mimes:jpeg,jpg,png | max:1000',
             'description'    => 'required',
             'status'         => 'required',
@@ -93,7 +93,7 @@ class ServiceController extends Controller
         // return $request->all();
 
         $request->validate([
-            'title'          => 'required',
+            'title'          => 'required|unique:services',
             'description'    => 'required',
             'status'         => 'required',
             'category_ids'   => 'required',
