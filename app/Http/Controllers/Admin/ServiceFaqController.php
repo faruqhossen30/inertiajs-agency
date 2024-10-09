@@ -18,7 +18,7 @@ class ServiceFaqController extends Controller
     public function faqStore(Request $request, $id){
 
         $request->validate([
-            'question'  => 'required|unique:service_faqs',
+            'question'  => 'required',
             'answer' => 'required'
         ]);
 

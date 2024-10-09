@@ -78,7 +78,7 @@ class PackageController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-           'name'         => 'required|unique:packages',
+           'name'         => 'required',
             'description' => 'required'
         ]);
 

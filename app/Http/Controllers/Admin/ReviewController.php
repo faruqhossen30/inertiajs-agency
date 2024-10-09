@@ -81,7 +81,7 @@ class ReviewController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-            'name' => 'required|unique:reviews',
+            'name' => 'required',
         ]);
 
         $data = [

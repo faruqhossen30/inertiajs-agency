@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('service_features', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('service_id')->nullable();
-            $table->unsignedBigInteger('feature_id')->unique();
+            $table->foreignId('feature_id')->constrained('features')->onDelete('cascade');
+            $table->foreignId('service_id')->constrained('services')->onDelete('cascade');
             $table->string('basic')->default(false);
             $table->string('standard')->default(false);
             $table->string('premium')->default(false);

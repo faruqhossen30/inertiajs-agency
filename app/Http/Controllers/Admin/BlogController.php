@@ -109,7 +109,7 @@ class BlogController extends Controller
 
         // return $request ->all();
         $request->validate([
-            'title' => 'required|unique:blogs',
+            'title' => 'required',
             'description' => 'required',
         ]);
 

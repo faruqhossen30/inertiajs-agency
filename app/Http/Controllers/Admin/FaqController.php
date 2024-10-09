@@ -34,7 +34,7 @@ class FaqController extends Controller
     {
         $request->validate([
 
-            'title' => 'required|unique:faqs'
+            'title' => 'required'
         ]);
 
         $data = [
@@ -70,7 +70,7 @@ class FaqController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-           'title' => 'required|unique:faqs'
+           'title' => 'required'
         ]);
 
         $data = [

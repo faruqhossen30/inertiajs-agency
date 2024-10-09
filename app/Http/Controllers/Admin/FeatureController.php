@@ -35,7 +35,7 @@ class FeatureController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-           'title' => 'required|unique:features'
+           'title' => 'required'
         ]);
 
         $data = [
@@ -72,7 +72,7 @@ class FeatureController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-            'title' => 'required|unique:features'
+            'title' => 'required|unique:features,title,'.$request->title
         ]);
 
         $data = [

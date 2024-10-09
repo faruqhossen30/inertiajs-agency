@@ -93,7 +93,7 @@ class ServiceController extends Controller
         // return $request->all();
 
         $request->validate([
-            'title'          => 'required|unique:services',
+            'title'          => 'required',
             'description'    => 'required',
             'status'         => 'required',
             'category_ids'   => 'required',
