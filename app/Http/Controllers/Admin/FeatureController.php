@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\FeatureUpdateRequest;
 use App\Models\Category;
 use App\Models\Feature;
 use App\Models\Service\ServiceFeature;
@@ -73,7 +74,8 @@ class FeatureController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-            'title' => 'required|unique:features,title,'.$request->title
+            'title' => 'required|unique:features,title,' . $id
+
         ]);
 
         $data = [
@@ -83,7 +85,7 @@ class FeatureController extends Controller
         ];
 
         Feature::firstwhere('id', $id)->update($data);
-        ServiceFeature::where('feature_id',$id)->update($request->is_additional);
+        // ServiceFeature::where('feature_id',$id)->update($request->is_additional);
 
         return to_route('feature.index'); //
     }

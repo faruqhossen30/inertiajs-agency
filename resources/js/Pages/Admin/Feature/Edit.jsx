@@ -27,14 +27,14 @@ export default function Create({ auth, feature ,categories}) {
             <div className="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-gray-800 dark:border-neutral-700 dark:shadow-neutral-700/70">
                 <div className="bg-gray-100 border-b rounded-t-xl py-3 px-4 md:py-4 md:px-5 dark:bg-gray-800 dark:border-neutral-700">
                     <p className="mt-1 text-sm text-gray-500 dark:text-neutral-500">
-                        Edit FAQ
+                        Edit Feature
                     </p>
                 </div>
                 <div className="p-4 md:p-5">
                     <div className=" px-2 py-2 sm:px-6 lg:px-4 mx-auto">
                         <form onSubmit={submit}>
                             <div>
-                                <InputLabel isRequired={true} labelFor="faq" />
+                                <InputLabel isRequired={true} labelFor="Title" />
                                 <Input id="faq" type="text" name="title" value={data.title} autoComplete="title" placeholder="title" onChange={(e) => setData('title', e.target.value)} />
                                 <p className="text-sm text-red-600 mt-2">{errors.title}</p>
                             </div>
