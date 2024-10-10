@@ -19,13 +19,13 @@ class ServiceFaqController extends Controller
 
         $request->validate([
             'question'  => 'required',
-            'answer' => 'required'
+            'answer'    => 'required'
         ]);
 
         $data = [
             'service_id' => $id,
-            'question' => $request->question,
-            'answer' => $request->answer,
+            'question'   => $request->question,
+            'answer'     => $request->answer,
         ];
 
         ServiceFaq::create($data);

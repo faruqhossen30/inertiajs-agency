@@ -14,9 +14,28 @@ class FaqController extends Controller
      */
     public function index()
     {
-        $faqs = Faq::paginate(10);
+        $show = null;
+        if (isset($_GET['show']) && $_GET['show']) {
+            $show = $_GET['show'];
+        }
+
+        $faqs = Faq::query();
+
+        if (isset($_GET['search']) && $_GET['search']) {
+            $search = $_GET['search'];
+            $faqs = $faqs->where('title', 'like', '%' . $search . '%');
+        }
+
+        if (isset($_GET['orderby']) && $_GET['orderby']) {
+            $orderby = $_GET['orderby'];
+            $faqs = $faqs->orderBy('created_at', $orderby);
+        }
+
+        $faqs = $faqs->paginate($show ?? 10)->appends($_GET);
+
         return Inertia::render('Admin/Faq/Index', ['faqs' => $faqs]);
     }
+
 
     /**
      * Show the form for creating a new resource.

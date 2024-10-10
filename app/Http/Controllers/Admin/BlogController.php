@@ -25,19 +25,19 @@ class BlogController extends Controller
 
         if (isset($_GET['search']) && $_GET['search']) {
             $search = $_GET['search'];
-            $portfolios = $blogs->where('title', 'like', '%' . $search . '%');
+            $blogs = $blogs->where('title', 'like', '%' . $search . '%');
         }
 
         if (isset($_GET['orderby']) && $_GET['orderby']) {
             $orderby = $_GET['orderby'];
-            $portfolios = $blogs->orderBy('created_at', $orderby);
+            $blogs = $blogs->orderBy('created_at', $orderby);
         }
 
         $blogs = $blogs->paginate($show ?? 10)->appends($_GET);
 
-
         return Inertia::render('Admin/Blog/Index', ['blogs' => $blogs]);
     }
+
 
     /**
      * Show the form for creating a new resource.

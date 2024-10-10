@@ -22,7 +22,7 @@ export default function Create({ auth, categories }) {
 
     return (
         <AuthenticatedLayout>
-            <BreadcumComponent pageOne="FAQ" pageOneRoute="feature.index" />
+            <BreadcumComponent pageOne="Feature" pageOneRoute="feature.index" />
 
             <div className="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-gray-800 dark:border-neutral-700 dark:shadow-neutral-700/70">
                 <div className="bg-gray-100 border-b rounded-t-xl py-3 px-4 md:py-4 md:px-5 dark:bg-gray-800 dark:border-neutral-700">

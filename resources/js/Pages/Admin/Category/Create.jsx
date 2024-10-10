@@ -12,6 +12,7 @@ export default function Create({ auth }) {
     const { data, setData, post, processing, errors, reset } = useForm({
         name: '',
         thumbnail: null,
+        icon: null,
         status: 1,
     });
 
@@ -54,6 +55,11 @@ export default function Create({ auth }) {
                             <div>
                                 <InputLabel isRequired={true} labelFor="thumbnail" />
                                 <ImageFile name="thumbnail" setData={setData} errors={errors} placeholder="Feature Photo" />
+                            </div>
+
+                            <div>
+                                <InputLabel isRequired={true} labelFor="icon" />
+                                <ImageFile name="icon" setData={setData} errors={errors} placeholder="Icon Photo" />
                             </div>
 
 

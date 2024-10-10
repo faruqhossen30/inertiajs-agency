@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('slug');
             $table->string('description',1000)->nullable();
             $table->string('thumbnail')->nullable();
+            $table->string('icon')->nullable();
             $table->string('user_id');
             $table->boolean('status')->default(1);
             $table->timestamps();

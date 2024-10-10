@@ -58,6 +58,10 @@ export default function Create({ auth, category }) {
                                 <InputLabel isRequired={true} labelFor="thumbnail" />
                                 <ImageFile name="thumbnail" setData={setData} errors={errors} placeholder="Feature Photo" />
                             </div>
+                            <div>
+                                <InputLabel isRequired={true} labelFor="icon" />
+                                <ImageFile name="icon" setData={setData} errors={errors} placeholder="Icon Photo" />
+                            </div>
 
                             <div>
                                 <InputLabel isRequired={true} labelFor="status" />

@@ -37,7 +37,7 @@ class FeatureController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-           'title' => 'required'
+           'title' => 'required|unique:features'
         ]);
 
         $data = [
@@ -79,13 +79,13 @@ class FeatureController extends Controller
         ]);
 
         $data = [
-            'category_id' => $request->category_id,
-            'title'       => $request->title,
-            'is_additional'       => $request->is_additional,
+            'category_id'  => $request->category_id,
+            'title'        => $request->title,
+            'is_additional'=> $request->is_additional,
         ];
 
         Feature::firstwhere('id', $id)->update($data);
-        // ServiceFeature::where('feature_id',$id)->update($request->is_additional);
+        ServiceFeature::where('feature_id',$id)->update($request->is_additional);
 
         return to_route('feature.index'); //
     }

@@ -17,9 +17,26 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::paginate(10);
-        // return $categories;
-        return Inertia::render('Admin/Category/Index',['categories'=> $categories]);
+        $show = null;
+        if (isset($_GET['show']) && $_GET['show']) {
+            $show = $_GET['show'];
+        }
+
+        $categories = Category::query();
+
+        if (isset($_GET['search']) && $_GET['search']) {
+            $search = $_GET['search'];
+            $categories = $categories->where('name', 'like', '%' . $search . '%');
+        }
+
+        if (isset($_GET['orderby']) && $_GET['orderby']) {
+            $orderby = $_GET['orderby'];
+            $categories = $categories->orderBy('created_at', $orderby);
+        }
+
+        $categories = $categories->paginate($show ?? 10)->appends($_GET);
+
+        return Inertia::render('Admin/Category/Index', ['categories' => $categories]);
     }
 
     /**
@@ -51,6 +68,10 @@ class CategoryController extends Controller
             $file_name = $request->file('thumbnail')->store('category');
             $data['thumbnail'] = $file_name;
         }
+        if ($request->file('icon')) {
+            $file_name = $request->file('icon')->store('category/icon');
+            $data['icon'] = $file_name;
+        }
 
         Category::create($data);
 
@@ -80,7 +101,7 @@ class CategoryController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-            'name' => 'required|unique:categories',
+           'name' => 'required|unique:categories,name,' . $id
         ]);
 
         $data = [
@@ -90,14 +111,22 @@ class CategoryController extends Controller
             'user_id'=> Auth::user()->id,
         ];
 
-        $skill = Category::firstwhere('id', $id);
+        $category = Category::firstwhere('id', $id);
         if ($request->file('thumbnail')) {
-            if ($skill->thumbnail != null && Storage::exists($skill->thumbnail)) {
-                Storage::delete($skill->thumbnail);
+            if ($category->thumbnail != null && Storage::exists($category->thumbnail)) {
+                Storage::delete($category->thumbnail);
             }
 
             $file_name = $request->file('thumbnail')->store('category');
             $data['thumbnail'] = $file_name;
+        }
+        if ($request->file('icon')) {
+            if ($category->icon != null && Storage::exists($category->icon)) {
+                Storage::delete($category->icon);
+            }
+
+            $file_name = $request->file('icon')->store('category/icon');
+            $data['icon'] = $file_name;
         }
 
 
