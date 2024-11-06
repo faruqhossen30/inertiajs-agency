@@ -3,6 +3,9 @@ import { Link } from '@inertiajs/react'
 import React from 'react'
 
 export default function Service({service}) {
+
+    console.log(service);
+
     return (
         <div className="col-span-6 md:col-span-4">
             <Link href={route('single.service',service.slug)} className="flex flex-col group bg-white border shadow-sm rounded-md overflow-hidden hover:shadow-lg transition dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7]" >
@@ -23,7 +26,7 @@ export default function Service({service}) {
                         </div>
 
                         <p className="text-sm py-2 text-gray-800 dark:text-gray-400">
-                            <span className="font-bold">4.6</span> /5 - from 12k reviews
+                            <span className="font-bold">4.6</span> /5 - from {service.reviews?.count || 0} reviews
                         </p>
                     </div>
 

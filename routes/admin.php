@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\ReviewController;
 use App\Http\Controllers\Admin\ServiceFaqController;
 use App\Http\Controllers\Admin\ServiceFeatureController;
 use App\Http\Controllers\Admin\ServicePackageController;
+use App\Http\Controllers\Admin\TeamController;
 use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -55,6 +56,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth','admin']], function (
 
     Route::resource('category', CategoryController::class);
     Route::post('category/{id}', [CategoryController::class, 'update'])->name('categoryupdate');
+
+    Route::resource('teams', TeamController::class);
+    Route::post('team/{id}', [TeamController::class, 'update'])->name('teamupdate');
 
     Route::resource('blogcategory', BlogcategoryController::class);
     Route::resource('package', PackageController::class);

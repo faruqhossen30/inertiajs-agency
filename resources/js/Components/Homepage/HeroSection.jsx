@@ -5,13 +5,13 @@ import React from 'react'
 export default function HeroSection() {
     return (
 
-        <div className="relative overflow-hidden before:absolute before:top-0 before:left-1/2 before:bg-no-repeat before:bg-top before:bg-cover before:w-full before:h-full before:-z-[1] before:transform before:-translate-x-1/2 before:start-1/2 before:bg-[url('https://preline.co/assets/svg/examples/polygon-bg-element.svg')] ">
+        <div className="relative  overflow-hidden before:absolute before:top-0 before:left-1/2 before:bg-no-repeat before:bg-top before:bg-cover before:w-full before:h-full before:-z-[1] before:transform before:-translate-x-1/2 before:start-1/2 before:bg-[url('https://preline.co/assets/svg/examples/polygon-bg-element.svg')] ">
             <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 pt-4 sm:pt-10 md:pt-16 lg:pt-24  md:pb-10">
 
                 <div className="mt-5 max-w-5xl md:max-w-4xl 2xl:max-w-6xl text-center mx-auto">
-                    <h1 className="block font-bold text-gray-800 text-[28px] sm:text-5xl md:text-[58px]  leading-9 md:leading-[60px] lg:leading-[75px] lg:text-[75px] xl:text-7xl 2xl:text-8xl dark:text-gray-200">
+                    <h1 className="block font-bold text-gray-800 text-[28px] sm:text-5xl md:text-[58px]  leading-9 md:leading-[60px] lg:leading-[75px] lg:text-[75px] xl:text-6xl 2xl:text-8xl dark:text-gray-200">
 
-                        <span className="bg-clip-text bg-gradient-to-tl from-blue-600 to-violet-600 text-transparent">Digital Marketing Agency</span>
+                        <span className="bg-clip-text bg-gradient-to-tl from-blue-600 to-violet-600 text-transparent font-libre">Digital Marketing Agency</span>
                          <span className="bg-clip-text bg-gradient-to-tl from-blue-600 to-violet-600 text-transparent"></span> Innovate Your World
 
                     </h1>

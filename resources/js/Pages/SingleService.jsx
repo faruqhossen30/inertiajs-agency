@@ -175,7 +175,7 @@ export default function SingleService({ service, reviews, item }) {
                             Advanced features for scaling your business
                         </p>
 
-                        <ul className="mt-7 text-sm bg-gray-50 dark:bg-slate-900 border dark:border-gray-700 border rounded-lg mx-5">
+                        <ul className="mt-7 text-sm bg-gray-50 dark:bg-slate-900 border dark:border-gray-700  rounded-lg mx-5">
                             {service.items.slice(0, 5).map((feature, index) => {
                                 return (
                                     <li
@@ -273,7 +273,7 @@ export default function SingleService({ service, reviews, item }) {
                             <tbody className=" ">
                                 <tr className="divide-y text-start dark:hover:bg-slate-900  dark:divide-gray-700 shadow-sm divide-x dark:border-gray-700">
                                     <td className="p-4 py-4 ps-6 pe-6 border dark:border-gray-700 font-bold text-xl divide-x text-gray-600 text-start whitespace-nowrap dark:text-gray-400">
-                                    Price
+                                        Price
                                     </td>
                                     <td className="p-4 w-3 border dark:border-gray-700 font-bold text-base  text-center text-gray-600  whitespace-normal dark:text-gray-400">
                                         <span className="">
@@ -314,7 +314,7 @@ export default function SingleService({ service, reviews, item }) {
 
                                 <tr className="divide-y text-center dark:hover:bg-slate-900 dark:divide-gray-700 shadow-sm divide-x dark:border-gray-700">
                                     <td className="p-4 py-4 ps-6 pe-6  border dark:border-gray-700 font-bold text-xl divide-x text-gray-600  text-start whitespace-nowrap  dark:text-gray-400">
-                                    Delivery Day
+                                        Delivery Day
                                     </td>
                                     <td className="p-4    border font-bold text-xl divide-x text-gray-600  text-center whitespace-nowrap  dark:text-gray-400">
                                         <span>{service.basic_day}</span>
@@ -511,7 +511,7 @@ export default function SingleService({ service, reviews, item }) {
                         </div>
                     </div>
 
-                    <section className="  bg-blueGray-100">
+                    <section className="bg-blueGray-100">
                         <div className="grid grid-cols-12 ">
                             <div className="col-span-8">
                                 <form onSubmit={submit}>
@@ -534,18 +534,10 @@ export default function SingleService({ service, reviews, item }) {
                                                     Select rating{" "}
                                                 </option>
                                                 <option value="1">One ★</option>
-                                                <option value="2">
-                                                    Two ★★
-                                                </option>
-                                                <option value="3">
-                                                    Three ★★★
-                                                </option>
-                                                <option value="4">
-                                                    Four ★★★★
-                                                </option>
-                                                <option value="5">
-                                                    Five★★★★★
-                                                </option>
+                                                <option value="2"> Two ★★  </option>
+                                                <option value="3">Three ★★★</option>
+                                                <option value="4"> Four ★★★★  </option>
+                                                <option value="5"> Five★★★★★</option>
                                             </select>
                                             <p className="text-sm text-red-600 mt-2">
                                                 {errors.rating}
@@ -574,21 +566,27 @@ export default function SingleService({ service, reviews, item }) {
                                         <SubmitButton />
                                     </div>
                                 </form>
-                                {service.reviews.map((item, index) => {
+                                {/* {service.reviews.map((item, index) => {
                                     return (
                                         <div
                                             key={index}
                                             className="mb-2 border rounded-md px-6 py-6 space-y-6 "
                                         >
+
+                                            {item.users.map((item, index) => {
                                             <div className=" ">
                                                 <div className="flex  items-center ">
+
+
                                                     <div className="">
                                                         <img
                                                             className="mr-10 h-14 w-14 flex justify-center object-cover  items-center p-1 border shadow-md  rounded-full"
-                                                            src="{window.location.protocol + '/storage/' + item.reviews.users.avater}"
+                                                            src={window.location.protocol + '/storage/' + item.reviews.users.avater}
                                                             alt=""
                                                         />
                                                     </div>
+
+
                                                     <div className="w-full md:w-px h-2 md:h-8 mx-8 bg-transparent md:bg-gray-200"></div>
                                                     <span className="mr-4 text-lg font-heading font-medium">
                                                         {item.rating}.0
@@ -631,9 +629,65 @@ export default function SingleService({ service, reviews, item }) {
                                                     <p>{item.review}</p>
                                                 </div>
                                             </div>
+
+                                            ))}
                                         </div>
                                     );
-                                })}
+                                })} */}
+
+
+                                {service.reviews.map((review, reviewIndex) => (
+                                    <div
+                                        key={reviewIndex}
+                                        className="mb-2 border rounded-md px-6 py-6 space-y-6"
+                                    >
+                                        {review.users && review.users.map((user, userIndex) => (
+                                            <div key={userIndex} className="">
+                                                <div className="flex items-center">
+                                                    <div>
+                                                        <img
+                                                            className="mr-10 h-14 w-14 flex justify-center object-cover items-center p-1 border shadow-md rounded-full"
+                                                            src={user.avatar ? window.location.protocol + '/storage/' + user.avatar : '/user/person-circle.svg'}
+                                                            alt="User Avatar"
+                                                        />
+                                                    </div>
+                                                    <div className="w-full md:w-px h-2 md:h-8 mx-8 bg-transparent md:bg-gray-200"></div>
+                                                    <span className="mr-4 text-lg font-heading font-medium">
+                                                        {review.rating}.0
+                                                    </span>
+                                                    <div className="flex">
+                                                        {Array.from({ length: review.rating }).map((_, starIndex) => (
+                                                            <a key={starIndex} className="inline-block mr-1" href="#">
+                                                                <svg
+                                                                    width="20"
+                                                                    height="20"
+                                                                    viewBox="0 0 20 20"
+                                                                    fill="none"
+                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                >
+                                                                    <path
+                                                                        d="M20 7.91677H12.4167L10 0.416763L7.58333 7.91677H0L6.18335 12.3168L3.81668 19.5834L10 15.0834L16.1834 19.5834L13.8167 12.3168L20 7.91677Z"
+                                                                        fill="#FFCB00"
+                                                                    ></path>
+                                                                </svg>
+                                                            </a>
+                                                        ))}
+                                                    </div>
+                                                    <div className="w-full text-right">
+                                                        <p className="text-sm text-gray-300">
+                                                            {moment(review.created_at, "YYYY/MM/DD").fromNow()}
+                                                        </p>
+                                                    </div>
+                                                </div>
+
+                                                <div className="py-4">
+                                                    <p>{review.review}</p>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                ))}
+
                             </div>
                         </div>
                     </section>

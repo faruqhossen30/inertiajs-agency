@@ -13,7 +13,7 @@ class UserReviewController extends Controller
 
         $reviews = Review::with('users','service')->get();
 
-        // return  $review ;
+        // return  $reviews ;
         return Inertia::render('SingleService',['reviews'=>$reviews]);
     }
     public function reviewStore(Request $request) {

@@ -37,7 +37,7 @@ class ServicepageController extends Controller
             $services = $services->orderBy('created_at', $orderby);
         }
 
-        $services = $services->paginate($show ?? 9)->appends($_GET);
+        $services = $services->with('reviews')->paginate($show ?? 9)->appends($_GET);
 
         return Inertia::render('ServicePage', ['services' => $services, 'request' => $_GET]);
     }

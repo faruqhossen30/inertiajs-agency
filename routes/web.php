@@ -36,7 +36,7 @@ Route::get('services', [ServicepageController::class, 'index'])->name('servicepa
 Route::get('services/{slug}', [ServicepageController::class, 'SingleService'])->name('single.service');
 
 Route::get('reviewcreate',[UserReviewController::class,'reviewCreate'])->name('reviewcreate');
-Route::post('reviewstore',[UserReviewController::class,'reviewStore'])->name('reviewstore');
+Route::post('reviewstore',[UserReviewController::class,'reviewStore'])->name('reviewstore')->middleware('auth');
 Route::get('order/{id}',[OrderController::class,'order'])->name('order');
 Route::get('blogs', [BlogpageController::class, 'index'])->name('blogpage');
 Route::get('blog/{slug}', [BlogpageController::class, 'singleBlog'])->name('single.blog');

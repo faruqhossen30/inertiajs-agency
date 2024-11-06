@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Team;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -9,6 +10,8 @@ use Inertia\Response;
 class TeamPageController extends Controller
 {
     function teamPage() : Response {
-        return Inertia::render('TeamPage');
+
+        $teams = Team::all();
+        return Inertia::render('TeamPage',[ 'teams' => $teams]);
     }
 }
