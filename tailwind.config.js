@@ -25,7 +25,7 @@ export default {
         extend: {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
-                libre: ['"Libre Baskerville"', ...defaultTheme.fontFamily.sans]
+                Montserrat: ['"Montserrat"', ...defaultTheme.fontFamily.sans]
             },
         },
     },
