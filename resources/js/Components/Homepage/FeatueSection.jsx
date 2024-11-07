@@ -18,7 +18,7 @@ function FeatueSection() {
     return (
 
         <div className="container px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto space-y-10">
-            <h2 className="text-[40px] leading-10 font-bold text-center capitalize dark:text-gray-400">What we are different</h2>
+            <h2 className="text-[40px] leading-10 font-bold font-Montserrat text-center capitalize dark:text-gray-400">What we are different</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-2  gap-6">
 
                 {

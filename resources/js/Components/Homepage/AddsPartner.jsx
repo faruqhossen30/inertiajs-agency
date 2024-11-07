@@ -6,7 +6,7 @@ function AddsPartner() {
         <div className="container px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
 
             <div className="mx-auto text-center mb-6 md:mb-12">
-                <h2 className="text-[40px] leading-10 font-bold text-center dark:text-gray-400">Our Advertising Partner</h2>
+                <h2 className="text-[40px] leading-10 font-bold font-Montserrat text-center dark:text-gray-400">Our Advertising Partner</h2>
             </div>
 
 

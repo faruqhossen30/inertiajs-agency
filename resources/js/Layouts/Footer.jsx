@@ -106,7 +106,7 @@ export default function Footer({ auth }) {
 
                         </div>
                         <div className="col-span-3 pl-10">
-                            <h6 className='text-gray-800   font-bold dark:text-gray-400  capitalize  pb-5'>Resources</h6>
+                            <h6 className='text-gray-800 font-Montserrat   font-bold dark:text-gray-400  capitalize  pb-5'>Resources</h6>
                             <p><a href="#" className='text-gray-800  dark:text-gray-400  capitalize  text-sm'>About Us</a></p>
                             <p><a href="#" className='text-gray-800   dark:text-gray-400 capitalize  text-sm'>Contact Us
                             </a></p>
@@ -128,7 +128,7 @@ export default function Footer({ auth }) {
                             </a></p>
                         </div>
                         <div className="col-span-2">
-                            <h6 className='text-gray-800   font-bold dark:text-gray-400 capitalize  pb-5'>Services</h6>
+                            <h6 className='text-gray-800  font-Montserrat  font-bold dark:text-gray-400 capitalize  pb-5'>Services</h6>
 
                             <div className="space-y-1">
                                 {
@@ -143,7 +143,7 @@ export default function Footer({ auth }) {
                         </div>
                         <div className="col-span-3">
                             <div className="space-y-3 ">
-                                <h6 className='text-gray-800   font-bold dark:text-gray-400  capitalize '>Subscribe</h6>
+                                <h6 className='text-gray-800  font-Montserrat  font-bold dark:text-gray-400  capitalize '>Subscribe</h6>
                                 <form>
                                     <div className="mt-4 flex flex-col items-center gap-2 sm:flex-row sm:gap-3 bg-white p-2 dark:bg-slate-800 dark:border rounded border-gray-700">
                                         <div className="w-full">
@@ -165,7 +165,7 @@ export default function Footer({ auth }) {
                 </footer>
                 <div className=" mt-1 dark:bg-slate-800 bg-gray-200">
                     <div className="py-3 flex justify-center">
-                        <p className='text-center text-base font-bold text-gray-800 dark:text-gray-400'> Boost   Care It 2024 | All right reserved.</p>
+                        <p className='text-center font-Montserrat text-base font-bold text-gray-800 dark:text-gray-400'> Boost   Care It 2024 | All right reserved.</p>
                     </div>
 
                 </div>
