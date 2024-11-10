@@ -113,18 +113,18 @@ export default function Footer({ auth }) {
                             <p><a href={route('teampage')} className='text-gray-800  dark:text-gray-400  capitalize  text-sm'>Our Team
                             </a></p>
 
-                            <p><a href="#" className='text-gray-800  dark:text-gray-400  capitalize  text-sm'>Privacy Policy
+                            <p><a href={route('privacy.policy')} className='text-gray-800  dark:text-gray-400  capitalize  text-sm'>Privacy Policy
                             </a></p>
                             <p><a href="#" className='text-gray-800  dark:text-gray-400  capitalize  text-sm'>Sitemap
                             </a></p>
                             <p><a href={route('faq.page')} className='text-gray-800  capitalize   dark:text-gray-400 text-sm'>FAQs
 
                             </a></p>
-                            <p><a href="#" className='text-gray-800   dark:text-gray-400 capitalize  text-sm'>Disclaimer
+                            <p><a href={route('disclaimer')} className='text-gray-800   dark:text-gray-400 capitalize  text-sm'>Disclaimer
 
                             </a></p>
 
-                            <p><a href="#" className='text-gray-800  text-sm dark:text-gray-400'>Terms and Conditions
+                            <p><a href={route('termsandConditions')} className='text-gray-800  text-sm dark:text-gray-400'>Terms and Conditions
                             </a></p>
                         </div>
                         <div className="col-span-2">
@@ -170,6 +170,9 @@ export default function Footer({ auth }) {
 
                 </div>
             </section>
+
+
+
 
         </>
     )
