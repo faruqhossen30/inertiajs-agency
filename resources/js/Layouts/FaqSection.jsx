@@ -11,7 +11,7 @@ const FaqSection = () => {
         <div className="">
             <div className="w-full px-6 pb-10 md:pb-20 md:pt-12 mx-auto ">
                 < div className=" flex justify-center pb-6  ">
-                    <span className='text-center text-3xl px-6 font-Montserrat font-extrabold text-gray-950 dark:text-gray-800'>FAQ</span>
+                    <span className='text-center text-3xl px-6 font-Montserrat font-extrabold text-gray-700 dark:text-gray-500'>FAQ</span>
                 </div>
                 <div className="grid grid-cols-12 max-w-5xl mx-auto ">
                     {faqs.map((item, index) => {

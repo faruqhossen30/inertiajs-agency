@@ -18,7 +18,7 @@ function FeatueSection() {
     return (
 
         <div className="container px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto space-y-10">
-            <h2 className="text-[40px] leading-10 font-bold font-Montserrat text-center capitalize dark:text-gray-400">What we are different</h2>
+            <h2 className="text-[40px] leading-10 font-bold font-Montserrat text-center capitalize text-gray-700 dark:text-gray-400">What we are different</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-2  gap-6">
 
                 {
@@ -27,7 +27,7 @@ function FeatueSection() {
                             <span className=" sm:flex md:flex-none ">{icons[index]}</span>
                             <div>
                                 <div className="space-y-2">
-                                    <h3 className="block font-bold  text-xl text-gray-800 dark:text-gray-400">{feature.title}</h3>
+                                    <h3 className="block font-bold  text-xl text-gray-700 dark:text-gray-400">{feature.title}</h3>
                                     <p className="text-gray-600 text-justify dark:text-neutral-400">{feature.description}</p>
                                 </div>
 

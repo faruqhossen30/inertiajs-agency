@@ -10,8 +10,8 @@ export default function Header() {
         <header className="flex flex-wrap sticky top-0 sm:justify-start sm:flex-nowrap z-50 w-full bg-white border-b border-gray-200 text-sm py-3 sm:py-0 dark:bg-gray-800 dark:border-gray-700">
             <nav className="container relative w-full mx-auto sm:flex sm:items-center sm:justify-between" aria-label="Global">
                 <div className="flex items-center justify-between">
-                    <Link href={route('homepage')} className="flex-none text-xl font-semibold dark:text-gray-400" aria-label="Brand">
-                        <img src={window.location.origin + '/boostcareit-logo.png'} className="h-6 rounded-lg" alt="" />
+                    <Link href={route('homepage')} className="flex-none text-2xl font-semibold dark:text-gray-400" aria-label="Brand">
+                        <img src={window.location.origin + '/boostcareit.png'} className="h-8 rounded-lg" alt="" />
                         {/* Boost Care IT */}
                     </Link>
                     <div className="sm:hidden">

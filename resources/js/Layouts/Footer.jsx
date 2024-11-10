@@ -58,7 +58,7 @@ export default function Footer({ auth }) {
                         <div className="col-span-4">
                             <div className=" space-y-6">
                                 <div className=" flex items-center space-x-3 text-sm">
-                                    <img className='h-6' src={window.location.origin + '/boostcareit-logo.png'} alt="" srcSet="" />
+                                    <img className='h-8' src={window.location.origin + '/boostcareit.png'} alt="" srcSet="" />
 
                                 </div>
 
