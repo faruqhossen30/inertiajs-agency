@@ -8,7 +8,7 @@ export default function Accordion({ item }) {
         <Disclosure as='div' className="py-2">
             <Disclosure.Button
                 onClick={() => setOpen(!open)}
-                className={`${open ? 'border-b-0 dark:border-blue-700 border-green-500 rounded-t-md' : 'rounded-md'} py-3 text-start justify-between bg-white
+                className={`${open ? 'border-b-0 dark:border-blue-600  border-green-500 rounded-t-md' : 'rounded-md'} py-3 text-start justify-between bg-white
                  dark:bg-slate-800 dark:text-gray-400 border dark:border-gray-700 px-4 inline-flex items-center gap-x-3 w-full font-semibold text-gray-800
                   hover:text-gray-500 disabled:opacity-50 disabled:pointer-events-none`} >
                 <div className="flex items-center space-x-3">
@@ -16,7 +16,7 @@ export default function Accordion({ item }) {
                         } border px-3 py-1 rounded-md text-white`}>Q</span>
                     <p className="text-left">{item.title}</p>
                 </div>
-                <ChevronUpIcon className={`${open ? 'rotate-180 transform' : ''} h-5 w-5 text-purple-500 dark:text-gray-500`} />
+                <ChevronUpIcon className={`${open ? 'rotate-180 transform text-green-500 dark:text-blue-700' : ''} h-5 w-5   `} />
             </Disclosure.Button>
 
             <Disclosure.Panel

@@ -2,12 +2,14 @@ import Switcher from '@/Components/Common/Switcher'
 import { activeMenu } from '@/Utils/Utils'
 import { PowerIcon, UserIcon } from '@heroicons/react/24/outline'
 import { Link, usePage } from '@inertiajs/react'
+import { useState } from 'react'
 import React from 'react'
 
 export default function Header() {
     const { auth } = usePage().props
+    const [isOpen, setIsOpen] = useState(false);
     return (
-        <header className="flex flex-wrap sticky top-0 sm:justify-start sm:flex-nowrap z-50 w-full bg-white border-b border-gray-200 text-sm py-3 sm:py-0 dark:bg-gray-800 dark:border-gray-700">
+        <header className="flex flex-wrap sticky top-0 sm:justify-start sm:flex-nowrap z-10 w-full bg-white border-b border-gray-200 text-sm py-3 sm:py-0 dark:bg-gray-800 dark:border-gray-700">
             <nav className="container relative w-full mx-auto sm:flex sm:items-center sm:justify-between" aria-label="Global">
                 <div className="flex items-center justify-between">
                     <Link href={route('homepage')} className="flex-none text-2xl font-semibold dark:text-gray-400" aria-label="Brand">
@@ -35,6 +37,31 @@ export default function Header() {
                         <Link href={route('blogpage')} className="font-medium text-gray-500 hover:text-blue-600 sm:py-6 dark:text-gray-400 dark:hover:text-gray-500" >Blog</Link>
                         <Link href={route('teampage')} className="font-medium text-gray-500 hover:text-blue-600 sm:py-6 dark:text-gray-400 dark:hover:text-gray-500" >Teams</Link>
                         <Link href={route('aboutpage')} className="font-medium text-gray-500 hover:text-blue-600 sm:py-6 dark:text-gray-400 dark:hover:text-gray-500" >About Us</Link>
+
+                        <div class="m-1 hs-dropdown [--trigger:hover] relative inline-flex">
+                            <button id="hs-dropdown-hover-event" type="button" class="hs-dropdown-toggle py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium  hover:text-blue-600 text-gray-800  focus:outline-none  disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700" aria-haspopup="menu" aria-expanded="false" aria-label="Dropdown">
+                                Who We Are
+                                <svg class="hs-dropdown-open:rotate-180 h-5 w-4=5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6" /></svg>
+                            </button>
+
+                            <div class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden min-w-60 bg-white shadow-md rounded-lg mt-2 dark:bg-neutral-800 dark:border dark:border-neutral-700 dark:divide-neutral-700 after:h-4 after:absolute after:-bottom-4 after:start-0 after:w-full before:h-4 before:absolute before:-top-4 before:start-0 before:w-full" role="menu" aria-orientation="vertical" aria-labelledby="hs-dropdown-hover-event">
+                                <div class="p-1 space-y-0.5">
+                                    <a class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700" href="#">
+                                        Newsletter
+                                    </a>
+                                    <a class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700" href="#">
+                                        Purchases
+                                    </a>
+                                    <a class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700" href="#">
+                                        Downloads
+                                    </a>
+                                    <a class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700" href="#">
+                                        Team Account
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
                         <Switcher />
                         {
                             auth.user ?

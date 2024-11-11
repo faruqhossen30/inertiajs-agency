@@ -62,7 +62,7 @@ export default function Footer({ auth }) {
 
                                 </div>
 
-                                <p className='text-sm text-gray-800 leading-7  font-light dark:text-gray-400   capitalize  '>Boost Care It is here to offer services  just for you!  <br />Our team of skilled professionals is ready  to give <br /> you the best creative design, digital marketing <br /> development,  and more.</p>
+                                <p className='text-sm text-gray-800 leading-7  font-normal dark:text-gray-400  font-Montserrat  capitalize  '>Boost Care It is here to offer services  just for you!  <br />Our team of skilled professionals is ready  to give <br /> you the best creative design, digital marketing <br /> development,  and more.</p>
                                 <div className="flex space-x-2 items-center">
                                     <a href="https://x.com/boostcareit" target="_blank">
                                         <svg className="w-5 h-5 text-gray-800  dark:text-gray-400 capitalize " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
@@ -105,7 +105,7 @@ export default function Footer({ auth }) {
                             </div>
 
                         </div>
-                        <div className="col-span-3 pl-10">
+                        <div className="col-span-3 pl-10 font-Montserrat font-normal">
                             <h6 className='text-gray-800 font-Montserrat   font-bold dark:text-gray-400  capitalize  pb-5'>Resources</h6>
                             <p><a href="#" className='text-gray-800  dark:text-gray-400  capitalize  text-sm'>About Us</a></p>
                             <p><a href="#" className='text-gray-800   dark:text-gray-400 capitalize  text-sm'>Contact Us
@@ -127,7 +127,7 @@ export default function Footer({ auth }) {
                             <p><a href={route('termsandConditions')} className='text-gray-800  text-sm dark:text-gray-400'>Terms and Conditions
                             </a></p>
                         </div>
-                        <div className="col-span-2">
+                        <div className="col-span-2 font-Montserrat font-normal">
                             <h6 className='text-gray-800  font-Montserrat  font-bold dark:text-gray-400 capitalize  pb-5'>Services</h6>
 
                             <div className="space-y-1">
